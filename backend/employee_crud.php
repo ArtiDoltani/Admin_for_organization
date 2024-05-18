@@ -52,10 +52,10 @@
 
  <!-- Delete Employee -->
  <?php
-    function delete_employee($id)
+    function delete_employee($edit_id)
     {
         include 'dbconnection.php';
-        $sql = "DELETE FROM employees WHERE id=$id";
+        $sql = "DELETE FROM employees WHERE id=$edit_id";
         if ($conn->query($sql) === TRUE) {
             return true;
         } else {
@@ -126,7 +126,7 @@
 
     if (isset($_GET['id'])) {
         $edit_id = $_GET['id'];
-        if (delete_employee($id)) {
+        if (delete_employee($edit_id)) {
             echo "<script>
         alert('Employee deleted successfully!');
         window.location.href='../organization/employees.php';

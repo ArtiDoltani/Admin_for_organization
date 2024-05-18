@@ -777,7 +777,7 @@
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
                         <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li class="active"><a href="professors.html"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
+                        <li class="active"><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
                         <li><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
                         <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
@@ -1009,7 +1009,7 @@
                                     echo '
                                     <tr>
                                     <td class="w60">
-                                    <img src="'.$employee['emp_image'].'" alt="profile image" height= "70px">
+                                    <img src="'.$employee['emp_image'].'" alt="profile image" height= "60px" width="70px">
                                  
                                     </td>
                                     <td><div class="font-15">'.$employee['f_name'].' '.$employee['l_name'].'</div></td>
