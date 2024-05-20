@@ -785,7 +785,7 @@ exit;
                     <ul class="metismenu">
                         <li class="active"><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
-                        <li><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
+                        <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
                         <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
@@ -1020,7 +1020,7 @@ exit;
                         <div class="card">
                             <div class="card-body ribbon">
                                 <div class="ribbon-box orange" data-toggle="tooltip" title="New Staff">8</div>
-                                <a href="staff.html" class="my_sort_cut text-muted">
+                                <a href="staff.php" class="my_sort_cut text-muted">
                                     <i class="fa fa-user-circle-o"></i>
                                     <span>Staff</span>
                                 </a>

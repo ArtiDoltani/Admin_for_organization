@@ -778,7 +778,7 @@
                     <ul class="metismenu">
                         <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
-                        <li class="active"><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
+                        <li class="active"><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
                         <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
@@ -976,8 +976,8 @@
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
                         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Staff-all">List View</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Staff-grid">Grid View</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Staff-profile">Profile</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Staff-grid">Grid View</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Staff-profile">Profile</a></li> -->
                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Staff-add">Add</a></li>
                     </ul>
                 </div>
@@ -987,206 +987,64 @@
             <div class="container-fluid">
                 <div class="tab-content">
                     <div class="tab-pane active" id="Staff-all">
-                        <div class="card">
+                                         <!-- Show staff     -->
+                    <div class="card">
                             <div class="table-responsive">
                                 <table class="table table-hover table-vcenter text-nowrap table-striped mb-0">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>Image</th>
                                             <th>Name</th>
                                             <th>Number</th>
                                             <th>Designation</th>
                                             <th>Email</th>
                                             <th>Joining Date</th>
-                                            <th></th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <?php 
+                                        include_once '../backend/staff_crud.php';
+                                        include_once '../backend/dbconnection.php';
+                                        $staffs=get_staffs();
+                                        foreach($staffs as $staff){
+                                            echo'
+                                            
+                                            <tr>
                                             <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar3.jpg" alt="">
+                                                <img class="avatar" src="'.$staff['staff_image'].'" alt="">
                                             </td>
-                                            <td><div class="font-15">Ken Smith</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Peon</span></td>
-                                            <td>ken@gmail.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
+                                            <td><div class="font-15">'.$staff['f_name'].' '. $staff['l_name'].'</div></td>
+                                            <td><span>'.$staff['phone'].'</span></td>
+                                            <td><span class="text-muted">'.$staff['designation'].'</span></td>
+                                            <td>'.$staff['email'].'</td>
+                                            <td><strong>'.$staff['joining_date'].'</strong></td>
                                             <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
+                                            <a href="../organization/edit_staff.php?edit_id=' . $staff['id'] . '" class="btn btn-icon btn-sm" title="Edit"
+                                            data-type="confirm">
+                                            <i class="fa fa-edit"></i>
+                                            </a>
+               
+                                            <a href="../backend/staff_crud.php?id=' . $staff['id'] . '" class="btn btn-icon btn-sm js-sweetalert" title="Delete"
+                                            data-type="confirm">
+                                            <i class="fa fa-trash-o text-danger"></i>
+                                            </a>
+                                                           </td>
                                         </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar4.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Alice A Smith</div></td>
-                                            <td><span>(417) 646-5023</span></td>
-                                            <td><span class="text-muted">Purchase Officer</span></td>
-                                            <td>Alice@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar5.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Gladys J Smith</div></td>
-                                            <td><span>(417) 646-9207</span></td>
-                                            <td><span class="text-muted">Receptionist</span></td>
-                                            <td>Gladys@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <div class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">
-                                                    <span>GS</span>
-                                                </div>
-                                            </td>
-                                            <td><div class="font-15">Gladys J Smith</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Clerk</span></td>
-                                            <td>sarah@gmail.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Alan Johnson</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Librarian</span></td>
-                                            <td>kenh@gmail.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-warning">Part-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar2.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">James A Johnson</div></td>
-                                            <td><span>(417) 646-1636</span></td>
-                                            <td><span class="text-muted">Librarian</span></td>
-                                            <td>johnson@gmail.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar7.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Gladys J Smith</div></td>
-                                            <td><span>(417) 646-9207</span></td>
-                                            <td><span class="text-muted">Driver</span></td>
-                                            <td>Gladys@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-warning">Part-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar8.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Danny M Johnson</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Driver</span></td>
-                                            <td>Danny@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar9.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Patricia Smith</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Purchase Officer</span></td>
-                                            <td>Patricia@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-warning">Part-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar10.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Gladys J Smith</div></td>
-                                            <td><span>(417) 646-9207</span></td>
-                                            <td><span class="text-muted">Librarian</span></td>
-                                            <td>Gladys@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar6.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Gerald K Smith</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Lab Assistent</span></td>
-                                            <td>Smith@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
+
+                                            
+                                            ';
+
+                                        }
+                                        
+                                        
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane" id="Staff-grid">
+                    <!-- <div class="tab-pane" id="Staff-grid">
                         <div class="row">
                             <div class="col-xl-3 col-lg-4 col-md-6">
                                 <div class="card">
@@ -1544,7 +1402,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                                     <!-- This is Add staff  -->
                     <div class="tab-pane" id="Staff-add">
                         <div class="row clearfix">
@@ -1558,115 +1416,68 @@
                                         </div>
                                     </div>
                                     <div class="card-body">
+                                    <form action="../backend/staff_crud.php" method="post" enctype="multipart/form-data">
                                         <div class="row clearfix">
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>First Name</label>
-                                                    <input type="text" class="form-control">
+
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>First Name</label>
+                                                        <input type="text" class="form-control" name="f_name">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Last Name</label>
-                                                    <input type="text" class="form-control">
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Last Name</label>
+                                                        <input type="text" class="form-control" name="l_name"
+                                                        >
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
+                                                                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Designation</label>
+                                                        <input type="text" class="form-control" name="designation"
+                                                                                                           >
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-md-6 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Joining Date</label>
-                                                    <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="">
+                                                    <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder=""
+                                                    name="joining_date">
+                                                </div>
+                                            </div> -->
+                                           
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Phone</label>
+                                                        <input type="text" class="form-control" name="phone"
+                                                    >
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Enter Your Email</label>
+                                                        <input type="text" class="form-control" name="email">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group mt-2 mb-3">
+                                                        <input type="file" class="dropify" name="uploadfile">
+                                                        <small id="fileHelp" class="form-text text-muted">Upload Profile Image</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <button type="submit" class="btn btn-primary" name="add">Submit</button>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <label>Gender</label>
-                                                <select class="form-control show-tick">
-                                                    <option value="">-- Gender --</option>
-                                                    <option value="10">Male</option>
-                                                    <option value="20">Female</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Department</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Position</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Phone</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Enter Your Email</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group mt-2 mb-3">
-                                                    <input type="file" class="dropify">
-                                                    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="form-group mt-3">
-                                                    <label>Messages</label>
-                                                    <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <button type="submit" class="btn btn-primary">Submit</button>
-                                                <button type="submit" class="btn btn-outline-secondary">Cancel</button>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
+                                                                            </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-12 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Account Information</h3>
-                                        <div class="card-options ">
-                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row clearfix">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>User Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Password</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Confirm Password</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <button type="submit" class="btn btn-primary">Submit</button>
-                                                <button type="submit" class="btn btn-outline-secondary">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
+                                        <div class="card">
+                                    <!-- <div class="card-header">
                                         <h3 class="card-title">Account Information</h3>
                                         <div class="card-options ">
                                             <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
@@ -1696,7 +1507,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         <button type="submit" class="btn btn-outline-secondary">Cancel</button>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -1708,7 +1519,7 @@
         <div class="section-body">
             <footer class="footer">
                 <div class="container-fluid">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-6 col-sm-12">
                             Copyright © 2019 <a href="https://themeforest.net/user/puffintheme/portfolio">PuffinTheme</a>.
                         </div>
@@ -1719,7 +1530,7 @@
                                 <li class="list-inline-item"><a href="javascript:void(0)" class="btn btn-outline-primary btn-sm">Buy Now</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </footer>
         </div>
