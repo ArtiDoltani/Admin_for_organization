@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Ericsson :: Attendance</title>
+<title>Attendance</title>
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
@@ -233,7 +233,7 @@
                 <ul class="list-group list-unstyled">
                     <li class="list-group-item mb-2">
                         <p>Light Version</p>
-                        <a href="../university/index.html"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
+                        <a href="../organization/index.php"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
                     </li>
                     <li class="list-group-item mb-2">
                         <p>Dark Version</p>
@@ -766,20 +766,20 @@
     <div id="left-sidebar" class="sidebar">
         <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">University</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-admin">Admin</a></li>
         </ul>
         <div class="tab-content mt-3">
             <div class="tab-pane fade" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li><a href="professors.html"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                        <li><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="students.html"><i class="fa fa-users"></i><span>Students</span></a></li>
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
+                        <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
+                        <!-- <li><a href="students.html"><i class="fa fa-users"></i><span>Students</span></a></li> -->
                         <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="courses.html"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
-                        <li><a href="library.html"><i class="fa fa-book"></i><span>Library</span></a></li>
+                        <!-- <li><a href="courses.html"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
+                        <li><a href="library.html"><i class="fa fa-book"></i><span>Library</span></a></li> -->
                         <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
@@ -797,9 +797,9 @@
                         <li><a href="payments.html"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
                         <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li>
                         <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
-                        <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
-                        <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li>
-                        <li class="active"><a href="attendance.html"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
+                        <!-- <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
+                        <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li> -->
+                        <li class="active"><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
                         <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
                     </ul>
@@ -985,7 +985,86 @@
             </div>
         </div>
         <div class="section-body mt-4">
-            <div class="container-fluid">
+            <!-- <h4>Employee Attendance of Month</h4> -->
+            <?php 
+            include '../backend/dbconnection.php';
+            $firstDayOfMonth= date("1-m-Y");
+            $total_days_in_month=date("t" ,strtotime($firstDayOfMonth));
+            $sql = "SELECT * FROM employees";
+        $result = $conn->query($sql);
+        $total_employees=mysqli_num_rows($result);
+        $employees = [];
+        $counter=0;
+            while ($row = $result->fetch_assoc()) {
+                $employees[] = $row['f_name']. ' '. $row['l_name'];
+                $employees_id[]=$row['id'];
+            }
+        
+
+            ?>
+            <div class="table-responsive">
+            <table class="table table-sm table-hover table-striped table-vcenter mb-0 text-nowrap">
+            <thead>
+            <?php 
+            for($i=1; $i<=$total_employees +1; $i++){
+                if($i==1){
+                    echo'
+                    <tr>
+                    <th>Employee</th>';
+                    for($j=1; $j<=$total_days_in_month; $j++){
+                        echo '
+                        <th>'.$j.'</th>';    
+                }  
+                echo' </tr>';
+                }
+             else{
+                echo'
+                    <tr>
+                    <td>'.$employees[$counter].'</td>';
+                    for($j=1; $j<=$total_days_in_month; $j++){
+                    $date_of_attendance=date('Y-m-'.$j.'');
+                  //  echo $date_of_attendance .' ';
+                   // echo $employees_id[$counter];   
+                   $employee_attendance=mysqli_query($conn,"SELECT `is_absent` FROM `attendance`
+                   WHERE `emp_id`='".$employees_id[$counter]."' and `date`= '".$date_of_attendance."'") or die(mysqli_errno($conn));
+                 $is_attendance_added=mysqli_num_rows($employee_attendance);
+                 if($is_attendance_added>0){
+                    $employeeAttendance=mysqli_fetch_assoc($employee_attendance);
+                    if($employeeAttendance['is_absent']==0){
+                        echo '
+                        <td><i class="icon-user-following"></i> </td>
+                        ';
+                    }else{
+                        echo ' <td><i class="icon-user-unfollow text-danger"></i> </td>';
+                    }
+                    // echo '
+                    // <td>'.$employeeAttendance['is_absent'].'</td>'; 
+              }
+              else{
+                echo '
+                <td> </td>'; 
+              }         
+                          
+                }  
+                echo' </tr>';
+                $counter++;
+             }
+                             
+            }
+            ?>  
+
+                </thead>
+            
+            </table>
+
+          
+          
+          </div>'
+
+            
+        
+
+            <!-- <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -1330,7 +1409,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Start main footer -->
         <div class="section-body">
             <footer class="footer">
