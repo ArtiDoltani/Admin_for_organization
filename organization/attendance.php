@@ -795,7 +795,7 @@
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
                         <li><a href="payments.html"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
-                        <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li>
+                        <!-- <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li> -->
                         <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                         <!-- <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
                         <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li> -->

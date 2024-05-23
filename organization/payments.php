@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Ericsson :: Fees</title>
+<title>:: Ericsson ::Salary</title>
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
@@ -235,7 +235,7 @@
                 <ul class="list-group list-unstyled">
                     <li class="list-group-item mb-2">
                         <p>Light Version</p>
-                        <a href="../university/index.html"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
+                        <a href="../organization/index.php"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
                     </li>
                     <li class="list-group-item mb-2">
                         <p>Dark Version</p>
@@ -768,20 +768,17 @@
     <div id="left-sidebar" class="sidebar">
         <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">University</a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-admin">Admin</a></li>
         </ul>
         <div class="tab-content mt-3">
             <div class="tab-pane fade" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li><a href="professors.html"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                        <li><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="students.html"><i class="fa fa-users"></i><span>Students</span></a></li>
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
+                        <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
                         <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="courses.html"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
-                        <li><a href="library.html"><i class="fa fa-book"></i><span>Library</span></a></li>
                         <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
@@ -796,12 +793,9 @@
             <div class="tab-pane fade show active" id="menu-admin" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li class="active"><a href="payments.html"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
-                        <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li>
+                        <li class="active"><a href="payments.php"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
                         <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
-                        <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
-                        <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li>
-                        <li><a href="attendance.html"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
+                        <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
                         <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
                     </ul>
@@ -976,16 +970,16 @@
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center ">
                     <div class="header-action">
-                        <h1 class="page-title">Fees</h1>
+                        <h1 class="page-title">Salary</h1>
                         <ol class="breadcrumb page-breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Fees</li>
+                            <li class="breadcrumb-item active" aria-current="page">Salary</li>
                         </ol>
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
                         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Fees-all">List</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Fees-Receipt">Fees Receipt</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Fees-add">Add Fees</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Fees-Receipt">Fees Receipt</a></li> -->
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Fees-add">Add Salary</a></li>
                     </ul>
                 </div>
             </div>
@@ -996,191 +990,46 @@
                     <div class="tab-pane active" id="Fees-all">
                         <div class="card">
                             <div class="card-body">
+                            <!-- Display Salary of all Employees -->
                                 <div class="table-responsive">
                                     <table class="table table-hover text-nowrap js-basic-example dataTable table-striped table_custom border-style spacing5">
                                         <thead>
                                             <tr>
-                                                <th>Roll No.</th>
-                                                <th>Student Name</th>
-                                                <th>Fees Type</th>
+                                                <th>Employee ID.</th>
+                                                <th>Name</th>
                                                 <th>Date</th>
-                                                <th>Invoice No.</th>
                                                 <th>Payment Type</th>
+                                                <th>Salary</th>
                                                 <th>Status</th>
-                                                <th>Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+
+                                        <?php
+                                        include '../backend/dbconnection.php';
+                                        $select_query="SELECT * FROM `payments` p INNER JOIN `employees` e ON e.id=p.emp_id";
+                                        $result=mysqli_query($conn, $select_query);
+                                        while($employee_payment=mysqli_fetch_assoc($result)){
+                                            echo '
                                             <tr>
-                                                <td>111</td>
-                                                <td>Corrine Johnson</td>
-                                                <td>Annual</td>
-                                                <td>12 Jan 2018</td>
-                                                <td>IN-4578</td>
-                                                <td>cash</td>
-                                                <td><span class="tag tag-green">paid</span></td>
-                                                <td>248$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>112</td>
-                                                <td>Gladys Smith</td>
-                                                <td>Tuition</td>
-                                                <td>12 Feb 2018</td>
-                                                <td>IN-3695</td>
-                                                <td>cheque</td>
-                                                <td><span class="tag tag-orange">pending</span></td>
-                                                <td>124$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>113</td>
-                                                <td>Alice Smith</td>
-                                                <td>Annual</td>
-                                                <td>24 Feb 2018</td>
-                                                <td>IN-4679</td>
-                                                <td>credit card</td>
-                                                <td><span class="tag tag-red">unpaid</span></td>
-                                                <td>340$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>114</td>
-                                                <td>Gladys Smith</td>
-                                                <td>Tuition</td>
-                                                <td>25 Feb 2018</td>
-                                                <td>IN-2839</td>
-                                                <td>cashn</td>
-                                                <td><span class="tag tag-green">paid</span></td>
-                                                <td>112$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>115</td>
-                                                <td>Corrine Johnson</td>
-                                                <td>Transport</td>
-                                                <td>12 March 2018</td>
-                                                <td>IN-4916</td>
-                                                <td>cheque</td>
-                                                <td><span class="tag tag-green">paid</span></td>
-                                                <td>340$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>116</td>
-                                                <td>Gladys Smith</td>
-                                                <td>Tuition</td>
-                                                <td>12 May 2018</td>
-                                                <td>IN-7542</td>
-                                                <td>cashn</td>
-                                                <td><span class="tag tag-red">unpaid</span></td>
-                                                <td>421$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>117</td>
-                                                <td>Alice Smith</td>
-                                                <td>Transport</td>
-                                                <td>12 May 2018</td>
-                                                <td>IN-8653</td>
-                                                <td>credit card</td>
-                                                <td><span class="tag tag-orange">pending</span></td>
-                                                <td>124$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>118</td>
-                                                <td>Gladys Smith</td>
-                                                <td>Library</td>
-                                                <td>12 May 2018</td>
-                                                <td>IN-4859</td>
-                                                <td>cheque</td>
-                                                <td><span class="tag tag-green">paid</span></td>
-                                                <td>485$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>119</td>
-                                                <td>Alice Smith</td>
-                                                <td>Annual</td>
-                                                <td>12 Jun 2018</td>
-                                                <td>IN-2648</td>
-                                                <td>cheque</td>
-                                                <td><span class="tag tag-orange">pending</span></td>
-                                                <td>231$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>120</td>
-                                                <td>Corrine Johnson</td>
-                                                <td>Tuition</td>
-                                                <td>21 Jun 2018</td>
-                                                <td>IN-4875</td>
-                                                <td>cashn</td>
-                                                <td><span class="tag tag-green">paid</span></td>
-                                                <td>4856$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>121</td>
-                                                <td>Gladys Smith</td>
-                                                <td>Transport</td>
-                                                <td>28 Jun 2018</td>
-                                                <td>IN-7946</td>
-                                                <td>credit card</td>
-                                                <td><span class="tag tag-red">unpaid</span></td>
-                                                <td>340$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>122</td>
-                                                <td>Ken Smith</td>
-                                                <td>Annual</td>
-                                                <td>12 Jun 2018</td>
-                                                <td>IN-9135</td>
-                                                <td>cheque</td>
-                                                <td><span class="tag tag-orange">pending</span></td>
-                                                <td>340$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>123</td>
-                                                <td>Corrine Johnson</td>
-                                                <td>Annual</td>
-                                                <td>22 Jun 2018</td>
-                                                <td>IN-5284</td>
-                                                <td>credit card</td>
-                                                <td><span class="tag tag-orange">pending</span></td>
-                                                <td>340$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>124</td>
-                                                <td>Ken Smith</td>
-                                                <td>Transport</td>
-                                                <td>18 Aug 2018</td>
-                                                <td>IN-4613</td>
-                                                <td>cashn</td>
-                                                <td><span class="tag tag-green">paid</span></td>
-                                                <td>254$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>125</td>
-                                                <td>Emmett Johnson</td>
-                                                <td>Annual</td>
-                                                <td>13 Aug 2018</td>
-                                                <td>IN-1826</td>
-                                                <td>credit card</td>
-                                                <td><span class="tag tag-red">unpaid</span></td>
-                                                <td>340$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>126</td>
-                                                <td>Ken Smith</td>
-                                                <td>Library</td>
-                                                <td>17 Aug 2018</td>
-                                                <td>IN-76149</td>
-                                                <td>cashn</td>
-                                                <td><span class="tag tag-green">paid</span></td>
-                                                <td>340$</td>
-                                            </tr>
-                                            <tr>
-                                                <td>127</td>
-                                                <td>Emmett Johnson</td>
-                                                <td>Annual</td>
-                                                <td>4 Sept 2018</td>
-                                                <td>IN-3794</td>
-                                                <td>credit card</td>
-                                                <td><span class="tag tag-orange">pending</span></td>
-                                                <td>548$</td>
-                                            </tr>
+                                                <td>'.$employee_payment['emp_id']. '</td>
+                                                <td>'.$employee_payment['f_name']. ' '.$employee_payment['l_name'].'</td>
+                                                <td>'.$employee_payment['date']. '</td>
+                                                <td>'.$employee_payment['payment_method']. '</td>  
+                                                <td>'.$employee_payment['salary']. '</td>';
+                                                if($employee_payment['payment_status']=='Paid'){
+                                                    echo'<td><span class="tag tag-green">paid</span></td>';
+                                                }
+                                                else{
+                                                    echo ' <td><span class="tag tag-red">unpaid</span></td>
+                                                    ';
+                                                }
+
+                                                echo '</tr>';    
+                                        }
+
+                                        ?>
+                                                                                    
                                         </tbody>
                                     </table>
                                 </div>
@@ -1277,42 +1126,43 @@
                             </div>
                         </div>
                     </div>
+                    <!-- This is section to Add Salary -->
                     <div class="tab-pane" id="Fees-add">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Add Library</h3>
+                                <h3 class="card-title">Add Salary</h3>
                                 <div class="card-options ">
                                     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                     <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                 </div>
                             </div>
-                            <form class="card-body">
+                            <form class="card-body" method="post" action="../backend/payments.php">
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Roll No <span class="text-danger">*</span></label>
+                                    <label class="col-md-3 col-form-label">Employee ID<span class="text-danger">*</span></label>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" Required name="emp_id">
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Employee Name <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
                                         <input type="text" class="form-control">
                                     </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Student Name <span class="text-danger">*</span></label>
-                                    <div class="col-md-7">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Department/Class  <span class="text-danger">*</span></label>
+                                </div> -->
+                                <!-- <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Department/Stack <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
                                         <select class="form-control" name="select">
                                             <option value="">Select...</option>
-                                            <option value="Category 1">Mathematics</option>
+                                            <option value="Category 1">IT</option>
                                             <option value="Category 2">Engineering</option>
                                             <option value="Category 3">Science</option>
                                             <option value="Category 3">M.B.A.</option>
                                             <option value="Category 3">Music</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="form-group row">
+                                </div> -->
+                                <!-- <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Fees Type  <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
                                         <select class="form-control" name="selectType">
@@ -1324,9 +1174,9 @@
                                             <option value="Category 3">Library</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Payment Duration <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
                                         <div class="custom-controls-stacked">
@@ -1343,61 +1193,50 @@
                                                 <span class="custom-control-label">Yearly</span>
                                             </label>
                                         </div>
+                                    </div> 
+                                </div>-->
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label"> Date <span class="text-danger">*</span></label>
+                                    <div class="col-md-7">
+                                        <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder=""
+                                        name="date">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Collection Date <span class="text-danger">*</span></label>
+                                    <label class="col-md-3 col-form-label">Salary <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Amount <span class="text-danger">*</span></label>
-                                    <div class="col-md-7">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="salary">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Payment Method <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <select class="form-control" name="select">
+                                        <select class="form-control" name="payment_method">
                                             <option value="">Select...</option>
-                                            <option value="Category 1">Cash</option>
-                                            <option value="Category 2">Cheque</option>
-                                            <option value="Category 3">Credit Card</option>
-                                            <option value="Category 4">Debit Card</option>
+                                            <option value="Cash">Cash</option>
+                                            <option value="Cheque">Cheque</option>
+                                            <option value="Credit Card">Credit Card</option>
+                                            <!-- <option value="Category 4">Debit Card</option>
                                             <option value="Category 5">Netbanking</option>
-                                            <option value="Category 6">Other</option>
+                                            <option value="Category 6">Other</option> -->
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Payment Status <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <select class="form-control" name="select">
+                                        <select class="form-control" name="payment_status">
                                             <option value="">Select...</option>
-                                            <option value="Category 1">Paid</option>
-                                            <option value="Category 2">Unpaid</option>
-                                            <option value="Category 3">Pending</option>
+                                            <option value="Paid">Paid</option>
+                                            <option value="UnPaid">Unpaid</option>
+                                            <!-- <option value="Category 3">Pending</option> -->
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Payment Reference No. <span class="text-danger">*</span></label>
-                                    <div class="col-md-7">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Payment Details <span class="text-danger">*</span></label>
-                                    <div class="col-md-7">
-                                        <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label"></label>
                                     <div class="col-md-7">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary" name="submit_salary">Submit</button>
                                         <button type="submit" class="btn btn-outline-secondary">Cancel</button>
                                     </div>
                                 </div>
