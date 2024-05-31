@@ -979,8 +979,8 @@
                         </ol>
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Holiday-Calendar">Calendar</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Holiday-all">List</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Holiday-Calendar">Calendar</a></li> -->
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Holiday-all">List</a></li>
                         <li class="nav-item"><a class="nav-link" id="Holiday-tab-Boot" data-toggle="tab" href="#Holiday-add-Boot">Add</a></li>
                     </ul>
                 </div>
@@ -990,7 +990,7 @@
             <div class="container-fluid">
                 <div class="tab-content">
                     <!-- Calender here -->
-                    <div class="tab-pane active" id="Holiday-Calendar">
+                    <div class="tab-pane" id="Holiday-Calendar">
                         <div class="card">
                             <div class="card-body">
                                 <div id="calendar"></div>
@@ -998,7 +998,7 @@
                         </div>
                     </div>
                     <!-- display holidays here -->
-                    <div class="tab-pane" id="Holiday-all">
+                    <div class="tab-pane active" id="Holiday-all">
                         <div class="card">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -1008,159 +1008,38 @@
                                                 <th>#</th>
                                                 <th>Title</th>
                                                 <th>Subject</th>
-                                                <th>Department</th>
-                                                <th>Year</th>
+                                                <th>Start</th>
+                                                <th>End</th>
                                                 <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php 
+                                        include '../backend/dbconnection.php';
+                                        include '../backend/holiday_crud.php';
+                                        $holidays=show_holidays();
+                                        foreach($holidays as $holiday){
+                                            echo'
                                             <tr>
-                                                <td>1</td>
-                                                <td>New Year's Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>01 January 2019</td>
-                                                <td>03 January 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                            <td>'.$holiday['holiday_id'].'</td>
+                                            <td>'.$holiday['title'].'</td>
+                                            <td>'.$holiday['holiday_type'].'</td>
+                                            <td>'.$holiday['start_date'].'</td>
+                                            <td>'.$holiday['end_date'].'  </td>
+                                            <td>
+                                            <a href="edit_holiday.php?edit_id='.$holiday['holiday_id'].'" class="btn btn-icon btn-sm" ><i class="fa fa-edit"></i></a>
+                                            <a href="../backend/holiday_crud.php?del_id='.$holiday['holiday_id'].'" class="btn btn-icon btn-sm js-sweetalert" ><i class="fa fa-trash-o text-danger"></i></a>
+                                                
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Memorial Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>29 May 2019</td>
-                                                <td>29 May 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Christmas Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>25 December 2019</td>
-                                                <td>03 January 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Annual Function</td>
-                                                <td>Holiday By Collage</td>
-                                                <td>01 March 2019</td>
-                                                <td>03 March 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>New Year's Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>01 January 2019</td>
-                                                <td>03 January 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Memorial Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>29 May 2019</td>
-                                                <td>29 May 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>Christmas Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>25 December 2019</td>
-                                                <td>03 January 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>Annual Function</td>
-                                                <td>Holiday By Collage</td>
-                                                <td>01 March 2019</td>
-                                                <td>03 March 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>9</td>
-                                                <td>New Year's Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>01 January 2019</td>
-                                                <td>03 January 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>Memorial Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>29 May 2019</td>
-                                                <td>29 May 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>11</td>
-                                                <td>Christmas Day</td>
-                                                <td>Public Holiday</td>
-                                                <td>25 December 2019</td>
-                                                <td>03 January 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>12</td>
-                                                <td>Annual Function</td>
-                                                <td>Holiday By Collage</td>
-                                                <td>01 March 2019</td>
-                                                <td>03 March 2019</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                    <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                                </td>
-                                            </tr>
+                                                
+                                                ';
+                                            }
+                                            echo '</tr> ';
+                                            ?>
+                                            <!-- <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button> -->
                                         </tbody>
                                     </table>
-                                </div>
+                                                                    </div>
                             </div>
                         </div>
                     </div>
@@ -1174,7 +1053,7 @@
                                     <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                 </div>
                             </div>
-                            <form class="card-body" action="holiday.php" method="post">
+                            <form class="card-body" action="../backend/holiday_crud.php" method="post">
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Title <span class="text-danger">*</span></label>
                                     <div class="col-md-7">

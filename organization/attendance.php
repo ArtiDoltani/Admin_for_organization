@@ -780,7 +780,7 @@
                         <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <!-- <li><a href="courses.html"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
                         <li><a href="library.html"><i class="fa fa-book"></i><span>Library</span></a></li> -->
-                        <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
+                        <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
                         <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li>
@@ -794,9 +794,9 @@
             <div class="tab-pane fade show active" id="menu-admin" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="payments.html"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
+                        <li><a href="payments.php"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
                         <!-- <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li> -->
-                        <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
+                        <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                         <!-- <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
                         <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li> -->
                         <li class="active"><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
