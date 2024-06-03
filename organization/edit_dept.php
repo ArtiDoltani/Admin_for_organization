@@ -1,3 +1,7 @@
+<?php
+include '../backend/dept_crud.php';
+
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 
@@ -6,12 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <title>:: Ericsson :: Taskboard</title>
+    <title> Ericsson :: Edit Department</title>
 
     <!-- Bootstrap Core and vandor -->
     <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/plugins/nestable/jquery-nestable.css" />
     <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link rel="stylesheet" href="../assets/plugins/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../assets/plugins/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="../assets/plugins/sweetalert/sweetalert.css">
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/style.min.css" />
@@ -30,7 +36,7 @@
         <div id="header_top" class="header_top">
             <div class="container">
                 <div class="hleft">
-                    <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <a class="header-brand" href="index.php"><i class="fa fa-graduation-cap brand-logo"></i></a>
                     <div class="dropdown">
                         <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
                         <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
@@ -702,7 +708,7 @@
                                                     <i class="fa fa-file-excel-o text-success"></i>
                                                 </div>
                                                 <div class="file-name">
-                                                    <p class="mb-0 text-muted">Report2017.xls</p>
+                                                    <p class="mb-0 text-muted">Report2019.xls</p>
                                                     <small>Size: 68KB</small>
                                                 </div>
                                             </a>
@@ -785,18 +791,18 @@
         <div id="left-sidebar" class="sidebar">
             <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">Organization</a></li>
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-admin">Admin</a></li>
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">Organization</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-admin">Admin</a></li>
             </ul>
             <div class="tab-content mt-3">
-                <div class="tab-pane fade" id="menu-uni" role="tabpanel">
+                <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
                     <nav class="sidebar-nav">
                         <ul class="metismenu">
                             <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                             <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
                             <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                            <li><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                            <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
+                            <li class="active"><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                            <li ><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                             <li class="g_heading">Extra</li>
                             <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
                             <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li>
@@ -807,11 +813,11 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="tab-pane fade show active" id="menu-admin" role="tabpanel">
+                <div class="tab-pane fade" id="menu-admin" role="tabpanel">
                     <nav class="sidebar-nav">
                         <ul class="metismenu">
                             <li><a href="payments.php"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
-                            <li class="active"><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
+                            <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                             <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                             <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
                             <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
@@ -826,7 +832,7 @@
             <div class="section-body" id="page_top">
                 <div class="container-fluid">
                     <div class="page-header">
-                        <div class="left">
+                        <div>
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="What you want to find">
                                 <div class="input-group-append">
@@ -853,9 +859,6 @@
                                         <a class="dropdown-item" href="login.html">Login</a>
                                         <a class="dropdown-item" href="register.html">Register</a>
                                         <a class="dropdown-item" href="forgot-password.html">Forgot password</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="404.html">404 error</a>
-                                        <a class="dropdown-item" href="500.html">500 error</a>
                                     </div>
                                 </li>
                             </ul>
@@ -987,390 +990,46 @@
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center ">
                         <div class="header-action">
-                            <h1 class="page-title">TaskBoard</h1>
+                            <h1 class="page-title">Department</h1>
                             <ol class="breadcrumb page-breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">TaskBoard</li>
+                                <li class="breadcrumb-item active" aria-current="page">Department</li>
                             </ol>
                         </div>
-                        <ul class="nav nav-tabs page-header-tab">
-                            <li class="nav-item"><a class="nav-link active" id="TaskBoard-tab" data-toggle="tab" href="#TaskBoard-all">Task List</a></li>
-                            <li class="nav-item"><a class="nav-link" id="TaskBoard-tab" data-toggle="tab" href="#TaskBoard-Scrum">Scrum Type</a></li>
-                            <li class="nav-item"><a class="nav-link" id="TaskBoard-tab" data-toggle="tab" href="#TaskBoard-add">Add Task</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
             <div class="section-body mt-4">
                 <div class="container-fluid">
                     <div class="tab-content">
-                        <!-- List of Tasks -->
-                        <div class="tab-pane active" id="TaskBoard-all">
-                            <div class="row clearfix mt-2">
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <h6>Planned</h6>
-                                            <input type="text" class="knob" value="23" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#2185d0">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <h6>In progress</h6>
-                                            <input type="text" class="knob" value="43" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#f2711c">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="card">
-                                        <div class="card-body text-center">
-                                            <h6>Completed</h6>
-                                            <input type="text" class="knob" value="83" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#21ba45">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h6>In Completed</h6>
-                                        <input type="text" class="knob" value="12" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#e03997">
-                                    </div>
-                                </div>
-                            </div> -->
-                            </div>
-                            <!-- Table to show tasks -->
-                            <div class="table-responsive">
-                                <table class="table table-hover table-vcenter mb-0 table_custom spacing8 text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Task</th>
-                                            <th>Assigned to</th>
-                                            <th>Duration</th>
-                                            <th>Action</th>
-                                            <th class="w200"></th>
-                                        </tr>
-                                    </thead>
-                                    <?php
-                                    include '../backend/dbconnection.php';
-                                    include '../backend/taskboard.php';
-                                    $tasks = show_tasks();
-                                    foreach ($tasks as $task) {
-                                        echo '
-                                    <tr>
-                                    <td>' . $task['task_id'] . '</td>
-                                    <td>
-                                        <h6 class="mb-0">' . $task['title'] . '</h6>
-                                        <span>' . $task['description'] . '</span>
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled team-info mb-0 w150">
-                                            <li><img src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <div class="text-info">Start: ' . $task['start_date'] . '</div>
-                                        <div class="text-pink">End: ' . $task['end_date'] . '</div>
-                                    </td>';
-
-                                        if ($task['status'] == 'Planned') {
-                                            echo '
-                                        <td>
-                                        <span class="tag tag-blue">Planned</span>
-                                    </td>
-                                    <td>
-                                        <div class="clearfix">
-                                            <div class="float-left"><strong>0%</strong></div>
-                                            <div class="float-right"><small class="text-muted">Progress</small></div>
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-azure" role="progressbar" style="width: 0%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-
-                                        ';
-                                        } elseif ($task['status'] == 'Completed') {
-
-                                            echo '
-                                        <td>
-                                        <span class="tag tag-green">Completed</span>
-                                    </td>
-                                    <td>
-                                        <div class="clearfix">
-                                            <div class="float-left"><strong>100%</strong></div>
-                                            <div class="float-right"><small class="text-muted">Progress</small></div>
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-green" role="progressbar" style="width: 100%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                      ';
-                                        } elseif ($task['status'] == 'In progress') {
-                                            echo '
-                                        <td>
-                                            <span class="tag tag-orange">In progress</span>
-                                        </td>
-
-                                        ';
-                                        }
-
-                                        echo '</tr> ';
-                                    }
-
-
-                                    ?>
-                                    <tbody>
-                                        <!-- <tr>
-                                        <td>03</td>
-                                        <td>
-                                            <h6 class="mb-0">Feed Details on Dribbble</h6>
-                                            <span>The point of using Lorem Ipsum is that...</span>
-                                        </td>
-                                        <td>
-                                            <ul class="list-unstyled team-info mb-0 w150">
-                                                <li><img src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                                <li><img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                                <li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                            </ul>
-                                        </td>
-                                        <td>
-                                            <div class="text-info">Start: 3 Jun 2019</div>
-                                            <div class="text-pink">End: 15 Jun 2019</div>
-                                        </td>
-                                        <td>
-                                            <span class="tag tag-orange">In progress</span>
-                                        </td>
-                                        <td>
-                                            <div class="clearfix">
-                                                <div class="float-left"><strong>35%</strong></div>
-                                                <div class="float-right"><small class="text-muted">Progress</small></div>
-                                            </div>
-                                            <div class="progress progress-xs">
-                                                <div class="progress-bar bg-azure" role="progressbar" style="width: 35%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr> -->
-                                </table>
-                            </div>
-                        </div>
-                        <!-- This is scrum type  -->
-                        <div class="tab-pane" id="TaskBoard-Scrum">
-                            <div class="row clearfix">
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="card planned_task">
-                                        <div class="card-header">
-                                            <h3 class="card-title">Planned</h3>
-                                            <div class="card-options">
-                                                <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                                <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
-                                                <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                                <div class="item-action dropdown ml-2">
-                                                    <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- This is a list of planned task -->
-
-                                        <div class="card-body">
-
-                                            <div class="dd" data-plugin="nestable">
-                                                <ol class="dd-list">
-
-                                                    <?php
-                                                    $plannedTasks = planned_tasks();
-                                                    foreach ($plannedTasks as $task) { ?>
-                                                        <li class="dd-item" data-id="<?php echo $task['task_id']; ?>">
-                                                            <div class="dd-handle">
-                                                                <h6><?php echo htmlspecialchars($task['title']); ?></h6>
-                                                                <span class="time"><span class="text-primary">Start: <?php echo $task['start_date']; ?></span> to <span class="text-danger">Complete: <?php echo $task['end_date']; ?></span></span>
-                                                                <p><?php echo htmlspecialchars($task['description']); ?></p>
-
-                                                            </div>
-                                                        </li>
-                                                    <?php } ?>
-                                                </ol>
-                                            </div>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <!-- List of Inprogress Tasks -->
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="card progress_task">
-                                        <div class="card-header">
-                                            <h3 class="card-title">In progress</h3>
-                                            <div class="card-options">
-                                                <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                                <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
-                                                <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                                <div class="item-action dropdown ml-2">
-                                                    <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="dd" data-plugin="nestable">
-                                                <ol class="dd-list">
-                                                    <?php
-                                                    $in_progessTasks = in_prograss_tasks();
-                                                    foreach ($in_progessTasks as $task) { ?>
-                                                        <li class="dd-item" data-id="<?php echo $task['task_id']; ?>">
-                                                            <div class="dd-handle">
-                                                                <h6><?php echo htmlspecialchars($task['title']); ?></h6>
-                                                                <span class="time"><span class="text-primary">Start: <?php echo $task['start_date']; ?></span> to <span class="text-danger">Complete: <?php echo $task['end_date']; ?></span></span>
-                                                                <p><?php echo htmlspecialchars($task['description']); ?></p>
-
-                                                            </div>
-                                                        </li>
-                                                    <?php } ?>
-                                                </ol>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- List of Completed Tasks -->
-                                <div class="col-lg-4 col-md-12">
-                                    <div class="card completed_task">
-                                        <div class="card-header">
-                                            <h3 class="card-title">Completed</h3>
-                                            <div class="card-options">
-                                                <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                                <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
-                                                <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                                <div class="item-action dropdown ml-2">
-                                                    <a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
-                                                        <div class="dropdown-divider"></div>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
-                                                        <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <div class="dd" data-plugin="nestable">
-                                                <ol class="dd-list">
-                                                    <?php
-                                                    $completedTasks = completed_tasks();
-                                                    foreach ($completedTasks as $task) { ?>
-                                                        <li class="dd-item" data-id="<?php echo $task['task_id']; ?>">
-                                                            <div class="dd-handle">
-                                                                <h6><?php echo htmlspecialchars($task['title']); ?></h6>
-                                                                <span class="time"><span class="text-primary">Start: <?php echo $task['start_date']; ?></span> to <span class="text-danger">Complete: <?php echo $task['end_date']; ?></span></span>
-                                                                <p><?php echo htmlspecialchars($task['description']); ?></p>
-
-                                                            </div>
-                                                        </li>
-                                                    <?php } ?>
-                                                </ol>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <!-- Add Task -->
-                        <div class="tab-pane" id="TaskBoard-add">
+                        <!-- Edit Department  -->
+                        <div class="tab-pane active" id="Holiday-add-Boot">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Add Task</h3>
+                                    <h3 class="card-title">Edit Department</h3>
                                     <div class="card-options ">
                                         <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                         <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                     </div>
                                 </div>
-                                <form class="card-body" action="../backend/taskboard.php" method="post">
-                                    <!-- <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Task no. <span class="text-danger">*</span></label>
+                                <form class="card-body" action="../backend/dept_crud.php?edit_id=<?php echo $edit_id; ?>" method="post">
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Department ID</label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="dept_id" value="<?php echo $dept['dept_id']; ?>">
                                     </div>
-                                </div> -->
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Job title <span class="text-danger">*</span></label>
-                                        <div class="col-md-7">
-                                            <input type="text" class="form-control" name="task_title">
-                                        </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Stack Name <span class="text-danger">*</span></label>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" name="stack" value="<?php echo $dept['stack_name']; ?>">
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Select Employee<span class="text-danger">*</span></label>
-                                        <div class="col-md-7">
-                                            <select class="form-control show-tick">
-                                                <option>Select</option>
-                                                <option>John Smith</option>
-                                                <option>Claire Peters</option>
-                                                <option>Allen Collins</option>
-                                                <option>Cory Carter</option>
-                                                <option>Rochelle Barton</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Description <span class="text-danger">*</span></label>
-                                        <div class="col-md-7">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..." name="description"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Range <span class="text-danger">*</span></label>
-                                        <div class="col-md-7">
-                                            <div class="input-daterange input-group" data-provide="datepicker">
-                                                <input type="text" class="form-control" name="start_date">
-                                                <span class="input-group-addon"> to </span>
-                                                <input type="text" class="form-control" name="end_date">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Status<span class="text-danger">*</span></label>
-                                        <div class="col-md-7">
-                                            <select class="form-control show-tick" name="status">
-                                                <option value="">Select</option>
-                                                <option value="Planned">Planned</option>
-                                                <option value="In progress">In progress</option>
-                                                <option value="Completed">Completed</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
+                                </div>
+  
+                                        <div class="form-group row">
                                         <label class="col-md-3 col-form-label"></label>
                                         <div class="col-md-7">
-                                            <button type="submit" class="btn btn-primary" name="submit_task">Submit</button>
-                                            <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                                            <button type="submit" class="btn btn-primary" name="edit_dept">Update</button>
                                         </div>
                                     </div>
                                 </form>
@@ -1401,18 +1060,22 @@
         </div>
     </div>
 
+
+
     <!-- Start Main project js, jQuery, Bootstrap -->
     <script src="../assets/bundles/lib.vendor.bundle.js"></script>
 
     <!-- Start Plugin Js -->
+    <script src="../assets/plugins/sweetalert/sweetalert.min.js"></script>
     <script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="../assets/bundles/knobjs.bundle.js"></script>
-    <script src="../assets/bundles/nestable.bundle.js"></script>
+    <script src="../assets/bundles/dataTables.bundle.js"></script>
+    <script src="../assets/bundles/fullcalendar.bundle.js"></script>
 
     <!-- Start project main js  and page js -->
     <script src="../assets/js/core.js"></script>
-    <script src="assets/js/page/sortable-nestable.js"></script>
-    <script src="assets/js/chart/knobjs.js"></script>
+    <script src="assets/js/page/dialogs.js"></script>
+    <script src="assets/js/table/datatable.js"></script>
+    <script src="assets/js/page/calendar.js"></script>
 </body>
 
 </html>

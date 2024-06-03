@@ -29,7 +29,7 @@
     <div id="header_top" class="header_top">
         <div class="container">
             <div class="hleft">
-                <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                <a class="header-brand" href="index.php"><i class="fa fa-graduation-cap brand-logo"></i></a>
                 <div class="dropdown">
                     <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
                     <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
@@ -235,15 +235,15 @@
                 <ul class="list-group list-unstyled">
                     <li class="list-group-item mb-2">
                         <p>Light Version</p>
-                        <a href="../university/index.html"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
+                        <a href="../organization/index.php"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
                     </li>
                     <li class="list-group-item mb-2">
                         <p>Dark Version</p>
-                        <a href="../university-dark/index.html"><img src="../assets/images/themes/dark.png" class="img-fluid" alt="" /></a>
+                        <a href="../organization-dark/index.html"><img src="../assets/images/themes/dark.png" class="img-fluid" alt="" /></a>
                     </li>
                     <li class="list-group-item mb-2">
                         <p>RTL Version</p>
-                        <a href="../university-rtl/index.html"><img src="../assets/images/themes/rtl.png" class="img-fluid" alt="" /></a>
+                        <a href="../organization-rtl/index.html"><img src="../assets/images/themes/rtl.png" class="img-fluid" alt="" /></a>
                     </li>
                 </ul>
             </div>
@@ -768,21 +768,18 @@
     <div id="left-sidebar" class="sidebar">
         <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">University</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-admin">Admin</a></li>
         </ul>
         <div class="tab-content mt-3">
             <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li><a href="professors.html"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                        <li><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="students.html"><i class="fa fa-users"></i><span>Students</span></a></li>
-                        <li class="active"><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="courses.html"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
-                        <li><a href="library.html"><i class="fa fa-book"></i><span>Library</span></a></li>
-                        <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
+                        <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
+                        <li class="active"><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                        <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
                         <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li>
@@ -796,12 +793,9 @@
             <div class="tab-pane fade" id="menu-admin" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="payments.html"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
-                        <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li>
-                        <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
-                        <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
-                        <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li>
-                        <li><a href="attendance.html"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
+                        <li><a href="payments.php"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
+                        <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
+                        <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
                         <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
                     </ul>
@@ -984,8 +978,7 @@
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
                         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Dep-all">List View</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Dep-add">Add</a></li>
-                        <li class="nav-item"><a class="nav-link" id="Dep-tab-Boot" data-toggle="tab" href="#Dep-add-Boot">Add Bootstrap Style</a></li>
+                        <li class="nav-item"><a class="nav-link" id="Dep-tab-Boot" data-toggle="tab" href="#Dep-add-Boot">Add</a></li>
                     </ul>
                 </div>
             </div>
@@ -993,171 +986,45 @@
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">
+                    <!-- Show all departments -->
                     <div class="tab-pane active" id="Dep-all">
                         <div class="table-responsive">
                             <div class="table-responsive card">
                                 <table class="table table-hover table-striped table-vcenter text-nowrap mb-0">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Dept. Name</th>
-                                            <th>Head OF Dept.</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                            <th>establish</th>
-                                            <th>Std. Capacity</th>
+                                            <th>Department ID</th>
+                                            <th>Stack</th>
+                                                <!-- <th>establish</th> -->
                                             <th>Edit</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mechanical Engg.</td>
-                                            <td>Emmett L Johnson</td>
-                                            <td>+123 4567890</td>
-                                            <td>test@example.com</td>
-                                            <td>1998</td>
-                                            <td>150</td>
+                                        <?php 
+                                        include '../backend/dept_crud.php';
+                                        $depts=show_dept();
+                                        foreach($depts as $dept){
+                                            echo'
+                                            <tr>
+                                            <td>'.$dept['dept_id'].'</td>
+                                            <td>'.$dept['stack_name'].'</td>
                                             <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
+                                            <a href="edit_dept.php?edit_id='.$dept['dept_id'].'" class="btn btn-icon btn-sm" ><i class="fa fa-edit"></i></a>
+                                            <a href="../backend/dept_crud.php?del_id='.$dept['dept_id'].'" class="btn btn-icon btn-sm js-sweetalert" ><i class="fa fa-trash-o text-danger"></i></a>
+                                                                                       </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Computer Engg.</td>
-                                            <td>Corrine M Johnson</td>
-                                            <td>+123 4567890</td>
-                                            <td>test@example.com</td>
-                                            <td>2011</td>
-                                            <td>205</td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>M.B.A.</td>
-                                            <td>Gladys J Smith</td>
-                                            <td>+123 4567890</td>
-                                            <td>test@example.com</td>
-                                            <td>2009</td>
-                                            <td>128</td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>M.C.A.</td>
-                                            <td>Patricia Smith</td>
-                                            <td>+123 4567890</td>
-                                            <td>test@example.com</td>
-                                            <td>2014</td>
-                                            <td>98</td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>Civil Engg.</td>
-                                            <td>Danny M Johnson</td>
-                                            <td>+123 4567890</td>
-                                            <td>test@example.com</td>
-                                            <td>2016</td>
-                                            <td>231</td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
+
+                                            ';
+                                        }
+                                        ?>
+                                                                              
+  
                                     </tbody>
                                 </table>
                             </div>        
                         </div>
                     </div>
-                    <div class="tab-pane" id="Dep-add">
-                        <div class="col-lg-12 col-md-12">                
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Department Basic Info</h3>
-                                    <div class="card-options ">
-                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row clearfix">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Department Name ">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Head of Department">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="number" class="form-control" placeholder="No. of Students ">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="Department Start Date">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <textarea rows="4" class="form-control no-resize" placeholder="Brief"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                            <button type="submit" class="btn btn-outline-secondary btn-default">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Staff Member Account Info</h3>
-                                    <div class="card-options ">
-                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="row clearfix">
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Email">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Phone">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                            <button type="submit" class="btn btn-outline-secondary btn-default">Cancel</button>
-                                        </div>
-                                    </div>                        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Add Departments -->
                     <div class="tab-pane" id="Dep-add-Boot">
                         <div class="card">
                             <div class="card-header">
@@ -1167,20 +1034,20 @@
                                     <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                 </div>
                             </div>
-                            <form class="card-body">
+                            <form class="card-body" action="../backend/dept_crud.php" method='post'>
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Department Name <span class="text-danger">*</span></label>
+                                    <label class="col-md-3 col-form-label">Department ID</label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="dept_id">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Head Of Department</label>
+                                    <label class="col-md-3 col-form-label">Stack Name <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="stack">
                                     </div>
                                 </div>
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Department Start Date <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
                                         <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="">
@@ -1197,11 +1064,11 @@
                                     <div class="col-md-7">
                                         <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label"></label>
                                     <div class="col-md-7">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary" name="add_dept">Submit</button>
                                         <button type="submit" class="btn btn-outline-secondary">Cancel</button>
                                     </div>
                                 </div>

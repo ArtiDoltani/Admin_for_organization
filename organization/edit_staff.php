@@ -783,7 +783,7 @@ include '../backend/staff_crud.php';
                         <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
                         <li class="active"><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                        <li><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
