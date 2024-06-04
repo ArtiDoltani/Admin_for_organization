@@ -1,10 +1,10 @@
  <!-- Add Employee -->
  <?php
-    function create_employee($folder, $email, $f_name, $l_name, $position, $stack, $phone)
+    function create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id)
     {
         require 'dbconnection.php';
-        $sql = "INSERT INTO `employees`(`emp_image`,`f_name`, `l_name`, `stack`, `position`, `phone`, `email`) VALUES 
-    ('$folder','$f_name','$l_name','$stack','$position','$phone','$email')";
+        $sql = "INSERT INTO `employees`(`emp_image`,`f_name`, `l_name`, `position`, `phone`, `email`,`TL_id`,`dept_id`) VALUES 
+    ('$folder','$f_name','$l_name','$position','$phone','$email','$tl_id','$dept_id')";
         if ($conn->query($sql) === TRUE) {
             return true;
         } else {
@@ -19,7 +19,9 @@
     function get_employees()
     {
         require 'dbconnection.php';
-        $sql = "SELECT * FROM employees";
+        $sql = "SELECT e.*, CONCAT(e.f_name,' ' , e.l_name) as 'Employee' ,CONCAT(m.f_name,' ' , m.l_name) as 'Team Lead', d.stack_name as 'Stack'
+        FROM `employees` e LEFT JOIN `employees` m ON e.TL_id=m.id 
+        LEFT JOIN `department` d on d.dept_id=e.dept_id";
         $result = $conn->query($sql);
         $employees = [];
         if ($result->num_rows > 0) {
@@ -36,10 +38,11 @@
  <!-- Update Employee -->
 
  <?php
-    function update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $stack, $phone)
+    function update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $phone,$dept_id)
     {
         require 'dbconnection.php';
-        $sql = "UPDATE `employees` SET `emp_image`='$folder',`f_name`='$f_name',`l_name`='$l_name',`stack`='$stack',`position`='$position',`phone`='$phone',`email`='$email' WHERE `id`='$edit_id'";
+        $sql = "UPDATE `employees` SET `emp_image`='$folder',`f_name`='$f_name',`l_name`='$l_name',`position`='$position',
+        `phone`='$phone',`email`='$email', `dept_id`='$dept_id' WHERE `id`='$edit_id'";
 
         if ($conn->query($sql) === TRUE) {
             return true;
@@ -77,10 +80,12 @@
             $email =  $_POST['email'];
             $f_name =  $_POST['f_name'];
             $l_name =  $_POST['l_name'];
-            $stack =  $_POST['stack'];
+            // $stack =  $_POST['stack'];
             $position =  $_POST['position'];
             $phone =  $_POST['phone'];
-            if (create_employee($folder, $email, $f_name, $l_name, $position, $stack, $phone)) {
+            $tl_id =  $_POST['tl_id'];
+            $dept_id=$_POST['dept_id'];
+            if (create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id)) {
                 echo "<script>
         alert('Employee Added Successfully');
         window.location.href='../organization/employees.php';
@@ -104,10 +109,11 @@
             $email =  $_POST['email'];
             $f_name =  $_POST['f_name'];
             $l_name =  $_POST['l_name'];
-            $stack =  $_POST['stack'];
+            // $stack =  $_POST['stack'];
             $position =  $_POST['position'];
             $phone =  $_POST['phone'];
-            if (update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $stack, $phone)) {
+            $dept_id=$_POST['dept_id'];
+            if (update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $phone,$dept_id)) {
                 echo "<script>
         alert('Employee Updated Successfully');
         window.location.href='../organization/employees.php';

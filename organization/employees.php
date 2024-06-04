@@ -995,6 +995,7 @@
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Phone</th>
+                                    <th>Team Lead</th>
                                     <th>Stack</th>
                                     <th>Position</th>
                                     <th>Joining Date</th>
@@ -1009,12 +1010,12 @@
                                     echo '
                                     <tr>
                                     <td class="w60">
-                                    <img src="'.$employee['emp_image'].'" alt="profile image" height= "60px" width="70px">
-                                 
-                                    </td>
-                                    <td><div class="font-15">'.$employee['f_name'].' '.$employee['l_name'].'</div></td>
+                                    <img class="avatar" src="'.$employee['emp_image'].'" alt="profile image">
+                                     </td>
+                                    <td><div class="font-15">'.$employee['Employee'].' </div></td>
                                     <td><span>'.$employee['phone'].'</span></td>
-                                    <td><span class="text-muted">'.$employee['stack'].'</span></td>
+                                    <td><span class="text-muted">'.$employee['Team Lead'].'</span></td>
+                                    <td>'.$employee['Stack'].'</td>
                                     <td>'.$employee['position'].'</td>
                                     <td><strong>'.$employee['joining_date'].'</strong></td>
                                     <td>
@@ -1427,21 +1428,38 @@
                                                         >
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3 col-sm-12">
+                                                <div class="col-md-4 col-sm-12">
                                                     <div class="form-group">
-                                                        <label>Stack</label>
+                                                        <label>dept_id</label>
                                                         <input type="text" class="form-control" 
-                                                        name="stack"
+                                                        name="dept_id"
                                                                                                           >
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3 col-sm-12">
+
+                                                <div class="col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Position</label>
-                                                        <input type="text" class="form-control" name="position"
+                                                        <select class="form-control" name="position">
+                                            <option >Select...</option>
+                                            <option >Trainee</option>
+                                            <option >Junior</option>
+                                            <option >Senior</option>
+                                            </select>
+                                        
+                                                    </div>
+                                                </div>
+
+                                            
+
+                                                <div class="col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Team Lead ID</label>
+                                                        <input type="text" class="form-control" name="tl_id"
                                                                                                            >
                                                     </div>
                                                 </div>
+
                                                 <div class="col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Phone</label>

@@ -1006,9 +1006,9 @@ include '../backend/employee_crud.php';
                                                 </div>
                                                 <div class="col-md-3 col-sm-12">
                                                     <div class="form-group">
-                                                        <label>Stack</label>
+                                                        <label>Dept ID</label>
                                                         <input type="text" class="form-control" 
-                                                        name="stack" value="<?php echo $employee['stack'] ?>"
+                                                        name="dept_id" value="<?php echo $employee['dept_id'] ?>"
                                                                                                           >
                                                     </div>
                                                 </div>
