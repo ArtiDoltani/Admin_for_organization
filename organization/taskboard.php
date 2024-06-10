@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../assets/plugins/nestable/jquery-nestable.css" />
     <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Core css -->
     <link rel="stylesheet" href="../assets/css/style.min.css" />
@@ -1041,8 +1042,10 @@
                             </div> -->
                             </div>
                             <!-- Table to show tasks -->
+                            <div class="card">
+                            <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-vcenter mb-0 table_custom spacing8 text-nowrap">
+                                <table class="table table-hover text-nowrap js-basic-example dataTable table-striped table_custom border-style spacing5">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -1050,7 +1053,7 @@
                                             <th>Assigned to</th>
                                             <th>Duration</th>
                                             <th>Action</th>
-                                            <th class="w200"></th>
+                                            <!-- <th class="w200"></th> -->
                                         </tr>
                                     </thead>
                                     <?php
@@ -1082,16 +1085,7 @@
                                         <td>
                                         <span class="tag tag-blue">Planned</span>
                                     </td>
-                                    <td>
-                                        <div class="clearfix">
-                                            <div class="float-left"><strong>0%</strong></div>
-                                            <div class="float-right"><small class="text-muted">Progress</small></div>
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-azure" role="progressbar" style="width: 0%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-
+                                    
                                         ';
                                         } elseif ($task['status'] == 'Completed') {
 
@@ -1099,16 +1093,7 @@
                                         <td>
                                         <span class="tag tag-green">Completed</span>
                                     </td>
-                                    <td>
-                                        <div class="clearfix">
-                                            <div class="float-left"><strong>100%</strong></div>
-                                            <div class="float-right"><small class="text-muted">Progress</small></div>
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-green" role="progressbar" style="width: 100%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </td>
-                                      ';
+                                                                         ';
                                         } elseif ($task['status'] == 'In progress') {
                                             echo '
                                         <td>
@@ -1118,7 +1103,13 @@
                                         ';
                                         }
 
-                                        echo '</tr> ';
+                                        echo '
+                                        
+                                        <td>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" 
+                                        data-target="#paymentModal"><i class="fa fa-eye"></i> </button>
+</td>
+                                        </tr> ';
                                     }
 
 
@@ -1157,7 +1148,30 @@
                                     <tr> -->
                                 </table>
                             </div>
+                            </div>
+                            </div>
                         </div>
+                         <!-- Modal
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
                         <!-- This is scrum type  -->
                         <div class="tab-pane" id="TaskBoard-Scrum">
                             <div class="row clearfix">
@@ -1408,11 +1422,15 @@
     <script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="../assets/bundles/knobjs.bundle.js"></script>
     <script src="../assets/bundles/nestable.bundle.js"></script>
+    <script src="../assets/bundles/dataTables.bundle.js"></script>
+
 
     <!-- Start project main js  and page js -->
     <script src="../assets/js/core.js"></script>
     <script src="assets/js/page/sortable-nestable.js"></script>
     <script src="assets/js/chart/knobjs.js"></script>
+    <script src="assets/js/table/datatable.js"></script>
+
 </body>
 
 </html>
