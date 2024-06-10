@@ -1,3 +1,6 @@
+<?php 
+include '../backend/payments.php';
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -782,12 +785,8 @@
                         <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
-                        <!-- <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li> -->
-                        <li><a href="app-contact.php"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
-                        <!-- <li><a href="app-filemanager.html"><i class="fa fa-folder"></i><span>FileManager</span></a></li> -->
-                        <!-- <li><a href="our-centres.html"><i class="fa fa-map"></i><span>OurCentres</span></a></li> -->
-                        <!-- <li><a href="gallery.html"><i class="fa fa-camera-retro"></i><span>Gallery</span></a></li> -->
-                    </ul>
+                                                <li><a href="app-contact.php"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
+                                          </ul>
                 </nav>
             </div>
             <div class="tab-pane fade show active" id="menu-admin" role="tabpanel">
@@ -842,126 +841,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="notification d-flex">
-                            <div class="dropdown d-flex">
-                                <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-language"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/us.svg" alt="">English</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/es.svg" alt="">Spanish</a>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/jp.svg" alt="">japanese</a>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/bl.svg" alt="">France</a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-flex">
-                                <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success nav-unread"></span></a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <ul class="right_chat list-unstyled w350 p-0">
-                                        <li class="online">
-                                            <a href="javascript:void(0);" class="media">
-                                                <img class="media-object" src="../assets/images/xs/avatar4.jpg" alt="">
-                                                <div class="media-body">
-                                                    <span class="name">Donald Gardner</span>
-                                                    <div class="message">It is a long established fact that a reader</div>
-                                                    <small>11 mins ago</small>
-                                                    <span class="badge badge-outline status"></span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="online">
-                                            <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt="">
-                                                <div class="media-body">
-                                                    <span class="name">Wendy Keen</span>
-                                                    <div class="message">There are many variations of passages of Lorem Ipsum</div>
-                                                    <small>18 mins ago</small>
-                                                    <span class="badge badge-outline status"></span>
-                                                </div>
-                                            </a>                            
-                                        </li>
-                                        <li class="offline">
-                                            <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt="">
-                                                <div class="media-body">
-                                                    <span class="name">Matt Rosales</span>
-                                                    <div class="message">Contrary to popular belief, Lorem Ipsum is not simply</div>
-                                                    <small>27 mins ago</small>
-                                                    <span class="badge badge-outline status"></span>
-                                                </div>
-                                            </a>                            
-                                        </li>
-                                        <li class="online">
-                                            <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt="">
-                                                <div class="media-body">
-                                                    <span class="name">Phillip Smith</span>
-                                                    <div class="message">It has roots in a piece of classical Latin literature from 45 BC</div>
-                                                    <small>33 mins ago</small>
-                                                    <span class="badge badge-outline status"></span>
-                                                </div>
-                                            </a>                            
-                                        </li>                        
-                                    </ul>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-flex">
-                                <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="badge badge-primary nav-unread"></span></a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <ul class="list-unstyled feeds_widget">
-                                        <li>
-                                            <div class="feeds-left">
-                                                <span class="avatar avatar-blue"><i class="fa fa-check"></i></span>
                                             </div>
-                                            <div class="feeds-body ml-3">
-                                                <p class="text-muted mb-0">Campaign <strong class="text-blue font-weight-bold">Holiday</strong> is nearly reach budget limit.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="feeds-left">
-                                                <span class="avatar avatar-green"><i class="fa fa-user"></i></span>
-                                            </div>
-                                            <div class="feeds-body ml-3">
-                                                <p class="text-muted mb-0">New admission <strong class="text-green font-weight-bold">32</strong> in computer department.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="feeds-left">
-                                                <span class="avatar avatar-red"><i class="fa fa-info"></i></span>
-                                            </div>
-                                            <div class="feeds-body ml-3">
-                                                <p class="text-muted mb-0">6th sem result <strong class="text-red font-weight-bold">67%</strong> in computer department.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="feeds-left">
-                                                <span class="avatar avatar-azure"><i class="fa fa-thumbs-o-up"></i></span>
-                                            </div>
-                                            <div class="feeds-body ml-3">
-                                                <p class="text-muted mb-0">New Feedback <strong class="text-azure font-weight-bold">53</strong> for university assessment.</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-flex">
-                                <a href="javascript:void(0)" class="chip ml-3" data-toggle="dropdown">
-                                    <span class="avatar" style="background-image: url(../assets/images/xs/avatar5.jpg)"></span> George</a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="page-profile.html"><i class="dropdown-icon fe fe-user"></i> Profile</a>
-                                    <a class="dropdown-item" href="app-setting.html"><i class="dropdown-icon fe fe-settings"></i> Settings</a>
-                                    <a class="dropdown-item" href="app-email.html"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="dropdown-icon fe fe-mail"></i> Inbox</a>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-send"></i> Message</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
-                                    <a class="dropdown-item" href="login.html"><i class="dropdown-icon fe fe-log-out"></i> Sign out</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -973,110 +853,44 @@
                         <h1 class="page-title">Salary</h1>
                         <ol class="breadcrumb page-breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Salary</li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Salary</li>
                         </ol>
                     </div>
-                    <ul class="nav nav-tabs page-header-tab">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Fees-all">List</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Fees-Receipt">Fees Receipt</a></li> -->
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Fees-add">Add Salary</a></li>
-                    </ul>
-                </div>
+                   </div>
             </div>
         </div>
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">
-                    <div class="tab-pane active" id="Fees-all">
-                        <div class="card">
-                            <div class="card-body">
-                            <!-- Display Salary of all Employees -->
-                                <div class="table-responsive">
-                                    <table class="table table-hover text-nowrap js-basic-example dataTable table-striped table_custom border-style spacing5">
-                                        <thead>
-                                            <tr>
-                                                <th>Employee ID.</th>
-                                                <th>Name</th>
-                                                <th>Date</th>
-                                                <th>Payment Type</th>
-                                                <th>Salary</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-
-                                        <?php
-                                        include '../backend/dbconnection.php';
-                                        $select_query="SELECT * FROM `payments` p INNER JOIN `employees` e ON e.id=p.emp_id";
-                                        $result=mysqli_query($conn, $select_query);
-                                        while($employee_payment=mysqli_fetch_assoc($result)){
-                                            echo '
-                                            <tr>
-                                                <td>'.$employee_payment['emp_id']. '</td>
-                                                <td>'.$employee_payment['f_name']. ' '.$employee_payment['l_name'].'</td>
-                                                <td>'.$employee_payment['date']. '</td>
-                                                <td>'.$employee_payment['payment_method']. '</td>  
-                                                <td>'.$employee_payment['salary']. '</td>';
-                                                if($employee_payment['payment_status']=='Paid'){
-                                                    echo'<td><span class="tag tag-green">paid</span></td>';
-                                                }
-                                                else{
-                                                    echo ' <td><span class="tag tag-red">unpaid</span></td>
-                                                    ';
-                                                }
-                                               echo' 
-                                               <td>
-                                               <a href="../organization/edit_payment.php?edit_id=' . $employee_payment['payment_id'] . '" class="btn btn-icon btn-sm" title="Edit"
-                                            data-type="confirm">
-                                            <i class="fa fa-edit"></i>
-                                            </a>                    
-                                            <a href="../backend/payments.php?del_id=' . $employee_payment['payment_id'] . '" class="btn btn-icon btn-sm js-sweetalert" title="Delete"
-                                            data-type="confirm">
-                                            <i class="fa fa-trash-o text-danger"></i>
-                                            </a>
-                                                           </td>
-
-                                                </tr>';    
-                                        }
-
-                                        ?>
-                                                                                    
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                          <!-- This is section to Add Salary -->
-                    <div class="tab-pane" id="Fees-add">
+                                <!-- This is section to edit Salary -->
+                    <div class="tab-pane active" id="Fees-add">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Add Salary</h3>
+                                <h3 class="card-title">Edit Salary</h3>
                                 <div class="card-options ">
                                     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                     <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                 </div>
                             </div>
-                            <form class="card-body" method="post" action="../backend/payments.php">
+                            <form class="card-body" method="post" action="../backend/payments.php?edit_id=<?php echo $edit_id;?>">
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Employee ID<span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control" Required name="emp_id">
+                                        <input type="text" class="form-control" Required name="emp_id" value="<?php echo $payment['emp_id'] ?>">
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 col-form-label"> Date <span class="text-danger">*</span></label>
+                                
+                                     <div class="form-group row">
+                                    <label class="col-md-3 col-form-label"> Date</label>
                                     <div class="col-md-7">
                                         <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder=""
-                                        name="date">
+                                        name="date" value="<?php echo date('m-d-Y', strtotime($payment['date'])) ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Salary <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control" name="salary">
+                                        <input type="text" class="form-control" name="salary" value="<?php echo $payment['salary'] ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -1084,31 +898,39 @@
                                     <div class="col-md-7">
                                         <select class="form-control" name="payment_method">
                                             <option value="">Select...</option>
-                                            <option value="Cash">Cash</option>
-                                            <option value="Cheque">Cheque</option>
-                                            <option value="Credit Card">Credit Card</option>
-                                            <!-- <option value="Category 4">Debit Card</option>
-                                            <option value="Category 5">Netbanking</option>
-                                            <option value="Category 6">Other</option> -->
-                                        </select>
+                                            <option <?php if ($payment['payment_method'] == 'Cash') {
+                                                            echo 'selected';
+                                                        } ?> >Cash</option>
+                                            <option <?php if ($payment['payment_method'] == 'Cheque') {
+                                                            echo 'selected';
+                                                        } ?>>Cheque</option>
+                                            <option <?php if ($payment['payment_method'] == 'Credit Card') {
+                                                            echo 'selected';
+                                                        } ?>>Credit Card</option>
+                                                                                   </select>
                                     </div>
-                                </div>
-                                <div class="form-group row">
+                                </div>                              <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Payment Status <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <select class="form-control" name="payment_status">
-                                            <option value="">Select...</option>
-                                            <option value="Paid">Paid</option>
-                                            <option value="UnPaid">Unpaid</option>
-                                                                                   </select>
+                                      <select class="form-control" name="payment_status">
+                                            <option >Select...</option>
+                                            <option <?php if ($payment['payment_status'] == 'Paid') {
+                                                            echo 'selected';
+                                                        } ?>>Paid</option>
+                                            <option <?php if ($payment['payment_status'] == 'UnPaid') {
+                                                            echo 'selected';
+                                                        } ?>>Unpaid</option>
+                                            <!-- <option value="Category 3">Pending</option> -->
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label"></label>
                                     <div class="col-md-7">
-                                        <button type="submit" class="btn btn-primary" name="submit_salary">Submit</button>
+                                        <button type="submit" class="btn btn-primary" name="edit_salary">Update</button>
                                         <a href="payments.php" class="btn btn-outline-secondary">Cancel</a>
-                                    </div>
+
+                                                                           </div>
                                 </div>
                             </form>
                         </div>
