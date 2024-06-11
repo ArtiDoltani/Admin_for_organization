@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Ericsson :: Courses</title>
+<title>:: Ericsson:: Cantact</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
@@ -768,40 +769,32 @@
     <div id="left-sidebar" class="sidebar">
         <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">University</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-admin">Admin</a></li>
         </ul>
         <div class="tab-content mt-3">
             <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li><a href="professors.html"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                        <li><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="students.html"><i class="fa fa-users"></i><span>Students</span></a></li>
-                        <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="courses.html"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
-                        <li><a href="library.html"><i class="fa fa-book"></i><span>Library</span></a></li>
-                        <li><a href="holiday.html"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
+                        <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
+                        <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
+                        <li><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                        <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
-                        <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li>
-                        <li class="active"><a href="app-contact.html"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
-                        <li><a href="app-filemanager.html"><i class="fa fa-folder"></i><span>FileManager</span></a></li>
-                        <li><a href="our-centres.html"><i class="fa fa-map"></i><span>OurCentres</span></a></li>
-                        <li><a href="gallery.html"><i class="fa fa-camera-retro"></i><span>Gallery</span></a></li>
-                    </ul>
+                        <!-- <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li> -->
+                        <li class="active"><a href="app-contact.php"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
+                        </ul>
                 </nav>
             </div>
             <div class="tab-pane fade" id="menu-admin" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="payments.html"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
-                        <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li>
-                        <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
-                        <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
-                        <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li>
-                        <li><a href="attendance.html"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
+                        <li><a href="payments.php"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
+                        <!-- <li><a href="noticeboard.php"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li> -->
+                        <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
+                        <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
                         <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
                     </ul>
@@ -984,7 +977,7 @@
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
                         <li class="nav-item"><a class="nav-link active" id="list-tab" data-toggle="tab" href="#list"><i class="fa fa-list-ul"></i> List</a></li>
-                        <li class="nav-item"><a class="nav-link" id="grid-tab" data-toggle="tab" href="#grid"><i class="fa fa-th"></i> Grid</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" id="grid-tab" data-toggle="tab" href="#grid"><i class="fa fa-th"></i> Grid</a></li> -->
                         <li class="nav-item"><a class="nav-link" id="addnew-tab" data-toggle="tab" href="#addnew"><i class="fa fa-plus"></i> Add New</a></li>
                     </ul>
                 </div>
@@ -993,11 +986,42 @@
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">
+                    <!-- List of contacts -->
                     <div class="tab-pane fade show active" id="list" role="tabpanel">
                         <div class="table-responsive" id="users">
                             <table class="table table-hover table-vcenter text-nowrap table_custom list">
                                 <tbody>
-                                    <tr class="">
+                                    <?php 
+                                    include '../backend/contact.php';
+                                    $contacts=get_contacts();
+                                    foreach($contacts as $contact){
+                                       echo'
+                                         <tr class="">
+                                        <td>
+                                            <div><a href="javascript:void(0);">'.$contact['name'].'</a></div>
+                                            <div class="text-muted">'.$contact['phone'].'</div>
+                                        </td>
+                                        <td class="hidden-xs">
+                                            <div class="text-muted">'.$contact['email'].'</div>
+                                        </td>
+                                        <td class="hidden-sm">
+                                            <div class="text-muted">'.$contact['address'].'</div>                                                
+                                        </td>
+                                        <td class="text-right">
+                                            <a class="btn btn-icon btn-sm" href="#" data-toggle="tooltip" title="Mail"><i class="fa fa-envelope"></i></a>
+                                            <a class="btn btn-icon btn-sm text-danger hidden-xs js-sweetalert" data-type="confirm" href="../backend/contact.php?del_id='.$contact['contact_id'].'" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
+                                            <a href="../backend/contact.php?edit_id='.$contact['contact_id'].'"
+                                        class="btn btn-icon btn-sm editbtn" title="Edit" data-target="#contactModal">
+                                            <i class="fa fa-edit"></i>
+                                            </a>                    
+
+                                            </td>
+                                    </tr>
+
+                                       '; 
+                                    }
+                                    ?>
+                                    <!-- <tr class="">
                                         <td class="width35 hidden-xs">
                                             <a href="javascript:void(0);" class="mail-star"><i class="fa fa-star"></i></a>
                                         </td>
@@ -1071,316 +1095,49 @@
                                             <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Mail"><i class="fa fa-envelope"></i></a>
                                             <a class="btn btn-icon btn-sm text-danger hidden-xs js-sweetalert" data-type="confirm" href="javascript:void(0)" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
                                         </td>
-                                    </tr>
-                                    <tr class="">
-                                        <td class="hidden-xs">
-                                            <a href="javascript:void(0);" class="mail-star active"><i class="fa fa-star"></i></a>
-                                        </td>
-                                        <td class="text-center width40">
-                                            <div class="avatar d-block">
-                                                <img class="avatar" src="../assets/images/xs/avatar7.jpg" alt="avatar">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="from"><a href="javascript:void(0);">Andrew Patrick</a></div>
-                                            <div class="text-muted">+264-625-2586</div>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <div class="text-muted">mikethimas@info.com</div>
-                                        </td>
-                                        <td class="hidden-sm">
-                                            <div class="text-muted">728 Blackburn St. Andover, MA 01810</div>                                                
-                                        </td>
-                                        <td class="text-right">
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Phone"><i class="fa fa-phone"></i></a>
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Mail"><i class="fa fa-envelope"></i></a>
-                                            <a class="btn btn-icon btn-sm text-danger hidden-xs js-sweetalert" data-type="confirm" href="javascript:void(0)" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="">
-                                        <td class="hidden-xs">
-                                            <a href="javascript:void(0);" class="mail-star"><i class="fa fa-star"></i></a>
-                                        </td>
-                                        <td class="text-center width40">
-                                            <div class="avatar d-block">
-                                                <img class="avatar" src="../assets/images/xs/avatar5.jpg" alt="avatar">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="from"><a href="javascript:void(0);">Claire Peters</a></div>
-                                            <div class="text-muted">+264-625-3333</div>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <div class="text-muted">clairepeters@info.com</div>
-                                        </td>
-                                        <td class="hidden-sm">
-                                            <div class="text-muted">19 Ohio St. Snellville, GA 30039</div>                                                
-                                        </td>
-                                        <td class="text-right">
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Phone"><i class="fa fa-phone"></i></a>
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Mail"><i class="fa fa-envelope"></i></a>
-                                            <a class="btn btn-icon btn-sm text-danger hidden-xs js-sweetalert" data-type="confirm" href="javascript:void(0)" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="" >
-                                        <td class="hidden-xs">
-                                            <a href="javascript:void(0);" class="mail-star"><i class="fa fa-star"></i></a>
-                                        </td>
-                                        <td class="text-center width40">
-                                            <div class="avatar d-block">
-                                                <img class="avatar" src="../assets/images/xs/avatar6.jpg" alt="avatar">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="from"><a href="javascript:void(0);">Allen Collins</a></div>
-                                            <div class="text-muted">+264-625-4526</div>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <div class="text-muted">kenpatrick@info.com</div>
-                                        </td>
-                                        <td class="hidden-sm">
-                                            <div class="text-muted">728 Blackburn St. Andover, MA 01810</div>                                                
-                                        </td>
-                                        <td class="text-right">
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Phone"><i class="fa fa-phone"></i></a>
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Mail"><i class="fa fa-envelope"></i></a>
-                                            <a class="btn btn-icon btn-sm text-danger hidden-xs js-sweetalert" data-type="confirm" href="javascript:void(0)" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="">
-                                        <td class="width35 hidden-xs">
-                                            <a href="javascript:void(0);" class="mail-star"><i class="fa fa-star"></i></a>
-                                        </td>
-                                        <td class="text-center width40">
-                                            <div class="avatar d-block">
-                                                <img class="avatar" src="../assets/images/xs/avatar4.jpg" alt="avatar">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div><a href="javascript:void(0);">Erin Gonzales</a></div>
-                                            <div class="text-muted">+264-625-1593</div>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <div class="text-muted">eringonzales@info.com</div>
-                                        </td>
-                                        <td class="hidden-sm">
-                                            <div class="text-muted">455 S. Airport St. Moncks Corner, SC 29461</div>                                                
-                                        </td>
-                                        <td class="text-right">
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Phone"><i class="fa fa-phone"></i></a>
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Mail"><i class="fa fa-envelope"></i></a>
-                                            <a class="btn btn-icon btn-sm text-danger hidden-xs js-sweetalert" data-type="confirm" href="javascript:void(0)" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr class="">
-                                        <td class="hidden-xs">
-                                            <a href="javascript:void(0);" class="mail-star"><i class="fa fa-star"></i></a>
-                                        </td>
-                                        <td class="text-center width40">
-                                            <div class="avatar d-block">
-                                                <img class="avatar" src="../assets/images/xs/avatar5.jpg" alt="avatar">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="from"><a href="javascript:void(0);">Harry McCall</a></div>
-                                            <div class="text-muted">+264-625-2468</div>
-                                        </td>
-                                        <td class="hidden-xs">
-                                            <div class="text-muted">susiewillis@info.com</div>
-                                        </td>
-                                        <td class="hidden-sm">
-                                            <div class="text-muted">19 Ohio St. Snellville, GA 30039</div>                                                
-                                        </td>
-                                        <td class="text-right">
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Phone"><i class="fa fa-phone"></i></a>
-                                            <a class="btn btn-icon btn-sm" href="javascript:void(0)" data-toggle="tooltip" title="Mail"><i class="fa fa-envelope"></i></a>
-                                            <a class="btn btn-icon btn-sm text-danger hidden-xs js-sweetalert" data-type="confirm" href="javascript:void(0)" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
+                                    </tr>-->
+                                    
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="grid" role="tabpanel">
-                        <div class="row row-deck">
-                            <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="card " >
-                                    <div class="card-body">
-                                        <div class="card-status bg-blue"></div>
-                                        <div class="mb-3"> <img src="../assets/images/sm/avatar1.jpg" class="rounded-circle w100" alt=""> </div>
-                                        <div class="mb-2">
-                                            <h5 class="mb-0">Paul Schmidt</h5>
-                                            <p class="text-muted">Aalizeethomas@info.com</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt</span>
-                                        </div>
-                                        <span class="font-12 text-muted">Common Contact</span>
-                                        <ul class="list-unstyled team-info margin-0 pt-2">
-                                            <li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar8.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="card ">
-                                    <div class="card-body">
-                                        <div class="mb-3"> <img src="../assets/images/sm/avatar2.jpg" class="rounded-circle w100" alt=""> </div>
-                                        <div class="mb-2">
-                                            <h5 class="mb-0">Andrew Patrick</h5>
-                                            <p>Aalizeethomas@info.com</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt</span>
-                                        </div>
-                                        <span class="font-12 text-muted">Common Contact</span>
-                                        <ul class="list-unstyled team-info margin-0 pt-2">
-                                            <li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="card ">
-                                    <div class="card-body">
-                                        <div class="mb-3"> <img src="../assets/images/sm/avatar3.jpg" class="rounded-circle w100" alt=""> </div>
-                                        <div class="mb-2">
-                                            <h5 class="mb-0">Mary Schneider</h5>
-                                            <p>Aalizeethomas@info.com</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt</span>
-                                        </div>
-                                        <span class="font-12 text-muted">Common Contact</span>
-                                        <ul class="list-unstyled team-info margin-0 pt-2">
-                                            <li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="card " >
-                                    <div class="card-body">
-                                        <div class="card-status bg-green"></div>
-                                        <div class="mb-3"> <img src="../assets/images/sm/avatar4.jpg" class="rounded-circle w100" alt=""> </div>
-                                        <div class="mb-2">
-                                            <h5 class="mb-0">Sean Black</h5>
-                                            <p>Aalizeethomas@info.com</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt</span>
-                                        </div>
-                                        <span class="font-12 text-muted">Common Contact</span>
-                                        <ul class="list-unstyled team-info margin-0 pt-2">
-                                            <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar6.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar5.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar7.jpg" alt="Avatar"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="card ">
-                                    <div class="card-body">
-                                        <div class="mb-3"> <img src="../assets/images/sm/avatar5.jpg" class="rounded-circle w100" alt=""> </div>
-                                        <div class="mb-2">
-                                            <h5 class="mb-0">David Wallace</h5>
-                                            <p>Aalizeethomas@info.com</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt</span>
-                                        </div>
-                                        <span class="font-12 text-muted">Common Contact</span>
-                                        <ul class="list-unstyled team-info margin-0 pt-2">
-                                            <li><img src="../assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar4.jpg" alt="Avatar"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="card ">
-                                    <div class="card-body">
-                                        <div class="card-status bg-pink"></div>
-                                        <div class="mb-3"> <img src="../assets/images/sm/avatar6.jpg" class="rounded-circle w100" alt=""> </div>
-                                        <div class="mb-2">
-                                            <h5 class="mb-0">Andrew Patrick</h5>
-                                            <p>Aalizeethomas@info.com</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt</span>
-                                        </div>
-                                        <span class="font-12 text-muted">Common Contact</span>
-                                        <ul class="list-unstyled team-info margin-0 pt-2">
-                                            <li><img src="../assets/images/xs/avatar5.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar6.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar1.jpg" alt="Avatar"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="card ">
-                                    <div class="card-body">
-                                        <div class="mb-3"> <img src="../assets/images/sm/avatar2.jpg" class="rounded-circle w100" alt=""> </div>
-                                        <div class="mb-2">
-                                            <h5 class="mb-0">Michelle Green</h5>
-                                            <p>Aalizeethomas@info.com</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt</span>
-                                        </div>
-                                        <span class="font-12 text-muted">Common Contact</span>
-                                        <ul class="list-unstyled team-info margin-0 pt-2">
-                                            <li><img src="../assets/images/xs/avatar8.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar7.jpg" alt="Avatar"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-6 col-sm-12">
-                                <div class="card ">
-                                    <div class="card-body">
-                                        <div class="mb-3"> <img src="../assets/images/sm/avatar4.jpg" class="rounded-circle w100" alt=""> </div>
-                                        <div class="mb-2">
-                                            <h5 class="mb-0">Mary Schneider</h5>
-                                            <p>Aalizeethomas@info.com</p>
-                                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti fugit incidunt</span>
-                                        </div>
-                                        <span class="font-12 text-muted">Common Contact</span>
-                                        <ul class="list-unstyled team-info margin-0 pt-2">
-                                            <li><img src="../assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar7.jpg" alt="Avatar"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    <!-- Add new  -->
                     <div class="tab-pane fade" id="addnew" role="tabpanel">
                         <div class="card">
                             <div class="card-body">
+                                <form action="../backend/contact.php" method="post" enctype="multipart/form-data">
                                 <div class="row clearfix">
-                                    <div class="col-lg-4 col-md-12">
+                                <div class="col-lg-4 col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Enter Name">
+                                            <input type="text" class="form-control" placeholder="Enter Name" name="name">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
                                         <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Enter Number">
+                                            <input type="text" class="form-control" placeholder="Enter Number" name="phone">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Enter Email">
+                                            <input type="email" class="form-control" placeholder="Enter Email" name="email">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12">
                                         <div class="form-group">
-                                            <textarea type="text" class="form-control" rows="4">Enter your Address</textarea>
+                                            <textarea type="text" class="form-control" rows="4" placeholder="Enter your Address" name="address">Enter your Address</textarea>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <input type="file" class="dropify">
-                                    </div>
+                                    <!-- <div class="col-lg-12">
+                                        <input type="file" class="dropify" name="imagefile">
+                                    </div> -->
                                     <div class="col-lg-12 mt-3">
-                                        <button type="submit" class="btn btn-primary">Add</button>
-                                        <button type="submit" class="btn btn-default">Cancel</button>
+                                        <button type="submit" class="btn btn-primary" name="add_contact">Add</button>
+                                        <a href="app-contact.php" class="btn btn-default">Cancel</a>
+                                        </div>    
+                                    
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
