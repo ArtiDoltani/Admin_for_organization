@@ -33,9 +33,18 @@
 
 
 
- <!-- Update Employee -->
+ <!-- Update contact -->
+<?php
+ function get_contact_by_id($contact_id) {
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM contacts WHERE contact_id = ?");
+    $stmt->bind_param("i", $contact_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->fetch_assoc();
+}
+?>
 
- 
  <!-- Delete Contact -->
  <?php
     function delete_contact($del_id)
@@ -74,35 +83,7 @@
         ";
             }
         }
-        // Updating Employee Data
-        if (isset($_POST['edit'])) {
-            $edit_id = $_GET['edit_id'];
-            $file_name = $_FILES['uploadfile']['name'];
-            $temp_name = $_FILES['uploadfile']['tmp_name'];
-            $folder = "../employee_images/" . $file_name;
-            move_uploaded_file($temp_name, $folder);
-            $email =  $_POST['email'];
-            $f_name =  $_POST['f_name'];
-            $l_name =  $_POST['l_name'];
-            // $stack =  $_POST['stack'];
-            $position =  $_POST['position'];
-            $phone =  $_POST['phone'];
-            $dept_id=$_POST['dept_id'];
-            if (update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $phone,$dept_id)) {
-                echo "<script>
-        alert('Employee Updated Successfully');
-        window.location.href='../organization/employees.php';
-        </script>
-        ";
-            } else {
-                echo "<script>
-        alert('Sorry!Server is Down');
-        window.location.href='../organization/employees.php';
-        </script>
-        ";
             }
-        }
-    }
     // To Delete
 
     if (isset($_GET['del_id'])) {
@@ -122,17 +103,37 @@
         }
     }
 
-    // To Update check Employee
-
-    if (isset($_GET['edit_id'])) {
-        $edit_id = $_GET['edit_id'];
-        $query = "SELECT * FROM contacts where `contact_id` = '$edit_id'";
-        $result = mysqli_query($conn, $query);
-        if ($result) {
-            $contact = mysqli_fetch_assoc($result);
-        }
+    // To Update check contact
+    if (isset($_POST['contact_id'])) {
+        $contact_id = $_POST['contact_id'];
+        $contact = get_contact_by_id($contact_id); // Create this function to fetch a single contact by ID
     }
 
+    // Update Contact
+    if (isset($_GET['edit_id']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+        $contact_id = $_GET['edit_id'];
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $sql="UPDATE contacts SET `name` = '$name', `phone` = '$phone', `email` = '$email', `address` = '$address' WHERE contact_id = '$contact_id'";
+        if($conn->query($sql)){
+
+            echo "<script>
+            alert('Contact updated Successfully');
+            window.location.href='../organization/app-contact.php';
+            </script>
+            ";
+                } else {
+                    echo "<script>
+            alert('Sorry!Server is Down');
+            window.location.href='../organization/app-contact.php';
+            </script>
+            ";
+                }
+        
+       
+    }
 
 
 

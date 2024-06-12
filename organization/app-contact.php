@@ -1008,13 +1008,13 @@
                                             <div class="text-muted">'.$contact['address'].'</div>                                                
                                         </td>
                                         <td class="text-right">
-                                            <a class="btn btn-icon btn-sm" href="#" data-toggle="tooltip" title="Mail"><i class="fa fa-envelope"></i></a>
                                             <a class="btn btn-icon btn-sm text-danger hidden-xs js-sweetalert" data-type="confirm" href="../backend/contact.php?del_id='.$contact['contact_id'].'" data-toggle="tooltip" title="Delete"><i class="fa fa-trash"></i></a>
-                                            <a href="../backend/contact.php?edit_id='.$contact['contact_id'].'"
-                                        class="btn btn-icon btn-sm editbtn" title="Edit" data-target="#contactModal">
-                                            <i class="fa fa-edit"></i>
-                                            </a>                    
-
+                                             <form method="post" action="edit_contact.php" style="display:inline;">
+                        <input type="hidden" name="contact_id" value="'.$contact['contact_id'].'">
+                        <button type="submit" class="btn btn-icon btn-sm" title="Edit">
+                            <i class="fa fa-edit"></i>
+                        </button>
+                    </form>
                                             </td>
                                     </tr>
 
@@ -1101,7 +1101,7 @@
                             </table>
                         </div>
                     </div>
-                    
+                   
                     <!-- Add new  -->
                     <div class="tab-pane fade" id="addnew" role="tabpanel">
                         <div class="card">
@@ -1144,6 +1144,8 @@
                 </div> 
             </div>
         </div>
+       
+
         <!-- Start main footer -->
         <div class="section-body">
             <footer class="footer">
