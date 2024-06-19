@@ -7,10 +7,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $result_select=mysqli_query($conn,$query_select);
         $num=mysqli_num_rows($result_select);
         if($num==1){
-            // $login=true;
-           session_start();
-            $_SESSION['loggedin']=true;
-            $_SESSION['email']=$email;
+             session_start();
+             $_SESSION['loggedin']=true;
+             while($row=mysqli_fetch_assoc($result_select)){
+              $_SESSION['emp_id']=$row['id'];
+              $_SESSION['name']=$row['f_name'] . ' ' . $row['l_name'];
+             }
+            
          echo"<script>alert('You are loggedin');
          window.location.href='../../employee-dashboard/dashboard.php';
          </script>";

@@ -1,3 +1,6 @@
+<?php 
+include '../backend/dbconnection.php';
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 
@@ -873,7 +876,7 @@
                                 </div>
                                 <div class="dropdown d-flex">
                                     <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success nav-unread"></span></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                    <!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                         <ul class="right_chat list-unstyled w350 p-0">
                                             <li class="online">
                                                 <a href="javascript:void(0);" class="media">
@@ -922,7 +925,7 @@
                                         </ul>
                                         <div class="dropdown-divider"></div>
                                         <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="dropdown d-flex">
                                     <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="badge badge-primary nav-unread"></span></a>
@@ -1010,37 +1013,57 @@
                             <div class="row clearfix mt-2">
                                 <div class="col-lg-4 col-md-6">
                                     <div class="card">
+                                    <!-- Planned -->
                                         <div class="card-body text-center">
                                             <h6>Planned</h6>
-                                            <input type="text" class="knob" value="23" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#2185d0">
-                                        </div>
+                                            <?php 
+                                            $qurey="SELECT COUNT(*) as Num_of_planned FROM `taskboard` WHERE status='Planned'";
+                                            $res=mysqli_query($conn,$qurey);
+                                            if($res){
+                                                while($status=mysqli_fetch_assoc($res)){
+                                                    echo'<input type="text" class="knob" value="'.$status['Num_of_planned'].'" data-width="90" data-height="90" 
+                                                    data-thickness="0.1" data-fgColor="#2185d0">';
+                                                }
+                                            }
+                                            ?>
+                                                                                    </div>
                                     </div>
                                 </div>
+                                <!-- In progress -->
                                 <div class="col-lg-4 col-md-6">
                                     <div class="card">
                                         <div class="card-body text-center">
                                             <h6>In progress</h6>
-                                            <input type="text" class="knob" value="43" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#f2711c">
+                                            <?php 
+                                            $qurey="SELECT COUNT(*) as Num_of_progress FROM `taskboard` WHERE status='In Progress'";
+                                            $res=mysqli_query($conn,$qurey);
+                                            if($res){
+                                                while($status=mysqli_fetch_assoc($res)){
+                                                     echo'  <input type="text" class="knob" value="'.$status['Num_of_progress'].'" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#f2711c"> ';
+                                                }
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Completed -->
                                 <div class="col-lg-4 col-md-6">
                                     <div class="card">
                                         <div class="card-body text-center">
                                             <h6>Completed</h6>
-                                            <input type="text" class="knob" value="83" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#21ba45">
+                                            <?php 
+                                            $qurey="SELECT COUNT(*) as Num_of_completed FROM `taskboard` WHERE status='completed'";
+                                            $res=mysqli_query($conn,$qurey);
+                                            if($res){
+                                                while($status=mysqli_fetch_assoc($res)){
+                                                     echo'  <input type="text" class="knob" value="'.$status['Num_of_completed'].'" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#21ba45"> ';
+                                                }
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-3 col-md-6">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <h6>In Completed</h6>
-                                        <input type="text" class="knob" value="12" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#e03997">
-                                    </div>
                                 </div>
-                            </div> -->
-                            </div>
                             <!-- Table to show tasks -->
                             <div class="card">
                             <div class="card-body">
@@ -1048,13 +1071,13 @@
                                 <table class="table table-hover text-nowrap js-basic-example dataTable table-striped table_custom border-style spacing5">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>Task ID</th>
                                             <th>Task</th>
                                             <th>Assigned to</th>
                                             <th>Duration</th>
-                                            <th>Action</th>
-                                            <th>view</th>
-                                            <!-- <th class="w200"></th> -->
+                                            <th>Status</th>
+                                            <!-- <th>view</th> -->
+                                            <th >Action</th>
                                         </tr>
                                     </thead>
                                     <?php
@@ -1062,6 +1085,18 @@
                                     include '../backend/taskboard.php';
                                     $tasks = show_tasks();
                                     foreach ($tasks as $task) {
+                                        $select_q="SELECT CONCAT(`f_name`,' ',`l_name`) as `name` from `employees` where `id`= '$task[emp_id]'";
+                                        $result=mysqli_query($conn,$select_q);
+                                        if ($result) {
+                                            $employee = mysqli_fetch_assoc($result);
+                                            if ($employee) {
+                                                $employee_name = $employee['name'];
+                                            } else {
+                                                $employee_name = 'Not Assigned';
+                                            }
+                                        } else {
+                                            $employee_name = 'Not Assigned';
+                                        }
                                         echo '
                                     <tr>
                                     <td>' . $task['task_id'] . '</td>
@@ -1070,12 +1105,9 @@
                                         <span>' . $task['description'] . '</span>
                                     </td>
                                     <td>
-                                        <ul class="list-unstyled team-info mb-0 w150">
-                                            <li><img src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                            <li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-                                        </ul>
-                                    </td>
+                                    <h6 class="mb-0">' . $employee_name . '</h6>
+
+                                       </td>
                                     <td>
                                         <div class="text-info">Start: ' . $task['start_date'] . '</div>
                                         <div class="text-pink">End: ' . $task['end_date'] . '</div>
@@ -1107,9 +1139,10 @@
                                         echo '
                                         
                                         <td>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" 
-                                        data-target="#paymentModal"><i class="fa fa-eye"></i> </button>
-</td>
+                                        
+                                        <a href="../backend/taskboard.php?del_id='.$task['task_id'].'"><i class="fa fa-trash"></i></a>
+                                        
+                                        </td>
                                         </tr> ';
                                     }
 
@@ -1343,13 +1376,24 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label">Select Employee<span class="text-danger">*</span></label>
                                         <div class="col-md-7">
-                                            <select class="form-control show-tick">
-                                                <option>Select</option>
-                                                <option>John Smith</option>
-                                                <option>Claire Peters</option>
-                                                <option>Allen Collins</option>
-                                                <option>Cory Carter</option>
-                                                <option>Rochelle Barton</option>
+                                            <select class="form-control show-tick" name="emp_id">
+                                            <option>Select</option>
+                                               
+                                                <?php 
+                                                include '../backend/dbconnection.php';
+                                                $sql="SELECT `id`, concat(`f_name`,' ',`l_name`) as name FROM `employees`";
+                                                $res=mysqli_query($conn,$sql);
+                                                if(mysqli_num_rows($res)){
+                                                    while($row=mysqli_fetch_assoc($res)){
+                                                        ?>
+                                                         <option value="<?php echo $row['id'] ;?>">
+                                                            <?php echo $row['name']; ?></option>
+                                               <?php
+                                                    }
+                                                }
+                                                
+                                                
+                                                ?>                                               
                                             </select>
                                         </div>
                                     </div>
