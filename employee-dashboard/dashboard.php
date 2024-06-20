@@ -8,12 +8,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee:: Dashboard</title>
     <!-- Bootstrap Core and vandor -->
-<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
-
+    <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <!-- Plugins css -->
 <link rel="stylesheet" href="../assets/plugins/summernote/dist/summernote.css"/>
 
@@ -60,8 +62,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                     <ul class="metismenu">
                         <li class="active"><a href="dashboard.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="task.php"><i class="fa fa-list-ul"></i><span>Tasks</span></a></li>
-                        <li><a href="leave.html"><i class="fa fa-flag"></i><span>Apply Leave</span></a></li>
-                        <li><a href="holiday.php"><i class="fa fa-folder"></i><span>Leave status</span></a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#leaveModal"><i class="fa fa-flag"></i><span>Apply Leave</span></a></li>
+                        <li><a href="leave_status.php"><i class="fa fa-folder"></i><span>Leave status</span></a></li>
                         </ul>
                 </nav>
             </div>
@@ -214,8 +216,10 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         </div>
 
 
-            </div>    
-</div>
+<!-- Leave Modal-->
+<?php 
+include 'apply_leave.php';
+?>
 
 <!-- Start Main project js, jQuery, Bootstrap -->
 <script src="../assets/bundles/lib.vendor.bundle.js"></script>

@@ -817,7 +817,7 @@ include '../backend/dbconnection.php';
                             <li><a href="payments.php"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
                             <li class="active"><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                             <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
-                            <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
+                            <li><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
                             <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
                         </ul>
                     </nav>

@@ -783,12 +783,9 @@
                         <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
-                        <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li>
+                        <!-- <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li> -->
                         <li><a href="app-contact.html"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
-                        <li><a href="app-filemanager.html"><i class="fa fa-folder"></i><span>FileManager</span></a></li>
-                        <li><a href="our-centres.html"><i class="fa fa-map"></i><span>OurCentres</span></a></li>
-                        <li><a href="gallery.html"><i class="fa fa-camera-retro"></i><span>Gallery</span></a></li>
-                    </ul>
+                        </ul>
                 </nav>
             </div>
             <div class="tab-pane fade" id="menu-admin" role="tabpanel">
@@ -800,7 +797,7 @@
                         <!-- <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
                         <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li> -->
                         <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
-                        <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
+                        <li><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
                         <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
                     </ul>
                 </nav>

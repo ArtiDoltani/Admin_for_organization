@@ -59,9 +59,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
                         <li ><a href="dashboard.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li class="active"><a href="task.php"><i class="fa fa-list-ul"></i><span>Tasks</span></a></li>
+                        <li ><a href="task.php"><i class="fa fa-list-ul"></i><span>Tasks</span></a></li>
                         <li><a href="leave.html" data-toggle="modal" data-target="#leaveModal"><i class="fa fa-flag"></i><span>Apply Leave</span></a></li>
-                        <li><a href="leave_status.php"><i class="fa fa-folder"></i><span>Leave status</span></a></li>
+                        <li class="active"><a href="leave_status.php"><i class="fa fa-folder"></i><span>Leave status</span></a></li>
                         </ul>
                 </nav>
             </div>
@@ -100,7 +100,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                         <h1 class="page-title">Tasks</h1>
                         <ol class="breadcrumb page-breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Employee</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Tasks</li>
+                            <li class="breadcrumb-item active" aria-current="page">Leaves</li>
                         </ol>
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
@@ -117,66 +117,38 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                                 <table class="table table-hover text-nowrap js-basic-example dataTable table-striped table_custom border-style spacing5">
                                     <thead>
                                         <tr>
-                                            <th>Task ID</th>
-                                            <th>Task</th>                                            
+                                            <th>S.no</th>
+                                            <th>Leave Reason</th>                                            
                                             <th>Duration</th>
                                             <th>Status</th>                                         
-                                            <th >Action</th>
-                                        </tr>
+                                            </tr>
                                     </thead>
                                     <?php
                                     include '../backend/dbconnection.php';
-                                    $sql="SELECT * FROM `taskboard` where emp_id='$_SESSION[emp_id]'";
+                                    $sql="SELECT * FROM `leaves` where emp_id='$_SESSION[emp_id]'";
                                     $res=mysqli_query($conn,$sql);
                                     if($res){
-                                        while($task=mysqli_fetch_assoc($res)){
+                                        $count=1;
+                                        while($leave=mysqli_fetch_assoc($res)){
                                             echo '
                                             <tr>
-                                            <td>' . $task['task_id'] . '</td>
+                                             <td>' . $count . '</td>
+                                           
                                             <td>
-                                                <h6 class="mb-0">' . $task['title'] . '</h6>
-                                                <span>' . $task['description'] . '</span>
-                                            </td>
+                                                <h6 class="mb-0">' . $leave['reason'] . '</h6>
+                                                                                           </td>
                                             <td>
-                                                <div class="text-info">Start: ' . $task['start_date'] . '</div>
-                                                <div class="text-pink">End: ' . $task['end_date'] . '</div>
-                                            </td>';
-        
-                                                if ($task['status'] == 'Planned') {
-                                                    echo '
-                                                <td>
-                                                <span class="tag tag-blue">Planned</span>
-                                            </td>
-                                            
-                                                ';
-                                                } elseif ($task['status'] == 'Completed') {
-        
-                                                    echo '
-                                                <td>
-                                                <span class="tag tag-green">Completed</span>
-                                            </td>
-                                                                                 ';
-                                                } elseif ($task['status'] == 'In progress') {
-                                                    echo '
-                                                <td>
-                                                    <span class="tag tag-orange">In progress</span>
-                                                </td>
-        
-                                                ';
-                                                }
-        
-                                                echo '
-                                                
-                                                <td>
-                                                <form method="post" action="edit_task.php" style="display:inline;">
-                                    <input type="hidden" name="task_id" value="'.$task['task_id'].'">
-                                    <button type="submit" class="btn btn-icon btn-sm" title="Edit">
-                                        <i class="fa fa-edit"></i>
-                                    </button>
-                    </form>
-                 
-                                                </td>
+                                                <div class="text-info">Start: ' . $leave['start'] . '</div>
+                                                <div class="text-pink">End: ' . $leave['end'] . '</div>
+                                            </td>  
+                                            <td>
+                                                <h6 class="mb-0">' . $leave['status'] . '</h6>
+                                                                                           </td>
+                                            <td>
+                                                  
                                                 </tr> ';
+                                                $count=$count+1;
+                                        
         
                                         }
                                     }
