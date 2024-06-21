@@ -97,7 +97,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="header-action">
-                        <h1 class="page-title">Tasks</h1>
+                        <h1 class="page-title">Leaves</h1>
                         <ol class="breadcrumb page-breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Employee</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Leaves</li>
