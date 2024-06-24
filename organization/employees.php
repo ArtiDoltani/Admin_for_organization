@@ -991,6 +991,7 @@
                                 <thead class="thead-dark">
                                     <th>Image</th>
                                     <th>Name</th>
+                                    <th>Password</th>
                                     <th>Phone</th>
                                     <th>Team Lead</th>
                                     <th>Stack</th>
@@ -1010,6 +1011,7 @@
                                     <img class="avatar" src="'.$employee['emp_image'].'" alt="profile image">
                                      </td>
                                     <td><div class="font-15">'.$employee['Employee'].' </div></td>
+                                    <td>'.$employee['password'].'</td>
                                     <td><span>'.$employee['phone'].'</span></td>
                                     <td><span class="text-muted">'.$employee['Team Lead'].'</span></td>
                                     <td>'.$employee['Stack'].'</td>
@@ -1027,9 +1029,7 @@
                                         </a>
            
                                     </td>
-                                </tr>
-                               
-                                    ';
+                                </tr> ';
                                   }
 
                                   ?>  
@@ -1415,30 +1415,48 @@
                                                 <div class="col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <label>First Name</label>
-                                                        <input type="text" class="form-control" name="f_name">
+                                                        <input type="text" class="form-control" name="f_name" Required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Last Name</label>
-                                                        <input type="text" class="form-control" name="l_name"
+                                                        <input type="text" class="form-control" name="l_name" Required
                                                         >
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 col-sm-12">
                                                     <div class="form-group">
-                                                        <label>dept_id</label>
-                                                        <input type="text" class="form-control" 
-                                                        name="dept_id"
-                                                                                                          >
+                                                        <label>Department</label>
+                                                        <select class="form-control" name="dept_id" Required>
+                                            <option value="">Select...</option>
+                                             
+                                             <?php 
+                                                include '../backend/dbconnection.php';
+                                                $sql="SELECT `dept_id`, `stack_name` FROM `department`";
+                                                $res=mysqli_query($conn,$sql);
+                                                if(mysqli_num_rows($res)){
+                                                    while($row=mysqli_fetch_assoc($res)){
+                                                        ?>
+                                                         <option value="<?php echo $row['dept_id'] ;?>">
+                                                            <?php echo $row['stack_name']; ?></option>
+                                               <?php
+                                                    }
+                                                }
+                                                
+                                                
+                                                ?>                                               
+                                            
+                                        
+                                            </select>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Position</label>
-                                                        <select class="form-control" name="position">
-                                            <option >Select...</option>
+                                                        <select class="form-control" name="position" Required>
+                                            <option value="">Select...</option>
                                             <option >Trainee</option>
                                             <option >Junior</option>
                                             <option >Senior</option>
@@ -1467,7 +1485,13 @@
                                                 <div class="col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Enter Your Email</label>
-                                                        <input type="text" class="form-control" name="email">
+                                                        <input type="text" class="form-control" name="email" Required>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-4 col-sm-12">
+                                                    <div class="form-group">
+                                                        <label>Password</label>
+                                                        <input type="text" Required class="form-control" name="password">
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12">
@@ -1559,25 +1583,7 @@
                 </div>
             </div>
         </div>
-        <!-- Start main footer -->
-        <div class="section-body">
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            Copyright © 2019 <a href="https://themeforest.net/user/puffintheme/portfolio">PuffinTheme</a>.
-                        </div>
-                        <div class="col-md-6 col-sm-12 text-md-right">
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item"><a href="../doc/index.html">Documentation</a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)">FAQ</a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)" class="btn btn-outline-primary btn-sm">Buy Now</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
+        
     </div>    
 </div>
 

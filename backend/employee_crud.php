@@ -1,10 +1,10 @@
  <!-- Add Employee -->
  <?php
-    function create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id)
+    function create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id,$em_password)
     {
         require 'dbconnection.php';
-        $sql = "INSERT INTO `employees`(`emp_image`,`f_name`, `l_name`, `position`, `phone`, `email`,`TL_id`,`dept_id`) VALUES 
-    ('$folder','$f_name','$l_name','$position','$phone','$email','$tl_id','$dept_id')";
+        $sql = "INSERT INTO `employees`(`TL_id`, `emp_image`, `f_name`, `l_name`, `password`, `position`, `phone`, `email`, `dept_id`) VALUES 
+    ('$tl_id','$folder','$f_name','$l_name','$em_password','$position','$phone','$email','$dept_id')";
         if ($conn->query($sql) === TRUE) {
             return true;
         } else {
@@ -80,15 +80,15 @@
             $email =  $_POST['email'];
             $f_name =  $_POST['f_name'];
             $l_name =  $_POST['l_name'];
-            // $stack =  $_POST['stack'];
+           $em_password= $_POST['password'];
             $position =  $_POST['position'];
             $phone =  $_POST['phone'];
             $tl_id =  $_POST['tl_id'];
             $dept_id=$_POST['dept_id'];
-            if (create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id)) {
+            if (create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id,$em_password)) {
                 echo "<script>
         alert('Employee Added Successfully');
-        window.location.href='../organization/employees.php';
+      
         </script>
         ";
             } else {

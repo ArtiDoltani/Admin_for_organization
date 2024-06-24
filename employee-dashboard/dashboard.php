@@ -143,7 +143,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                     $currentDate = date('Y-m-d');
                                     $nearDate = date('Y-m-d', strtotime($currentDate . ' + ' . $daysToConsider . ' days'));
                                     $sql = "SELECT title, end_date FROM taskboard 
-                                WHERE `status`  IN ('In progress', 'Planned') And
+                                WHERE emp_id='$_SESSION[emp_id]' and `status`  IN ('In progress', 'Planned') And
                                 end_date BETWEEN '$currentDate' AND '$nearDate'";
                                     $result = $conn->query($sql);
                                     $nearDateTask = $result->num_rows > 0;
