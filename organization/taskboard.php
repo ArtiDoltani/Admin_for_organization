@@ -10,6 +10,7 @@ include '../backend/dbconnection.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>:: Ericsson :: Taskboard</title>
+    <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
 
     <!-- Bootstrap Core and vandor -->
     <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
@@ -865,110 +866,6 @@ include '../backend/dbconnection.php';
                             </ul>
                             <div class="notification d-flex">
                                 <div class="dropdown d-flex">
-                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-language"></i></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/us.svg" alt="">English</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/es.svg" alt="">Spanish</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/jp.svg" alt="">japanese</a>
-                                        <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/bl.svg" alt="">France</a>
-                                    </div>
-                                </div>
-                                <div class="dropdown d-flex">
-                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success nav-unread"></span></a>
-                                    <!-- <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <ul class="right_chat list-unstyled w350 p-0">
-                                            <li class="online">
-                                                <a href="javascript:void(0);" class="media">
-                                                    <img class="media-object" src="../assets/images/xs/avatar4.jpg" alt="">
-                                                    <div class="media-body">
-                                                        <span class="name">Donald Gardner</span>
-                                                        <div class="message">It is a long established fact that a reader</div>
-                                                        <small>11 mins ago</small>
-                                                        <span class="badge badge-outline status"></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="online">
-                                                <a href="javascript:void(0);" class="media">
-                                                    <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt="">
-                                                    <div class="media-body">
-                                                        <span class="name">Wendy Keen</span>
-                                                        <div class="message">There are many variations of passages of Lorem Ipsum</div>
-                                                        <small>18 mins ago</small>
-                                                        <span class="badge badge-outline status"></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="offline">
-                                                <a href="javascript:void(0);" class="media">
-                                                    <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt="">
-                                                    <div class="media-body">
-                                                        <span class="name">Matt Rosales</span>
-                                                        <div class="message">Contrary to popular belief, Lorem Ipsum is not simply</div>
-                                                        <small>27 mins ago</small>
-                                                        <span class="badge badge-outline status"></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="online">
-                                                <a href="javascript:void(0);" class="media">
-                                                    <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt="">
-                                                    <div class="media-body">
-                                                        <span class="name">Phillip Smith</span>
-                                                        <div class="message">It has roots in a piece of classical Latin literature from 45 BC</div>
-                                                        <small>33 mins ago</small>
-                                                        <span class="badge badge-outline status"></span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
-                                    </div> -->
-                                </div>
-                                <div class="dropdown d-flex">
-                                    <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="badge badge-primary nav-unread"></span></a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <ul class="list-unstyled feeds_widget">
-                                            <li>
-                                                <div class="feeds-left">
-                                                    <span class="avatar avatar-blue"><i class="fa fa-check"></i></span>
-                                                </div>
-                                                <div class="feeds-body ml-3">
-                                                    <p class="text-muted mb-0">Campaign <strong class="text-blue font-weight-bold">Holiday</strong> is nearly reach budget limit.</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="feeds-left">
-                                                    <span class="avatar avatar-green"><i class="fa fa-user"></i></span>
-                                                </div>
-                                                <div class="feeds-body ml-3">
-                                                    <p class="text-muted mb-0">New admission <strong class="text-green font-weight-bold">32</strong> in computer department.</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="feeds-left">
-                                                    <span class="avatar avatar-red"><i class="fa fa-info"></i></span>
-                                                </div>
-                                                <div class="feeds-body ml-3">
-                                                    <p class="text-muted mb-0">6th sem result <strong class="text-red font-weight-bold">67%</strong> in computer department.</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="feeds-left">
-                                                    <span class="avatar avatar-azure"><i class="fa fa-thumbs-o-up"></i></span>
-                                                </div>
-                                                <div class="feeds-body ml-3">
-                                                    <p class="text-muted mb-0">New Feedback <strong class="text-azure font-weight-bold">53</strong> for university assessment.</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="dropdown-divider"></div>
-                                        <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
-                                    </div>
-                                </div>
-                                <div class="dropdown d-flex">
                                     <a href="javascript:void(0)" class="chip ml-3" data-toggle="dropdown">
                                         <span class="avatar" style="background-image: url(../assets/images/xs/avatar5.jpg)"></span> George</a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
@@ -1141,7 +1038,8 @@ include '../backend/dbconnection.php';
                                         <td>
                                         
                                         <a href="../backend/taskboard.php?del_id='.$task['task_id'].'"><i class="fa fa-trash"></i></a>
-                                        
+                                        <a href="edit_task.php?id_edit='.$task['task_id'].'"><i class="fa fa-edit"></i></a>
+                                      
                                         </td>
                                         </tr> ';
                                     }
@@ -1241,12 +1139,27 @@ include '../backend/dbconnection.php';
 
                                                     <?php
                                                     $plannedTasks = planned_tasks();
-                                                    foreach ($plannedTasks as $task) { ?>
+                                                    foreach ($plannedTasks as $task) { 
+                                                        $select_q="SELECT CONCAT(`f_name`,' ',`l_name`) as `name` from `employees` where `id`= '$task[emp_id]'";
+                                        $result=mysqli_query($conn,$select_q);
+                                        if ($result) {
+                                            $employee = mysqli_fetch_assoc($result);
+                                            if ($employee) {
+                                                $employee_name = $employee['name'];
+                                            } else {
+                                                $employee_name = 'Not Assigned';
+                                            }
+                                        } else {
+                                            $employee_name = 'Not Assigned';
+                                        }
+?>
                                                         <li class="dd-item" data-id="<?php echo $task['task_id']; ?>">
                                                             <div class="dd-handle">
                                                                 <h6><?php echo htmlspecialchars($task['title']); ?></h6>
                                                                 <span class="time"><span class="text-primary">Start: <?php echo $task['start_date']; ?></span> to <span class="text-danger">Complete: <?php echo $task['end_date']; ?></span></span>
-                                                                <p><?php echo htmlspecialchars($task['description']); ?></p>
+                                                                <p>Assigned to: <span class="text-primary"> <?php echo $employee_name?></span></p>
+                                                                <p><?php echo ($task['description']); ?></p>
+
 
                                                             </div>
                                                         </li>
@@ -1287,12 +1200,27 @@ include '../backend/dbconnection.php';
                                                 <ol class="dd-list">
                                                     <?php
                                                     $in_progessTasks = in_prograss_tasks();
-                                                    foreach ($in_progessTasks as $task) { ?>
+                                                    foreach ($in_progessTasks as $task) { 
+                                                        $select_q="SELECT CONCAT(`f_name`,' ',`l_name`) as `name` from `employees` where `id`= '$task[emp_id]'";
+                                                        $result=mysqli_query($conn,$select_q);
+                                                        if ($result) {
+                                                            $employee = mysqli_fetch_assoc($result);
+                                                            if ($employee) {
+                                                                $employee_name = $employee['name'];
+                                                            } else {
+                                                                $employee_name = 'Not Assigned';
+                                                            }
+                                                        } else {
+                                                            $employee_name = 'Not Assigned';
+                                                        }
+                
+                                                        ?>
                                                         <li class="dd-item" data-id="<?php echo $task['task_id']; ?>">
                                                             <div class="dd-handle">
                                                                 <h6><?php echo htmlspecialchars($task['title']); ?></h6>
                                                                 <span class="time"><span class="text-primary">Start: <?php echo $task['start_date']; ?></span> to <span class="text-danger">Complete: <?php echo $task['end_date']; ?></span></span>
-                                                                <p><?php echo htmlspecialchars($task['description']); ?></p>
+                                                                <p>Assigned to: <span class="text-primary"> <?php echo $employee_name?></span></p>
+                                                                <p><?php echo ($task['description']); ?></p>
 
                                                             </div>
                                                         </li>
@@ -1330,12 +1258,28 @@ include '../backend/dbconnection.php';
                                                 <ol class="dd-list">
                                                     <?php
                                                     $completedTasks = completed_tasks();
-                                                    foreach ($completedTasks as $task) { ?>
+                                                    foreach ($completedTasks as $task) { 
+                                                        $select_q="SELECT CONCAT(`f_name`,' ',`l_name`) as `name` from `employees` where `id`= '$task[emp_id]'";
+                                                        $result=mysqli_query($conn,$select_q);
+                                                        if ($result) {
+                                                            $employee = mysqli_fetch_assoc($result);
+                                                            if ($employee) {
+                                                                $employee_name = $employee['name'];
+                                                            } else {
+                                                                $employee_name = 'Not Assigned';
+                                                            }
+                                                        } else {
+                                                            $employee_name = 'Not Assigned';
+                                                        }
+                
+                                                        
+                                                        ?>
                                                         <li class="dd-item" data-id="<?php echo $task['task_id']; ?>">
                                                             <div class="dd-handle">
                                                                 <h6><?php echo htmlspecialchars($task['title']); ?></h6>
                                                                 <span class="time"><span class="text-primary">Start: <?php echo $task['start_date']; ?></span> to <span class="text-danger">Complete: <?php echo $task['end_date']; ?></span></span>
-                                                                <p><?php echo htmlspecialchars($task['description']); ?></p>
+                                                                <p>Assigned to: <span class="text-primary"> <?php echo $employee_name?></span></p>
+                                                                <p><?php echo ($task['description']); ?></p>
 
                                                             </div>
                                                         </li>
@@ -1361,12 +1305,6 @@ include '../backend/dbconnection.php';
                                     </div>
                                 </div>
                                 <form class="card-body" action="../backend/taskboard.php" method="post">
-                                    <!-- <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Task no. <span class="text-danger">*</span></label>
-                                    <div class="col-md-7">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div> -->
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label">Job title <span class="text-danger">*</span></label>
                                         <div class="col-md-7">
@@ -1374,7 +1312,7 @@ include '../backend/dbconnection.php';
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Select Employee<span class="text-danger">*</span></label>
+                                        <label class="col-md-3 col-form-label">Assign to<span class="text-danger">*</span></label>
                                         <div class="col-md-7">
                                             <select class="form-control show-tick" name="emp_id">
                                             <option>Select</option>
@@ -1398,30 +1336,60 @@ include '../backend/dbconnection.php';
                                         </div>
                                     </div>
                                     <div class="form-group row">
+                <label class="col-md-3 col-form-label">Priority <span class="text-danger">*</span></label>
+                <div class="col-md-7">
+                    <select class="form-control show-tick" name="priority">
+                        <option value="">Select</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Assigned By <span class="text-danger">*</span></label>
+                <div class="col-md-7">
+                    <select class="form-control show-tick" name="assigned_by">
+                        <option>Select</option>
+                        <?php 
+                        $sql="SELECT `id`, concat(`f_name`,' ',`l_name`) as `name` FROM `employees`"; // Modify this query as needed to get the list of possible assigners
+                        $res=mysqli_query($conn,$sql);
+                        if(mysqli_num_rows($res)){
+                            while($row=mysqli_fetch_assoc($res)){
+                                ?>
+                                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Range <span class="text-danger">*</span></label>
+                <div class="col-md-7">
+                    <div class="input-daterange input-group" data-provide="datepicker">
+                        <input type="text" class="form-control" name="start_date">
+                        <span class="input-group-addon"> to </span>
+                        <input type="text" class="form-control" name="end_date">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label">Status<span class="text-danger">*</span></label>
+                <div class="col-md-7">
+                    <select class="form-control show-tick" name="status">
+                        <option value="">Select</option>
+                        <option value="Planned">Planned</option>
+                        <option value="In progress">In progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+            </div>
+                                    <div class="form-group row">
                                         <label class="col-md-3 col-form-label">Description <span class="text-danger">*</span></label>
                                         <div class="col-md-7">
-                                            <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..." name="description"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Range <span class="text-danger">*</span></label>
-                                        <div class="col-md-7">
-                                            <div class="input-daterange input-group" data-provide="datepicker">
-                                                <input type="text" class="form-control" name="start_date">
-                                                <span class="input-group-addon"> to </span>
-                                                <input type="text" class="form-control" name="end_date">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label">Status<span class="text-danger">*</span></label>
-                                        <div class="col-md-7">
-                                            <select class="form-control show-tick" name="status">
-                                                <option value="">Select</option>
-                                                <option value="Planned">Planned</option>
-                                                <option value="In progress">In progress</option>
-                                                <option value="Completed">Completed</option>
-                                            </select>
+                                            <textarea rows="6" class="form-control no-resize" placeholder="Please type what you want..." name="description"></textarea>
                                         </div>
                                     </div>
 
@@ -1429,8 +1397,8 @@ include '../backend/dbconnection.php';
                                         <label class="col-md-3 col-form-label"></label>
                                         <div class="col-md-7">
                                             <button type="submit" class="btn btn-primary" name="submit_task">Submit</button>
-                                            <button type="submit" class="btn btn-outline-secondary">Cancel</button>
-                                        </div>
+                                            <a href="taskboard.php" class="btn btn-outline-secondary">Cancel</a>
+                                            </div>
                                     </div>
                                 </form>
                             </div>
@@ -1438,27 +1406,11 @@ include '../backend/dbconnection.php';
                     </div>
                 </div>
             </div>
-            <!-- Start main footer -->
-            <div class="section-body">
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12">
-                                Copyright © 2019 <a href="https://themeforest.net/user/puffintheme/portfolio">PuffinTheme</a>.
-                            </div>
-                            <div class="col-md-6 col-sm-12 text-md-right">
-                                <ul class="list-inline mb-0">
-                                    <li class="list-inline-item"><a href="../doc/index.html">Documentation</a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)">FAQ</a></li>
-                                    <li class="list-inline-item"><a href="javascript:void(0)" class="btn btn-outline-primary btn-sm">Buy Now</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
+             </div>
     </div>
+    <script>
+ CKEDITOR.replace('description');
+</script>
 
     <!-- Start Main project js, jQuery, Bootstrap -->
     <script src="../assets/bundles/lib.vendor.bundle.js"></script>
