@@ -816,32 +816,7 @@ include '../backend/payments.php';
                             </div>
                         </div>
                     </div>
-                    <div class="right">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="page-empty.html">Empty page</a>
-                                    <a class="dropdown-item" href="page-profile.html">Profile</a>
-                                    <a class="dropdown-item" href="page-search.html">Search Results</a>
-                                    <a class="dropdown-item" href="page-timeline.html">Timeline</a>
-                                    <a class="dropdown-item" href="page-invoices.html">Invoices</a>
-                                    <a class="dropdown-item" href="page-pricing.html">Pricing</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Auth</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="login.html">Login</a>
-                                    <a class="dropdown-item" href="register.html">Register</a>
-                                    <a class="dropdown-item" href="forgot-password.html">Forgot password</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="404.html">404 error</a>
-                                    <a class="dropdown-item" href="500.html">500 error</a>
-                                </div>
-                            </li>
-                        </ul>
-                                            </div>
+                 
                 </div>
             </div>
         </div>
@@ -874,19 +849,34 @@ include '../backend/payments.php';
                             </div>
                             <form class="card-body" method="post" action="../backend/payments.php?edit_id=<?php echo $edit_id;?>">
                                 <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Employee ID<span class="text-danger">*</span></label>
+                                    <label class="col-md-3 col-form-label">Employee<span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <input type="text" class="form-control" Required name="emp_id" value="<?php echo $payment['emp_id'] ?>">
-                                    </div>
+                                    <select class="form-control show-tick" name="emp_id">
+                                    <option value="">Select</option>
+                                    <?php 
+                                      $sql="SELECT `id`, concat(`f_name`,' ',`l_name`) as `name` FROM `employees`"; // Modify this query as needed to get the list of possible assigners
+                                      $res=mysqli_query($conn,$sql);
+                                      if($res->num_rows>0){
+                                        while($row=mysqli_fetch_assoc($res)){
+                                            $selected=($payment['emp_id']==$row['id']? 'selected': '');
+                                            echo"<option value='{$row['id']}' {$selected}>{$row['name']}</option>";
+                                        }
+                                      }
+                                    
+                                    
+                                    ?>
+                                    </select>        
+                                
+                                </div>
                                 </div>
                                 
-                                     <div class="form-group row">
+                                     <!-- <div class="form-group row">
                                     <label class="col-md-3 col-form-label"> Date</label>
                                     <div class="col-md-7">
                                         <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder=""
                                         name="date" value="<?php echo date('m-d-Y', strtotime($payment['date'])) ?>">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Salary <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
@@ -909,22 +899,8 @@ include '../backend/payments.php';
                                                         } ?>>Credit Card</option>
                                                                                    </select>
                                     </div>
-                                </div>                              <div class="form-group row">
-                                    <label class="col-md-3 col-form-label">Payment Status <span class="text-danger">*</span></label>
-                                    <div class="col-md-7">
-                                      <select class="form-control" name="payment_status">
-                                            <option >Select...</option>
-                                            <option <?php if ($payment['payment_status'] == 'Paid') {
-                                                            echo 'selected';
-                                                        } ?>>Paid</option>
-                                            <option <?php if ($payment['payment_status'] == 'UnPaid') {
-                                                            echo 'selected';
-                                                        } ?>>Unpaid</option>
-                                            <!-- <option value="Category 3">Pending</option> -->
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
+                                </div>                     
+                                  <div class="form-group row">
                                     <label class="col-md-3 col-form-label"></label>
                                     <div class="col-md-7">
                                         <button type="submit" class="btn btn-primary" name="edit_salary">Update</button>
@@ -938,26 +914,7 @@ include '../backend/payments.php';
                 </div>
             </div>
         </div>
-        <!-- Start main footer -->
-        <div class="section-body">
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            Copyright © 2019 <a href="https://themeforest.net/user/puffintheme/portfolio">PuffinTheme</a>.
-                        </div>
-                        <div class="col-md-6 col-sm-12 text-md-right">
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item"><a href="../doc/index.html">Documentation</a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)">FAQ</a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)" class="btn btn-outline-primary btn-sm">Buy Now</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>    
+           </div>    
 </div>
 
 <!-- Start Main project js, jQuery, Bootstrap -->
