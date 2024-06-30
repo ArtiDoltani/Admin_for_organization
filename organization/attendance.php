@@ -1025,16 +1025,21 @@
                     $date_of_attendance=date('Y-m-'.$j.'');
                   //  echo $date_of_attendance .' ';
                    // echo $employees_id[$counter];   
-                   $employee_attendance=mysqli_query($conn,"SELECT `is_absent` FROM `attendance`
+                   $employee_attendance=mysqli_query($conn,"SELECT `is_absent`,`status` FROM `attendance`
                    WHERE `emp_id`='".$employees_id[$counter]."' and `date`= '".$date_of_attendance."'") or die(mysqli_errno($conn));
                  $is_attendance_added=mysqli_num_rows($employee_attendance);
                  if($is_attendance_added>0){
                     $employeeAttendance=mysqli_fetch_assoc($employee_attendance);
-                    if($employeeAttendance['is_absent']==0){
+                    if($employeeAttendance['status']=='present'){
                         echo '
                         <td><i class="icon-user-following"></i> </td>
                         ';
-                    }else{
+                    }elseif($employeeAttendance['status']=='leave'){
+                        echo'<td class="text-warning">L</td>';
+
+                    }
+                    
+                    else{
                         echo ' <td><i class="icon-user-unfollow text-danger"></i> </td>';
                     }
                     // echo '
@@ -1328,44 +1333,7 @@
                                             <td><i class="icon-user-unfollow text-danger"></i> </td>
                                             <td><i class="icon-user-following"></i> </td>
                                         </tr>
-                                        <tr>
-                                            <td>Maryam Amiri</td>
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>                                            
-                                            <td><i class="icon-user-following"></i> </td>
-
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>                                            
-                                            <td><i class="icon-user-following"></i> </td>
-
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>                                            
-                                            <td><i class="icon-user-following"></i> </td>
-
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-unfollow text-danger"></i> </td>
-                                            <td><i class="icon-user-following"></i> </td>
-                                        </tr>
-                                        <tr>
+                                                                  <tr>
                                             <td>Hossein Shams</td>
                                             <td><i class="icon-user-unfollow text-danger"></i> </td>
                                             <td><i class="icon-user-following"></i> </td>
@@ -1410,26 +1378,7 @@
                 </div>
             </div>
         </div> -->
-        <!-- Start main footer -->
-        <div class="section-body">
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                            Copyright © 2019 <a href="https://themeforest.net/user/puffintheme/portfolio">PuffinTheme</a>.
-                        </div>
-                        <div class="col-md-6 col-sm-12 text-md-right">
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item"><a href="../doc/index.html">Documentation</a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)">FAQ</a></li>
-                                <li class="list-inline-item"><a href="javascript:void(0)" class="btn btn-outline-primary btn-sm">Buy Now</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>    
+          </div>    
 </div>
 
 <!-- Start Main project js, jQuery, Bootstrap -->
