@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
 
         if (employee_sigin_exists($emp_id)) {
             $sql = "UPDATE `attendance` SET `logout_time`='$logout_time' WHERE
-                    `emp_id`='$emp_id' and `date`='$date' and `is_absent`=0";
+                    `emp_id`='$emp_id' and `date`='$date' and `status`='present'";
             if ($conn->query($sql)) {
                 echo "<script>alert('Success! Logged Out.');
                         window.location.href='../organization/user_login_for_attend.php';
@@ -68,8 +68,8 @@ if (isset($_POST['submit'])) {
             window.location.href='../organization/user_login_for_attend.php';
             </script>";
             } else {
-                $sql_insert = "INSERT INTO `attendance`(`emp_id`, `is_absent`) VALUES
-                ('$emp_id',1)";
+                $sql_insert = "INSERT INTO `attendance`(`emp_id`, `status`) VALUES
+                ('$emp_id','absent')";
                 if ($conn->query($sql_insert)) {
                     echo "<script>alert('Marked Absent');
                     window.location.href='../organization/user_login_for_attend.php';
