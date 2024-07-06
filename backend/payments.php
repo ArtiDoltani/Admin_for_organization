@@ -1,6 +1,6 @@
 <?php
 // Insert Data into payment table
-function create_payment($emp_id, $date, $salary, $payment_method)
+function create_payment($emp_id, $date, $salary, $payment_method,$cheque_number)
 {
     include 'dbconnection.php';
     $query="SELECT `salary` from `employees` where `id`= '$emp_id'";
@@ -9,8 +9,8 @@ function create_payment($emp_id, $date, $salary, $payment_method)
     if($result){
         $emp_salary=mysqli_fetch_assoc($result);
         if($salary < $emp_salary['salary']){
-            $sql = "INSERT INTO `payments`(`emp_id`, `date`, `salary`, `payment_method`, `payment_status`) VALUES 
-            ('$emp_id','$date','$salary','$payment_method','Unpaid')";
+            $sql = "INSERT INTO `payments`(`emp_id`, `date`, `salary`, `payment_method`,`cheque_number` `payment_status`) VALUES 
+            ('$emp_id','$date','$salary','$payment_method','$cheque_number','Unpaid')";
             if ($conn->query($sql)) {
                 return true;
             } else {
@@ -18,8 +18,8 @@ function create_payment($emp_id, $date, $salary, $payment_method)
             }
         }
         elseif($salary == $emp_salary['salary']){
-            $sql = "INSERT INTO `payments`(`emp_id`, `date`, `salary`, `payment_method`, `payment_status`) VALUES 
-            ('$emp_id','$date','$salary','$payment_method','Paid')";
+            $sql = "INSERT INTO `payments`(`emp_id`, `date`, `salary`, `payment_method`,`cheque_number`, `payment_status`) VALUES 
+            ('$emp_id','$date','$salary','$payment_method','$cheque_number','Paid')";
             if ($conn->query($sql)) {
                 return true;
             } else {
@@ -93,8 +93,9 @@ if (isset($_POST['submit_salary'])) {
     $salary = $_POST['salary'];
     $payment_method = $_POST['payment_method'];
     // $payment_status = $_POST['payment_status'];
+    $cheque_number=$_POST['cheque_number'];
     
-        if (create_payment($emp_id, $date, $salary, $payment_method)) {
+        if (create_payment($emp_id, $date, $salary, $payment_method,$cheque_number)) {
             echo "<script>alert('Success! Salary Added');
             window.location.href='../organization/payments.php';
             </script>";

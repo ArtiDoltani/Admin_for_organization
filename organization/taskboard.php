@@ -250,28 +250,7 @@ include '../backend/dbconnection.php';
                 </div>
             </div>
         </div>
-        <!-- Start Theme panel do not add in project -->
-        <div class="theme_div">
-            <div class="card">
-                <div class="card-body">
-                    <ul class="list-group list-unstyled">
-                        <li class="list-group-item mb-2">
-                            <p>Light Version</p>
-                            <a href="../university/index.html"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
-                        </li>
-                        <li class="list-group-item mb-2">
-                            <p>Dark Version</p>
-                            <a href="../university-dark/index.html"><img src="../assets/images/themes/dark.png" class="img-fluid" alt="" /></a>
-                        </li>
-                        <li class="list-group-item mb-2">
-                            <p>RTL Version</p>
-                            <a href="../university-rtl/index.html"><img src="../assets/images/themes/rtl.png" class="img-fluid" alt="" /></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Start Quick menu with more functio -->
+               <!-- Start Quick menu with more functio -->
         <div class="user_div">
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#righttab-statistics">Statistics</a></li>
@@ -376,16 +355,7 @@ include '../backend/dbconnection.php';
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body top_counter">
-                            <div class="icon bg-indigo"><i class="fa fa-smile-o"></i> </div>
-                            <div class="content">
-                                <span>Smiley Face</span>
-                                <h5 class="number mb-0">10K</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                   </div>
                 <div class="tab-pane fade" id="righttab-Result" role="tabpanel">
                     <div class="card">
                         <div class="card-header">
@@ -799,7 +769,7 @@ include '../backend/dbconnection.php';
                         <ul class="metismenu">
                             <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                             <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
-                            <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
+                            <!-- <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li> -->
                             <li><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
                             <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                             <li class="g_heading">Extra</li>
@@ -832,39 +802,9 @@ include '../backend/dbconnection.php';
                 <div class="container-fluid">
                     <div class="page-header">
                         <div class="left">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="What you want to find">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button">Search</button>
-                                </div>
                             </div>
-                        </div>
                         <div class="right">
-                            <ul class="nav nav-pills">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="page-empty.html">Empty page</a>
-                                        <a class="dropdown-item" href="page-profile.html">Profile</a>
-                                        <a class="dropdown-item" href="page-search.html">Search Results</a>
-                                        <a class="dropdown-item" href="page-timeline.html">Timeline</a>
-                                        <a class="dropdown-item" href="page-invoices.html">Invoices</a>
-                                        <a class="dropdown-item" href="page-pricing.html">Pricing</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Auth</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="login.html">Login</a>
-                                        <a class="dropdown-item" href="register.html">Register</a>
-                                        <a class="dropdown-item" href="forgot-password.html">Forgot password</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="404.html">404 error</a>
-                                        <a class="dropdown-item" href="500.html">500 error</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="notification d-flex">
+                           <div class="notification d-flex">
                                 <div class="dropdown d-flex">
                                     <a href="javascript:void(0)" class="chip ml-3" data-toggle="dropdown">
                                         <span class="avatar" style="background-image: url(../assets/images/xs/avatar5.jpg)"></span> George</a>
