@@ -62,7 +62,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                         <li class="active"><a href="task.php"><i class="fa fa-list-ul"></i><span>Tasks</span></a></li>
                         <li><a href="leave.html" data-toggle="modal" data-target="#leaveModal"><i class="fa fa-flag"></i><span>Apply Leave</span></a></li>
                         <li><a href="leave_status.php"><i class="fa fa-folder"></i><span>Leave status</span></a></li>
-                        </ul>
+                        <li><a href="my_performance.php"><i class="fa fa-line-chart"></i><span>My Performance</span></a></li>  
+                    </ul>
                 </nav>
             </div>
             </div>
@@ -103,10 +104,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                             <li class="breadcrumb-item active" aria-current="page">Tasks</li>
                         </ol>
                     </div>
-                    <ul class="nav nav-tabs page-header-tab">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#admin-Dashboard">Dashboard</a></li>
-                                           </ul>
-                </div>
+                                   </div>
             </div>
         </div>
         <div class="section-body mt-4">
