@@ -63,6 +63,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                         <li><a href="leave.html" data-toggle="modal" data-target="#leaveModal"><i class="fa fa-flag"></i><span>Apply Leave</span></a></li>
                         <li><a href="leave_status.php"><i class="fa fa-folder"></i><span>Leave status</span></a></li>
                         <li><a href="my_performance.php"><i class="fa fa-line-chart"></i><span>My Performance</span></a></li>  
+                        <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
+
                     </ul>
                 </nav>
             </div>
@@ -126,6 +128,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                                     include '../backend/dbconnection.php';
                                     $sql="SELECT * FROM `taskboard` where emp_id='$_SESSION[emp_id]'";
                                     $res=mysqli_query($conn,$sql);
+                                    $currentDate=date('Y-m-d');
                                     if($res){
                                         while($task=mysqli_fetch_assoc($res)){
                                             echo '
@@ -134,12 +137,23 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                                             <td>
                                                 <h6 class="mb-0">' . $task['title'] . '</h6>
                                                 <span>' . $task['description'] . '</span>
-                                            </td>
-                                            <td>
-                                                <div class="text-info">Start: ' . $task['start_date'] . '</div>
-                                                <div class="text-pink">End: ' . $task['end_date'] . '</div>
                                             </td>';
-        
+                                            if($task['end_date']<$currentDate){
+                                                echo'
+                                                <td>
+                                                    <div class="text-info">Start: ' . $task['start_date'] . '</div>
+                                                    <div class="text-pink">End: ' . $task['end_date'] . '</div>
+                                                </td>';
+            
+                                            }
+                                            else{
+                                                echo'
+                                                <td>
+                                                    <div class="text-info">Start: ' . $task['start_date'] . '</div>
+                                                    <div class="text-info">End: ' . $task['end_date'] . '</div>
+                                                </td>';
+            
+                                            }
                                                 if ($task['status'] == 'Planned') {
                                                     echo '
                                                 <td>

@@ -66,7 +66,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                             <li><a href="task.php"><i class="fa fa-list-ul"></i><span>Tasks</span></a></li>
                             <li><a href="#" data-toggle="modal" data-target="#leaveModal"><i class="fa fa-flag"></i><span>Apply Leave</span></a></li>
                             <li><a href="leave_status.php"><i class="fa fa-folder"></i><span>Leave status</span></a></li>
-                       <li><a href="my_performance.php"><i class="fa fa-line-chart"></i><span>My Performance</span></a></li>
+                            <li><a href="my_performance.php"><i class="fa fa-line-chart"></i><span>My Performance</span></a></li>
+                            <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
+
                         </ul>
                     </nav>
                 </div>

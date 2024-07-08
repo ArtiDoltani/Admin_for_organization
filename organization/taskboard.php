@@ -934,6 +934,8 @@ include '../backend/dbconnection.php';
                                         } else {
                                             $employee_name = 'Not Assigned';
                                         }
+                                        $currentdate=date('Y-m-d');
+
                                         echo '
                                     <tr>
                                     <td>' . $task['task_id'] . '</td>
@@ -944,11 +946,21 @@ include '../backend/dbconnection.php';
                                     <td>
                                     <h6 class="mb-0">' . $employee_name . '</h6>
 
-                                       </td>
-                                    <td>
-                                        <div class="text-info">Start: ' . $task['start_date'] . '</div>
-                                        <div class="text-pink">End: ' . $task['end_date'] . '</div>
-                                    </td>';
+                                       </td>';
+                                        if($task['end_date']< $currentdate){
+                                            echo'
+                                            <td>
+                                                <div class="text-info">Start: ' . $task['start_date'] . '</div>
+                                                <div class="text-pink">End: ' . $task['end_date'] . '</div>
+                                            </td>';
+                                        }else{
+                                      echo'      <td>
+                                            <div class="text-info">Start: ' . $task['start_date'] . '</div>
+                                            <div class="text-info">End: ' . $task['end_date'] . '</div>
+                                        </td>';
+
+                                        }
+
 
                                         if ($task['status'] == 'Planned') {
                                             echo '
