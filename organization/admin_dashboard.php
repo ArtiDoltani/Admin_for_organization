@@ -792,7 +792,7 @@ exit;
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
                         <!-- <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li> -->
                         <li><a href="app-contact.php"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
-                                           </ul>
+                        </ul>
                 </nav>
             </div>
             <div class="tab-pane fade" id="menu-admin" role="tabpanel">
@@ -1557,7 +1557,7 @@ exit;
                                                     <?php 
                                                     include_once '../backend/dbconnection.php';
                                                     $sql="SELECT * FROM `employees`
-                                                    ORDER BY id DESC LIMIT 5";
+                                                    ORDER BY id DESC LIMIT 10";
                                                     $result=$conn->query($sql);
                                                     if($result->num_rows>0){
                                                         foreach($result as $employee){
