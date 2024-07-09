@@ -88,7 +88,7 @@
             if (create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id,$em_password)) {
                 echo "<script>
         alert('Employee Added Successfully');
-      
+      window.location.href='../organization/employees.php';
         </script>
         ";
             } else {

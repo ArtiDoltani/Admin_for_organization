@@ -797,7 +797,7 @@
                 <div class="tab-pane fade" id="menu-uni" role="tabpanel">
                     <nav class="sidebar-nav">
                         <ul class="metismenu">
-                            <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                            <li><a href="admin_dashboard.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                             <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
                             <!-- <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li> -->
                             <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>

@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $_SESSION['loggedin']=true;
             $_SESSION['Email']=$email;
          echo"<script>alert('loggedin');
-         window.location.href='../organization/index.php';
+         window.location.href='../organization/admin_dashboard.php';
          </script>";
         }
         else{
