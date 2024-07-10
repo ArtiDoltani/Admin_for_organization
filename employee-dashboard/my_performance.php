@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     </div>
     <div id="main_content">
         <!-- Start Main top header -->
-        <div id="header_top" class="header_top">
+        <!-- <div id="header_top" class="header_top">
             <div class="container">
                 <div class="hleft">
                     <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
@@ -46,11 +46,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                     <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Start Quick menu with more functions -->
         <!-- Start Main leftbar navigation -->
         <div id="left-sidebar" class="sidebar">
-            <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+            <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">Employee</a></li>
             </ul>

@@ -10,7 +10,7 @@ include '../backend/taskboard.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <title>:: Ericsson :: Taskboard</title>
+    <title>Taskboard</title>
     <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
 
     <!-- Bootstrap Core and vandor -->
@@ -33,7 +33,7 @@ include '../backend/taskboard.php';
 
     <div id="main_content">
         <!-- Start Main top header -->
-        <div id="header_top" class="header_top">
+        <!-- <div id="header_top" class="header_top">
             <div class="container">
                 <div class="hleft">
                     <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
@@ -52,7 +52,8 @@ include '../backend/taskboard.php';
                     <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>
                 </div>
             </div>
-        </div>
+        </div> -->
+        
         <!-- Start Rightbar setting panel -->
         <div id="rightsidebar" class="right_sidebar">
             <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
@@ -253,7 +254,7 @@ include '../backend/taskboard.php';
         </div>
                         <!-- Start Main leftbar navigation -->
         <div id="left-sidebar" class="sidebar">
-            <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+            <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">Organization</a></li>
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-admin">Admin</a></li>
@@ -264,17 +265,14 @@ include '../backend/taskboard.php';
                         <ul class="metismenu">
                             <li><a href="admin_dashboard.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                             <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
-                            <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
+                            <!-- <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li> -->
                             <li><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
                             <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                             <li class="g_heading">Extra</li>
                             <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
                             <!-- <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li> -->
                             <li><a href="app-contact.php"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
-                            <!-- <li><a href="app-filemanager.html"><i class="fa fa-folder"></i><span>FileManager</span></a></li>
-                            <li><a href="our-centres.html"><i class="fa fa-map"></i><span>OurCentres</span></a></li>
-                            <li><a href="gallery.html"><i class="fa fa-camera-retro"></i><span>Gallery</span></a></li> -->
-                        </ul>
+                              </ul>
                     </nav>
                 </div>
                 <div class="tab-pane fade show active" id="menu-admin" role="tabpanel">
@@ -284,23 +282,21 @@ include '../backend/taskboard.php';
                             <li class="active"><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                             <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                             <li><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
-                            <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
-                        </ul>
+                                                   </ul>
                     </nav>
                 </div>
             </div>
         </div>
         <!-- Start project content area -->
         <div class="page">
-            <!-- Start Page header -->
-                    
+            <!-- Start Page header -->         
             <div class="section-body">
                 <div class="container-fluid">
                     <div class="d-flex justify-content-between align-items-center ">
                         <div class="header-action">
                             <h1 class="page-title">TaskBoard</h1>
                             <ol class="breadcrumb page-breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
+                                <li class="breadcrumb-item"><a href="#">Matz Solutions</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Edit Task</li>
                             </ol>
                         </div>

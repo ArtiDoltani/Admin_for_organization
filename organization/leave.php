@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+header("location:all_login.html");
+exit;
+}
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -5,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Ericsson :: Leave</title>
+<title> Leave</title>
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
@@ -23,27 +30,7 @@
 </div>
 
 <div id="main_content">
-    <!-- Start Main top header -->
-    <div id="header_top" class="header_top">
-        <div class="container">
-            <div class="hleft">
-                <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
-                    <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
-                    <a href="app-email.html"  class="nav-link icon app_inbox"><i class="fe fe-inbox" data-toggle="tooltip" data-placement="right" title="Inbox"></i></a>
-                    <a href="app-filemanager.html"  class="nav-link icon app_file xs-hide"><i class="fe fe-folder" data-toggle="tooltip" data-placement="right" title="File Manager"></i></a>
-                    <a href="app-social.html"  class="nav-link icon xs-hide"><i class="fe fe-share-2" data-toggle="tooltip" data-placement="right" title="Social Media"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon theme_btn"><i class="fe fe-feather"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                </div>
-            </div>
-            <div class="hright">
-                <a href="javascript:void(0)" class="nav-link icon right_tab"><i class="fe fe-align-right"></i></a>
-                <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
-            </div>
-        </div>
-    </div>
+   
     <!-- Start Rightbar setting panel -->
     <div id="rightsidebar" class="right_sidebar">
         <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
@@ -743,7 +730,7 @@
     </div>
     <!-- Start Main leftbar navigation -->
     <div id="left-sidebar" class="sidebar">
-        <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+        <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-admin">Admin</a></li>
@@ -771,8 +758,7 @@
                         <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                         <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li class="active"><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
-                        <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
-                    </ul>
+                        </ul>
                 </nav>
             </div>
         </div>
@@ -793,11 +779,11 @@
                     <div class="header-action">
                         <h1 class="page-title">Leave</h1>
                         <ol class="breadcrumb page-breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
+                            <li class="breadcrumb-item"><a href="#">Matz Solutions</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Leave</li>
                         </ol>
                     </div>
-                    <a href="javascript:void(0)" class="btn btn-info btn-sm">Export Excel</a>
+                    <!-- <a href="javascript:void(0)" class="btn btn-info btn-sm">Export Excel</a> -->
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ function create_payment($emp_id, $date, $salary, $payment_method,$cheque_number)
     if($result){
         $emp_salary=mysqli_fetch_assoc($result);
         if($salary < $emp_salary['salary']){
-            $sql = "INSERT INTO `payments`(`emp_id`, `date`, `salary`, `payment_method`,`cheque_number` `payment_status`) VALUES 
+            $sql = "INSERT INTO `payments`(`emp_id`, `date`, `salary`, `payment_method`,`cheque_number` ,`payment_status`) VALUES 
             ('$emp_id','$date','$salary','$payment_method','$cheque_number','Unpaid')";
             if ($conn->query($sql)) {
                 return true;
@@ -100,8 +100,9 @@ if (isset($_POST['submit_salary'])) {
             window.location.href='../organization/payments.php';
             </script>";
         } else {
-            echo "<script>alert('Sorry! Server Down');
-            window.location.href='../organization/payments.php';
+            echo "<script>alert('Please, Add Employee Salary First');
+                 window.location.href='../organization/payments.php';
+         
             </script>";
         }
    }

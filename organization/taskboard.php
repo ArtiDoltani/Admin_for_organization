@@ -9,7 +9,7 @@ include '../backend/dbconnection.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <title>:: Ericsson :: Taskboard</title>
+    <title> Taskboard</title>
     <script src="https://cdn.ckeditor.com/4.19.1/standard/ckeditor.js"></script>
 
     <!-- Bootstrap Core and vandor -->
@@ -31,27 +31,7 @@ include '../backend/dbconnection.php';
     </div>
 
     <div id="main_content">
-        <!-- Start Main top header -->
-        <div id="header_top" class="header_top">
-            <div class="container">
-                <div class="hleft">
-                    <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
-                    <div class="dropdown">
-                        <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
-                        <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
-                        <a href="app-email.html" class="nav-link icon app_inbox"><i class="fe fe-inbox" data-toggle="tooltip" data-placement="right" title="Inbox"></i></a>
-                        <a href="app-filemanager.html" class="nav-link icon app_file xs-hide"><i class="fe fe-folder" data-toggle="tooltip" data-placement="right" title="File Manager"></i></a>
-                        <a href="app-social.html" class="nav-link icon xs-hide"><i class="fe fe-share-2" data-toggle="tooltip" data-placement="right" title="Social Media"></i></a>
-                        <a href="javascript:void(0)" class="nav-link icon theme_btn"><i class="fe fe-feather"></i></a>
-                        <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                    </div>
-                </div>
-                <div class="hright">
-                    <a href="javascript:void(0)" class="nav-link icon right_tab"><i class="fe fe-align-right"></i></a>
-                    <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>
-                </div>
-            </div>
-        </div>
+       
         <!-- Start Rightbar setting panel -->
         <div id="rightsidebar" class="right_sidebar">
             <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
@@ -758,7 +738,7 @@ include '../backend/dbconnection.php';
         </div>
         <!-- Start Main leftbar navigation -->
         <div id="left-sidebar" class="sidebar">
-            <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+            <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">Organization</a></li>
                 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-admin">Admin</a></li>
@@ -789,8 +769,7 @@ include '../backend/dbconnection.php';
                             <li class="active"><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                             <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                             <li><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
-                            <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
-                        </ul>
+                            </ul>
                     </nav>
                 </div>
             </div>
@@ -801,25 +780,8 @@ include '../backend/dbconnection.php';
             <div class="section-body" id="page_top">
                 <div class="container-fluid">
                     <div class="page-header">
-                        <div class="left">
-                            </div>
-                        <div class="right">
-                           <div class="notification d-flex">
-                                <div class="dropdown d-flex">
-                                    <a href="javascript:void(0)" class="chip ml-3" data-toggle="dropdown">
-                                        <span class="avatar" style="background-image: url(../assets/images/xs/avatar5.jpg)"></span> George</a>
-                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                        <a class="dropdown-item" href="page-profile.html"><i class="dropdown-icon fe fe-user"></i> Profile</a>
-                                        <a class="dropdown-item" href="app-setting.html"><i class="dropdown-icon fe fe-settings"></i> Settings</a>
-                                        <a class="dropdown-item" href="app-email.html"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="dropdown-icon fe fe-mail"></i> Inbox</a>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-send"></i> Message</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
-                                        <a class="dropdown-item" href="login.html"><i class="dropdown-icon fe fe-log-out"></i> Sign out</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                       
+                        
                     </div>
                 </div>
             </div>
@@ -830,7 +792,7 @@ include '../backend/dbconnection.php';
                         <div class="header-action">
                             <h1 class="page-title">TaskBoard</h1>
                             <ol class="breadcrumb page-breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
+                                <li class="breadcrumb-item"><a href="#">Matz Solutions</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">TaskBoard</li>
                             </ol>
                         </div>

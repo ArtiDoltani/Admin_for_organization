@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+header("location:all_login.html");
+exit;
+}
+?>
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -26,27 +33,6 @@
 </div>
 
 <div id="main_content">
-    <!-- Start Main top header -->
-    <div id="header_top" class="header_top">
-        <div class="container">
-            <div class="hleft">
-                <a class="header-brorganization"index.php"><i class="fa fa-graduation-cap brand-logo"></i></a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
-                    <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
-                    <a href="app-email.html"  class="nav-link icon app_inbox"><i class="fe fe-inbox" data-toggle="tooltip" data-placement="right" title="Inbox"></i></a>
-                    <a href="app-filemanager.html"  class="nav-link icon app_file xs-hide"><i class="fe fe-folder" data-toggle="tooltip" data-placement="right" title="File Manager"></i></a>
-                    <a href="app-social.html"  class="nav-link icon xs-hide"><i class="fe fe-share-2" data-toggle="tooltip" data-placement="right" title="Social Media"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon theme_btn"><i class="fe fe-feather"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                </div>
-            </div>
-            <div class="hright">
-                <a href="javascript:void(0)" class="nav-link icon right_tab"><i class="fe fe-align-right"></i></a>
-                <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
-            </div>
-        </div>
-    </div>
     <!-- Start Rightbar setting panel -->
     <div id="rightsidebar" class="right_sidebar">
         <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
@@ -229,27 +215,7 @@
             </div>
         </div>
     </div>
-    <!-- Start Theme panel do not add in project -->
-    <div class="theme_div">
-        <div class="card">
-            <div class="card-body">
-                <ul class="list-group list-unstyled">
-                    <li class="list-group-item mb-2">
-                        <p>Light Version</p>
-                        <a href="../organization/index.php"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
-                    </li>
-                    <li class="list-group-item mb-2">
-                        <p>Dark Version</p>
-                        <a href="../university-dark/index.html"><img src="../assets/images/themes/dark.png" class="img-fluid" alt="" /></a>
-                    </li>
-                    <li class="list-group-item mb-2">
-                        <p>RTL Version</p>
-                        <a href="../university-rtl/index.html"><img src="../assets/images/themes/rtl.png" class="img-fluid" alt="" /></a>
-                    </li>
-                </ul>
-            </div>
-        </div>        
-    </div>
+ 
     <!-- Start Quick menu with more functio -->
     <div class="user_div">
         <ul class="nav nav-tabs">
@@ -767,7 +733,7 @@
     </div>
     <!-- Start Main leftbar navigation -->
     <div id="left-sidebar" class="sidebar">
-        <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+        <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-admin">Admin</a></li>
@@ -784,7 +750,7 @@
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
                         <!-- <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li> -->
-                        <li><a href="app-contact.html"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
+                        <li><a href="app-contact.php"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
                         </ul>
                 </nav>
             </div>
@@ -810,7 +776,7 @@
                     <div class="header-action">
                         <h1 class="page-title">Employees</h1>
                         <ol class="breadcrumb page-breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
+                            <li class="breadcrumb-item"><a href="#">Matz Solutions</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Employees</li>
                         </ol>
                     </div>

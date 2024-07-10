@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Ericsson :: Holiday</title>
+<title>:: Matz :: Holiday</title>
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
@@ -27,27 +27,7 @@
 </div>
 
 <div id="main_content">
-    <!-- Start Main top header -->
-    <div id="header_top" class="header_top">
-        <div class="container">
-            <div class="hleft">
-                <a class="header-brand" href="index.php"><i class="fa fa-graduation-cap brand-logo"></i></a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
-                    <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
-                    <a href="app-email.html"  class="nav-link icon app_inbox"><i class="fe fe-inbox" data-toggle="tooltip" data-placement="right" title="Inbox"></i></a>
-                    <a href="app-filemanager.html"  class="nav-link icon app_file xs-hide"><i class="fe fe-folder" data-toggle="tooltip" data-placement="right" title="File Manager"></i></a>
-                    <a href="app-social.html"  class="nav-link icon xs-hide"><i class="fe fe-share-2" data-toggle="tooltip" data-placement="right" title="Social Media"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon theme_btn"><i class="fe fe-feather"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                </div>
-            </div>
-            <div class="hright">
-                <a href="javascript:void(0)" class="nav-link icon right_tab"><i class="fe fe-align-right"></i></a>
-                <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
-            </div>
-        </div>
-    </div>
+   
     <!-- Start Rightbar setting panel -->
     <div id="rightsidebar" class="right_sidebar">
         <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
@@ -230,27 +210,7 @@
             </div>
         </div>
     </div>
-    <!-- Start Theme panel do not add in project -->
-    <div class="theme_div">
-        <div class="card">
-            <div class="card-body">
-                <ul class="list-group list-unstyled">
-                    <li class="list-group-item mb-2">
-                        <p>Light Version</p>
-                        <a href="../university/index.html"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
-                    </li>
-                    <li class="list-group-item mb-2">
-                        <p>Dark Version</p>
-                        <a href="../university-dark/index.html"><img src="../assets/images/themes/dark.png" class="img-fluid" alt="" /></a>
-                    </li>
-                    <li class="list-group-item mb-2">
-                        <p>RTL Version</p>
-                        <a href="../university-rtl/index.html"><img src="../assets/images/themes/rtl.png" class="img-fluid" alt="" /></a>
-                    </li>
-                </ul>
-            </div>
-        </div>        
-    </div>
+    
     <!-- Start Quick menu with more functio -->
     <div class="user_div">
         <ul class="nav nav-tabs">
@@ -768,7 +728,7 @@
     </div>
     <!-- Start Main leftbar navigation -->
     <div id="left-sidebar" class="sidebar">
-        <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+        <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-admin">Admin</a></li>
@@ -796,174 +756,14 @@
                          <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                           <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
-                        <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
-                    </ul>
+                       </ul>
                 </nav>
             </div>
         </div>
     </div>
     <!-- Start project content area -->
     <div class="page">
-        <!-- Start Page header -->
-        <div class="section-body" id="page_top" >
-            <div class="container-fluid">
-                <div class="page-header">
-                    <div>                        
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="What you want to find">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Search</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <ul class="nav nav-pills">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="page-empty.html">Empty page</a>
-                                    <a class="dropdown-item" href="page-profile.html">Profile</a>
-                                    <a class="dropdown-item" href="page-search.html">Search Results</a>
-                                    <a class="dropdown-item" href="page-timeline.html">Timeline</a>
-                                    <a class="dropdown-item" href="page-invoices.html">Invoices</a>
-                                    <a class="dropdown-item" href="page-pricing.html">Pricing</a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Auth</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="login.html">Login</a>
-                                    <a class="dropdown-item" href="register.html">Register</a>
-                                    <a class="dropdown-item" href="forgot-password.html">Forgot password</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="404.html">404 error</a>
-                                    <a class="dropdown-item" href="500.html">500 error</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="notification d-flex">
-                            <div class="dropdown d-flex">
-                                <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-language"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/us.svg" alt="">English</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/es.svg" alt="">Spanish</a>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/jp.svg" alt="">japanese</a>
-                                    <a class="dropdown-item" href="#"><img class="w20 mr-2" src="../assets/images/flags/bl.svg" alt="">France</a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-flex">
-                                <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success nav-unread"></span></a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <ul class="right_chat list-unstyled w350 p-0">
-                                        <li class="online">
-                                            <a href="javascript:void(0);" class="media">
-                                                <img class="media-object" src="../assets/images/xs/avatar4.jpg" alt="">
-                                                <div class="media-body">
-                                                    <span class="name">Donald Gardner</span>
-                                                    <div class="message">It is a long established fact that a reader</div>
-                                                    <small>11 mins ago</small>
-                                                    <span class="badge badge-outline status"></span>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="online">
-                                            <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="../assets/images/xs/avatar5.jpg" alt="">
-                                                <div class="media-body">
-                                                    <span class="name">Wendy Keen</span>
-                                                    <div class="message">There are many variations of passages of Lorem Ipsum</div>
-                                                    <small>18 mins ago</small>
-                                                    <span class="badge badge-outline status"></span>
-                                                </div>
-                                            </a>                            
-                                        </li>
-                                        <li class="offline">
-                                            <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="../assets/images/xs/avatar2.jpg" alt="">
-                                                <div class="media-body">
-                                                    <span class="name">Matt Rosales</span>
-                                                    <div class="message">Contrary to popular belief, Lorem Ipsum is not simply</div>
-                                                    <small>27 mins ago</small>
-                                                    <span class="badge badge-outline status"></span>
-                                                </div>
-                                            </a>                            
-                                        </li>
-                                        <li class="online">
-                                            <a href="javascript:void(0);" class="media">
-                                                <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt="">
-                                                <div class="media-body">
-                                                    <span class="name">Phillip Smith</span>
-                                                    <div class="message">It has roots in a piece of classical Latin literature from 45 BC</div>
-                                                    <small>33 mins ago</small>
-                                                    <span class="badge badge-outline status"></span>
-                                                </div>
-                                            </a>                            
-                                        </li>                        
-                                    </ul>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-flex">
-                                <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-1" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="badge badge-primary nav-unread"></span></a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <ul class="list-unstyled feeds_widget">
-                                        <li>
-                                            <div class="feeds-left">
-                                                <span class="avatar avatar-blue"><i class="fa fa-check"></i></span>
-                                            </div>
-                                            <div class="feeds-body ml-3">
-                                                <p class="text-muted mb-0">Campaign <strong class="text-blue font-weight-bold">Holiday</strong> is nearly reach budget limit.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="feeds-left">
-                                                <span class="avatar avatar-green"><i class="fa fa-user"></i></span>
-                                            </div>
-                                            <div class="feeds-body ml-3">
-                                                <p class="text-muted mb-0">New admission <strong class="text-green font-weight-bold">32</strong> in computer department.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="feeds-left">
-                                                <span class="avatar avatar-red"><i class="fa fa-info"></i></span>
-                                            </div>
-                                            <div class="feeds-body ml-3">
-                                                <p class="text-muted mb-0">6th sem result <strong class="text-red font-weight-bold">67%</strong> in computer department.</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="feeds-left">
-                                                <span class="avatar avatar-azure"><i class="fa fa-thumbs-o-up"></i></span>
-                                            </div>
-                                            <div class="feeds-body ml-3">
-                                                <p class="text-muted mb-0">New Feedback <strong class="text-azure font-weight-bold">53</strong> for university assessment.</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="javascript:void(0)" class="dropdown-item text-center text-muted-dark readall">Mark all as read</a>
-                                </div>
-                            </div>
-                            <div class="dropdown d-flex">
-                                <a href="javascript:void(0)" class="chip ml-3" data-toggle="dropdown">
-                                    <span class="avatar" style="background-image: url(../assets/images/xs/avatar5.jpg)"></span> George</a>
-                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="page-profile.html"><i class="dropdown-icon fe fe-user"></i> Profile</a>
-                                    <a class="dropdown-item" href="app-setting.html"><i class="dropdown-icon fe fe-settings"></i> Settings</a>
-                                    <a class="dropdown-item" href="app-email.html"><span class="float-right"><span class="badge badge-primary">6</span></span><i class="dropdown-icon fe fe-mail"></i> Inbox</a>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-send"></i> Message</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="dropdown-icon fe fe-help-circle"></i> Need help?</a>
-                                    <a class="dropdown-item" href="login.html"><i class="dropdown-icon fe fe-log-out"></i> Sign out</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
         <!-- Start Page title and tab -->
         <div class="section-body">
             <div class="container-fluid">
@@ -971,7 +771,7 @@
                     <div class="header-action">
                         <h1 class="page-title">Holiday</h1>
                         <ol class="breadcrumb page-breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
+                            <li class="breadcrumb-item"><a href="#">Matz Solutions</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Holiday</li>
                         </ol>
                     </div>
@@ -1007,7 +807,7 @@
                                                 <th>Subject</th>
                                                 <th>Start</th>
                                                 <th>End</th>
-                                                <th>Status</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1089,7 +889,7 @@
                                     <label class="col-md-3 col-form-label"></label>
                                     <div class="col-md-7">
                                         <button type="submit" class="btn btn-primary" name="submit_holiday">Submit</button>
-                                        <button type="submit" class="btn btn-outline-secondary">Cancel</button>
+                                        <a href="holiday.php" class="btn btn-secondary">Cancel</a>
                                     </div>
                                 </div>
                             </form>

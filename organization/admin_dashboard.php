@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-header("location:../organization/login.html");
+header("location:all_login.html");
 exit;
 }
 ?>
@@ -33,34 +33,11 @@ exit;
 </div>
 
 <div id="main_content">
-    <!-- Start Main top header -->
-    <div id="header_top" class="header_top">
-        <div class="container">
-            <div class="hleft">
-                <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
-                    <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
-                    <a href="app-email.html"  class="nav-link icon app_inbox"><i class="fe fe-inbox" data-toggle="tooltip" data-placement="right" title="Inbox"></i></a>
-                    <a href="app-filemanager.html"  class="nav-link icon app_file xs-hide"><i class="fe fe-folder" data-toggle="tooltip" data-placement="right" title="File Manager"></i></a>
-                    <a href="app-social.html"  class="nav-link icon xs-hide"><i class="fe fe-share-2" data-toggle="tooltip" data-placement="right" title="Social Media"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon theme_btn"><i class="fe fe-feather"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                </div>
-            </div>
-            <div class="hright">
-                <a href="javascript:void(0)" class="nav-link icon right_tab"><i class="fe fe-align-right"></i></a>
-                <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
-            </div>
-        </div>
-    </div>
+    
     <!-- Start Rightbar setting panel -->
     <div id="rightsidebar" class="right_sidebar">
         <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Settings" aria-expanded="true">Settings</a></li>
-            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#activity" aria-expanded="false">Activity</a></li>
-        </ul>
+        
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane vivify fadeIn active" id="Settings" aria-expanded="true">
                 <div class="mb-4">
@@ -774,7 +751,7 @@ exit;
     </div>
     <!-- Start Main leftbar navigation -->
     <div id="left-sidebar" class="sidebar">
-        <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+        <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-admin">Admin</a></li>
@@ -820,9 +797,10 @@ exit;
                         <div class="notification d-flex">
                                 <div class="dropdown d-flex">
                                 <a href="javascript:void(0)" class="chip ml-3" data-toggle="dropdown">
-                                    <span class="avatar" style="background-image: url(../assets/images/xs/avatar5.jpg)"></span> George</a>
+                                    <!-- <span class="avatar" style="background-image: url(../assets/images/xs/avatar5.jpg)"></span>  -->
+                                    Admin</a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                    <a class="dropdown-item" href="login.html"><i class="dropdown-icon fe fe-log-out"></i> Sign out</a>
+                                    <a class="dropdown-item" href="../backend/logout.php"><i class="dropdown-icon fe fe-log-out"></i> Sign out</a>
                                 </div>
                             </div>
                         </div>
@@ -837,15 +815,11 @@ exit;
                     <div class="header-action">
                         <h1 class="page-title">Dashboard</h1>
                         <ol class="breadcrumb page-breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
+                            <li class="breadcrumb-item"><a href="#">Matz Solutions</a></li>
                             <li class="breadcrumb-item"><a href="#">Organization</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                         </ol>
                     </div>
-                    <ul class="nav nav-tabs page-header-tab">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#admin-Dashboard">Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#admin-Activity">Activity</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -881,7 +855,7 @@ exit;
                     <div class="col-4 col-md-3 ">
                         <div class="card">
                             <div class="card-body">
-                                <a href="app-contact.html" class="my_sort_cut text-muted">
+                                <a href="app-contact.php" class="my_sort_cut text-muted">
                                     <i class="fa fa-address-book"></i>
                                     <span>Contact</span>
                                 </a>

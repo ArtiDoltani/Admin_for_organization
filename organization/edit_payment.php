@@ -8,13 +8,17 @@ include '../backend/payments.php';
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Ericsson ::Salary</title>
+<title>Salary</title>
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
 <link rel="stylesheet" href="../assets/plugins/datatable/dataTables.bootstrap4.min.css">
-
+ <style>
+        #chequeInput {
+            display: none;
+        }
+    </style>
 <!-- Core css -->
 <link rel="stylesheet" href="../assets/css/style.min.css"/>
 </head>
@@ -28,27 +32,7 @@ include '../backend/payments.php';
 </div>
 
 <div id="main_content">
-    <!-- Start Main top header -->
-    <div id="header_top" class="header_top">
-        <div class="container">
-            <div class="hleft">
-                <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
-                    <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
-                    <a href="app-email.html"  class="nav-link icon app_inbox"><i class="fe fe-inbox" data-toggle="tooltip" data-placement="right" title="Inbox"></i></a>
-                    <a href="app-filemanager.html"  class="nav-link icon app_file xs-hide"><i class="fe fe-folder" data-toggle="tooltip" data-placement="right" title="File Manager"></i></a>
-                    <a href="app-social.html"  class="nav-link icon xs-hide"><i class="fe fe-share-2" data-toggle="tooltip" data-placement="right" title="Social Media"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon theme_btn"><i class="fe fe-feather"></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                </div>
-            </div>
-            <div class="hright">
-                <a href="javascript:void(0)" class="nav-link icon right_tab"><i class="fe fe-align-right"></i></a>
-                <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
-            </div>
-        </div>
-    </div>
+    
     <!-- Start Rightbar setting panel -->
     <div id="rightsidebar" class="right_sidebar">
         <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
@@ -231,27 +215,7 @@ include '../backend/payments.php';
             </div>
         </div>
     </div>
-    <!-- Start Theme panel do not add in project -->
-    <div class="theme_div">
-        <div class="card">
-            <div class="card-body">
-                <ul class="list-group list-unstyled">
-                    <li class="list-group-item mb-2">
-                        <p>Light Version</p>
-                        <a href="../organization/index.php"><img src="../assets/images/themes/default.png" class="img-fluid" alt="" /></a>
-                    </li>
-                    <li class="list-group-item mb-2">
-                        <p>Dark Version</p>
-                        <a href="../university-dark/index.html"><img src="../assets/images/themes/dark.png" class="img-fluid" alt="" /></a>
-                    </li>
-                    <li class="list-group-item mb-2">
-                        <p>RTL Version</p>
-                        <a href="../university-rtl/index.html"><img src="../assets/images/themes/rtl.png" class="img-fluid" alt="" /></a>
-                    </li>
-                </ul>
-            </div>
-        </div>        
-    </div>
+    
     <!-- Start Quick menu with more functio -->
     <div class="user_div">
         <ul class="nav nav-tabs">
@@ -778,10 +742,10 @@ include '../backend/payments.php';
             <div class="tab-pane fade" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li><a href="admin_dashboard.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
                         <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="departments.html"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                        <li><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
@@ -795,9 +759,8 @@ include '../backend/payments.php';
                         <li class="active"><a href="payments.php"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
                         <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                         <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
-                        <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
-                        <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
-                    </ul>
+                        <li><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
+                                           </ul>
                 </nav>
             </div>
         </div>
@@ -808,14 +771,7 @@ include '../backend/payments.php';
         <div class="section-body" id="page_top" >
             <div class="container-fluid">
                 <div class="page-header">
-                    <div class="left">                        
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="What you want to find">
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button">Search</button>
-                            </div>
-                        </div>
-                    </div>
+                   
                  
                 </div>
             </div>
@@ -889,7 +845,7 @@ include '../backend/payments.php';
                                         <select class="form-control" name="payment_method">
                                             <option value="">Select...</option>
                                             <option <?php if ($payment['payment_method'] == 'Cash') {
-                                                            echo 'selected';
+                                                            echo 'selected';                                                            
                                                         } ?> >Cash</option>
                                             <option <?php if ($payment['payment_method'] == 'Cheque') {
                                                             echo 'selected';
@@ -899,6 +855,12 @@ include '../backend/payments.php';
                                                         } ?>>Credit Card</option>
                                                                                    </select>
                                     </div>
+                                     <div class="row" id="chequeInput">
+            <div class="col-md-7">
+                <input type="text" class="form-control" name="cheque_number" placeholder="Enter Cheque Number" value="<?php echo $payment['cheque_number']; ?>">
+            </div>
+        </div>
+
                                 </div>                     
                                   <div class="form-group row">
                                     <label class="col-md-3 col-form-label"></label>
@@ -916,7 +878,24 @@ include '../backend/payments.php';
         </div>
            </div>    
 </div>
+ <script>
+        document.getElementById('paymentMethod').addEventListener('change', function() {
+            var chequeInput = document.getElementById('chequeInput');
+            if (this.value === 'Cheque') {
+                chequeInput.style.display = 'block';
+            } else {
+                chequeInput.style.display = 'none';
+            }
+        });
 
+        // Check the initial payment method to show cheque input if necessary
+        window.onload = function() {
+            var paymentMethod = document.getElementById('paymentMethod').value;
+            if (paymentMethod === 'Cheque') {
+                document.getElementById('chequeInput').style.display = 'block';
+            }
+        };
+    </script>
 <!-- Start Main project js, jQuery, Bootstrap -->
 <script src="../assets/bundles/lib.vendor.bundle.js"></script>
 
