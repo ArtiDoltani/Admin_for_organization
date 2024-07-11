@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         $emp_id = $_POST['emp_id'];
         date_default_timezone_set('Asia/Karachi');
         $date = date('Y-m-d');
-        $logout_time = date('H:i:s');
+        $logout_time = $_POST['logout_time'];
 
         if (employee_sigin_exists($emp_id)) {
             $sql = "UPDATE `attendance` SET `logout_time`='$logout_time' WHERE

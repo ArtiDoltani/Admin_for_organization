@@ -25,6 +25,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 </head>
 
 <body class="font-muli theme-cyan gradient">
+        <a href="../backend/logout.php" class="btn btn-outline-secondary right">Logout</a> 
   <div class="auth option2">
     <div class="auth_left">
       <div class="card">
@@ -57,17 +58,27 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                                                                                            
                                                 ?>                                               
                                             </select>
-
-                                               
+                                           
+              </div>
+                     </div>
+                     <div class="form-group row">
+                <label class="col-md-4 col-form-label">Login time </label>
+                <div class="col-md-7">
+                  <input type="time" class="form-control" name="login_time" >
+                </div>
+              </div>
+               <div class="form-group row">
+                <label class="col-md-4 col-form-label">Logout time </label>
+                <div class="col-md-7">
+                  <input type="time" class="form-control" name="logout_time" >
+                </div>
               </div>
               </div>
-              </div>
-        <div class="text-center my-4">
+          <div class="text-center my-4">
           <button type="submit" class="btn btn-primary" value="signin_time" name="submit">Login Time</button>
           <button type="submit" class="btn btn-primary" value="signout_time" name="submit">Logout Time</button>
           <button type="submit" class="btn btn-danger" value="mark_absent" name="submit">Mark Absent</button>
-
-
+     
           <!-- <a href="index.html" class="btn btn-primary btn-block" title=""
                   >Sign in</a>-->
         </div>

@@ -1,4 +1,11 @@
 <?php 
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+header("location:all_login.html");
+exit;
+}
+?>
+<?php 
 include '../backend/payments.php';
 ?>
 <!doctype html>
@@ -733,7 +740,7 @@ include '../backend/payments.php';
     </div>
     <!-- Start Main leftbar navigation -->
     <div id="left-sidebar" class="sidebar">
-        <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
+        <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-uni">Organization</a></li>
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-admin">Admin</a></li>
@@ -771,8 +778,6 @@ include '../backend/payments.php';
         <div class="section-body" id="page_top" >
             <div class="container-fluid">
                 <div class="page-header">
-                   
-                 
                 </div>
             </div>
         </div>
@@ -783,7 +788,7 @@ include '../backend/payments.php';
                     <div class="header-action">
                         <h1 class="page-title">Salary</h1>
                         <ol class="breadcrumb page-breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Ericsson</a></li>
+                            <li class="breadcrumb-item"><a href="#">Matz Solutions</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Edit Salary</li>
                         </ol>
                     </div>
@@ -810,7 +815,7 @@ include '../backend/payments.php';
                                     <select class="form-control show-tick" name="emp_id">
                                     <option value="">Select</option>
                                     <?php 
-                                      $sql="SELECT `id`, concat(`f_name`,' ',`l_name`) as `name` FROM `employees`"; // Modify this query as needed to get the list of possible assigners
+                                      $sql="SELECT `id`, concat(`f_name`,' ',`l_name`) as `name` FROM `employees`"; 
                                       $res=mysqli_query($conn,$sql);
                                       if($res->num_rows>0){
                                         while($row=mysqli_fetch_assoc($res)){
@@ -842,7 +847,7 @@ include '../backend/payments.php';
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Payment Method <span class="text-danger">*</span></label>
                                     <div class="col-md-7">
-                                        <select class="form-control" name="payment_method">
+                                        <select class="form-control" name="payment_method" id="paymentMethod">
                                             <option value="">Select...</option>
                                             <option <?php if ($payment['payment_method'] == 'Cash') {
                                                             echo 'selected';                                                            

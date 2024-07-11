@@ -48,7 +48,7 @@ function delete_payment($del_id)
 
 <?php
 // update Data into payment table
-function update_payment($edit_id, $emp_id, $date, $salary, $payment_method)
+function update_payment($edit_id, $emp_id, $date, $salary, $payment_method,$cheque_number)
 {
     global $conn;
     $query="SELECT `salary` from `employees` where `id`= '$emp_id'";
@@ -58,7 +58,7 @@ function update_payment($edit_id, $emp_id, $date, $salary, $payment_method)
         $emp_salary=mysqli_fetch_assoc($result);
         if($salary < $emp_salary['salary']){
             $sql = "UPDATE `payments` SET `emp_id`='$emp_id',`date`='$date',`salary`='$salary',
-    `payment_method`='$payment_method',`payment_status`='Unpaid'
+    `payment_method`='$payment_method',`cheque_number`='$cheque_number',`payment_status`='Unpaid'
      WHERE `payment_id`='$edit_id'";
             if ($conn->query($sql)) {
                 return true;
@@ -68,7 +68,7 @@ function update_payment($edit_id, $emp_id, $date, $salary, $payment_method)
         }
         elseif($salary == $emp_salary['salary']){
             $sql = "UPDATE `payments` SET `emp_id`='$emp_id',`date`='$date',`salary`='$salary',
-    `payment_method`='$payment_method',`payment_status`='Paid' WHERE `payment_id`='$edit_id'";      
+    `payment_method`='$payment_method',`cheque_number`='$cheque_number',`payment_status`='Paid' WHERE `payment_id`='$edit_id'";      
           if ($conn->query($sql)) {
                 return true;
             } else {
@@ -138,8 +138,8 @@ if (isset($_POST['edit_salary'])) {
     $salary = $_POST['salary'];
     $payment_method = $_POST['payment_method'];
     // $payment_status = $_POST['payment_status'];
-    
-        if (update_payment($edit_id,$emp_id, $date, $salary, $payment_method)) {
+    $cheque_number=$_POST['cheque_number'];
+        if (update_payment($edit_id,$emp_id, $date, $salary, $payment_method,$cheque_number)) {
             echo "<script>alert('Success! Salary Updated');
               window.location.href='../organization/payments.php';
             </script>";

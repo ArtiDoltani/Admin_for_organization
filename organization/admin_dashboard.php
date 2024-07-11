@@ -1518,7 +1518,7 @@ exit;
                                             <table class="table table-striped mb-0 text-nowrap">
                                                 <thead>
                                                     <tr>
-                                                        <th>Employee ID</th>
+                                                        <th>S.no</th>
                                                         <th>Name</th>
                                                         <!-- <th>Assigned Professor</th> -->
                                                         <th>Email</th>
@@ -1530,6 +1530,7 @@ exit;
                                                 <tbody>
                                                     <?php 
                                                     include_once '../backend/dbconnection.php';
+                                                    $count=1;
                                                     $sql="SELECT * FROM `employees`
                                                     ORDER BY id DESC LIMIT 10";
                                                     $result=$conn->query($sql);
@@ -1539,7 +1540,7 @@ exit;
 
                                                           <tr>
                                                           <td>
-                                                          '.$employee['id'].'
+                                                          '.$count.'
                                                           </td>
                                                           <td>'.$employee['f_name']. ' '.$employee['l_name']. ' </td>
                                                           <td>'.$employee['email']. '</td>
@@ -1552,7 +1553,7 @@ exit;
                                                       </tr>
    
                                                           ';      
-
+                                                $count++;
                                                         }
                                                     }
                                                     

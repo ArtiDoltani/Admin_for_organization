@@ -1,10 +1,10 @@
  <!-- Add Employee -->
  <?php
-    function create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id,$em_password)
+    function create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id,$em_password,$salary)
     {
         require 'dbconnection.php';
-        $sql = "INSERT INTO `employees`(`TL_id`, `emp_image`, `f_name`, `l_name`, `password`, `position`, `phone`, `email`, `dept_id`) VALUES 
-    ('$tl_id','$folder','$f_name','$l_name','$em_password','$position','$phone','$email','$dept_id')";
+        $sql = "INSERT INTO `employees`(`TL_id`, `emp_image`, `f_name`, `l_name`, `password`,`salary`, `position`, `phone`, `email`, `dept_id`) VALUES 
+    ('$tl_id','$folder','$f_name','$l_name','$em_password','$salary','$position','$phone','$email','$dept_id')";
         if ($conn->query($sql) === TRUE) {
             return true;
         } else {
@@ -38,10 +38,10 @@
  <!-- Update Employee -->
 
  <?php
-    function update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $phone,$dept_id)
+    function update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $phone,$dept_id,$salary,$em_password,$tl_id)
     {
         require 'dbconnection.php';
-        $sql = "UPDATE `employees` SET `emp_image`='$folder',`f_name`='$f_name',`l_name`='$l_name',`position`='$position',
+        $sql = "UPDATE `employees` SET `TL_id`='$tl_id', `emp_image`='$folder',`f_name`='$f_name',`l_name`='$l_name',`password`='$em_password',`salary`='$salary',`position`='$position',
         `phone`='$phone',`email`='$email', `dept_id`='$dept_id' WHERE `id`='$edit_id'";
 
         if ($conn->query($sql) === TRUE) {
@@ -85,7 +85,8 @@
             $phone =  $_POST['phone'];
             $tl_id =  $_POST['tl_id'];
             $dept_id=$_POST['dept_id'];
-            if (create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id,$em_password)) {
+            $salary=$_POST['salary'];
+            if (create_employee($folder, $email, $f_name, $l_name, $position, $phone,$tl_id,$dept_id,$em_password,$salary)) {
                 echo "<script>
         alert('Employee Added Successfully');
       window.location.href='../organization/employees.php';
@@ -113,7 +114,10 @@
             $position =  $_POST['position'];
             $phone =  $_POST['phone'];
             $dept_id=$_POST['dept_id'];
-            if (update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $phone,$dept_id)) {
+            $salary=$_POST['salary'];
+            $em_password= $_POST['password'];
+             $tl_id =  $_POST['tl_id'];
+            if (update_employee($edit_id, $folder, $email, $f_name, $l_name, $position, $phone,$dept_id,$salary, $em_password,$tl_id)) {
                 echo "<script>
         alert('Employee Updated Successfully');
         window.location.href='../organization/employees.php';

@@ -36,7 +36,7 @@ function employee_sigin_time($emp_id)
 {
     include 'dbconnection.php';
     date_default_timezone_set('Asia/Karachi');
-    $login_time = date('H:i:s');
+    $login_time = $_POST['login_time'];
     $sql_insert = "INSERT INTO `attendance`(`emp_id`, `login_time`, `status`) VALUES
     ('$emp_id','$login_time','present')";
     if ($conn->query($sql_insert)) {
