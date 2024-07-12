@@ -55,10 +55,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
           <div class="card-body">
             <form method="post">
               <div class="text-center">
-                <a class="header-brand" href="#"
-                  ><i class="fa fa-graduation-cap brand-logo"></i
-                ></a>
-                <div class="card-title mt-3">Login to your account</div>
+                 <img class="header-brand" src="logo.png" alt="" width="90px">
+                <div class="card-title mt-3">User Login</div>
                 <!-- <button type="button" class="btn btn-facebook"><i class="fa fa-facebook mr-2"></i>Facebook</button>
                         <button type="button" class="btn btn-google"><i class="fa fa-google mr-2"></i>Google</button>
                         <h6 class="mt-3 mb-3">Or</h6> -->
@@ -80,10 +78,10 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                   placeholder="Password" name="password"
                 />
               </div>
-                     <div class="text-center">
+                <div class="text-center">
                 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                   
-                            </div>
+                 <a href="all_login.html" class="btn btn-outline-secondary btn-block ">Go Back</a>
+             </div>
             </form>
           </div>
         </div>
