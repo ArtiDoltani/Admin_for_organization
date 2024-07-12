@@ -1,6 +1,9 @@
-<?php
-include '../backend/employee_crud.php';
-
+<?php 
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+header("location:login.html");
+exit;
+}
 ?>
 <!doctype html>
 <html lang="en" dir="ltr">
@@ -9,13 +12,14 @@ include '../backend/employee_crud.php';
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>Employees</title>
+<title> Teams</title>
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
-<link rel="stylesheet" href="../assets/plugins/dropify/css/dropify.min.css">
-<link rel="stylesheet" href="../assets/plugins/summernote/dist/summernote.css"/>
+<link rel="stylesheet" href="../assets/plugins/datatable/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="../assets/plugins/fullcalendar/fullcalendar.min.css">
+<link rel="stylesheet" href="../assets/plugins/sweetalert/sweetalert.css">
 
 <!-- Core css -->
 <link rel="stylesheet" href="../assets/css/style.min.css"/>
@@ -30,6 +34,7 @@ include '../backend/employee_crud.php';
 </div>
 
 <div id="main_content">
+   
     <!-- Start Rightbar setting panel -->
     <div id="rightsidebar" class="right_sidebar">
         <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
@@ -213,6 +218,7 @@ include '../backend/employee_crud.php';
         </div>
     </div>
     
+   
     <!-- Start Main leftbar navigation -->
     <div id="left-sidebar" class="sidebar">
         <h5 class="brand-name">Matz Solutions<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
@@ -225,191 +231,184 @@ include '../backend/employee_crud.php';
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
                         <li><a href="admin_dashboard.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li class="active"><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
+                        <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
                         <!-- <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li> -->
-                         <li><a href="teams.php"><i class="fa fa-users"></i><span>Teams</span></a></li> 
+                        <li class="active"><a href="teams.php"><i class="fa fa-users"></i><span>Teams</span></a></li> 
                         <li><a href="departments.php"><i class="fa fa-database"></i><span>Departments</span></a></li>
-                        <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
+                        <li ><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
+                        <!-- <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li> -->
                         <li><a href="app-contact.php"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
-                       </ul>
+                        </ul>
                 </nav>
             </div>
             <div class="tab-pane fade" id="menu-admin" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
                         <li><a href="payments.php"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
-                        <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
-                        <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
+                         <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
+                          <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
-                                            </ul>
+                       </ul>
                 </nav>
             </div>
         </div>
     </div>
     <!-- Start project content area -->
     <div class="page">
-        <!-- Start Page header -->
-        <div class="section-body" id="page_top" >
-            <div class="container-fluid">
-                <div class="page-header">
-                    
-                  
-                </div>
-            </div>
-        </div>
+     
         <!-- Start Page title and tab -->
-        <div class="section-body">
+        <div class="section-body my-4">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center ">
                     <div class="header-action">
-                        <h1 class="page-title">Employees</h1>
+                        <h1 class="page-title">Teams</h1>
                         <ol class="breadcrumb page-breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Matz Solutions</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Employees</li>
+                            <li class="breadcrumb-item active" aria-current="page">Teams</li>
                         </ol>
                     </div>
                     
                 </div>
             </div>
         </div>
-                                
-                                    <div class="card-body">
-                                        <form action="../backend/employee_crud.php?edit_id=<?php echo $edit_id;?>" method="post" enctype="multipart/form-data">
-                                        <div class="row clearfix">
-
-                                                <div class="col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>First Name</label>
-                                                        <input type="text" class="form-control" name="f_name" value="<?php echo $employee['f_name'] ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Last Name</label>
-                                                        <input type="text" class="form-control" name="l_name" value="<?php echo $employee['l_name'] ?>"
-                                                        >
-                                                    </div>
-                                                </div>
+        <div class="section-body mt-4">
+            <div class="container-fluid">
+                <div class="tab-content">
+                    <!-- Calender here -->
+                    <div class="tab-pane" id="Holiday-Calendar">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="calendar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- display holidays here -->
+                    <div class="tab-pane active" id="Holiday-all">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-vcenter text-nowrap js-basic-example dataTable table-striped table_custom border-style spacing5">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Team Lead</th>
+                                                <th>Team Members</th>
+                                                <th>Stack</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php 
+                                        include '../backend/dbconnection.php';
+                                        $sql=" SELECT e.TL_id,CONCAT(m.f_name,' ' , m.l_name) as 'Team Lead', d.stack_name as 'Stack', GROUP_CONCAT(CONCAT(e.f_name,' ' , e.l_name)SEPARATOR ', ' )  AS 'Team Members'
+                                        FROM `employees` e LEFT JOIN `employees` m ON e.TL_id=m.id 
+                                        LEFT JOIN `department` d on d.dept_id=e.dept_id
+                                        GROUP BY e.TL_id,d.stack_name";
+                                        $count=1;
+                                        $res=mysqli_query($conn,$sql);
+                                        if($res){
                                             
-                                                <div class="col-md-3 col-sm-12">
-                                                    <div class="form-group">
-                                                       <label >Department </label>
+                                            while($row=mysqli_fetch_assoc($res)){
+                                                 echo'
+                                            <tr>
+                                             <td>'.$count++.'</td>
+                                            <td><strong>'.$row['Team Lead'].'</strong></td>
+                                            <td>'.$row['Team Members'].'</td>
+                                            <td>'.$row['Stack'].'</td>
+                                                
+                                                ';
+                                            }
+                                            echo '</tr> ';
                                         
-                                  <select class="form-control show-tick" name="dept_id" Required>
-                                   <option value="">Select</option>
-                                              <?php 
-                                               $sql="SELECT `dept_id`, `stack_name` FROM `department`";
-                                           $res = $conn->query($sql);
-                                                if ($res->num_rows > 0) {
-                                                    while ($row = $res->fetch_assoc()) {
-                                                        $selected = ($employee['dept_id'] == $row['dept_id']) ? 'selected' : '';
-                                                        echo "<option value='{$row['dept_id']}' {$selected}>{$row['stack_name']}</option>";
-                                                    }
-                                                }
-                                                ?>                    </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Position</label>
-                                                        <select class="form-control" name="position" >
-                                            <option value="">Select...</option>
-                                            <option <?php if ($employee['position'] == 'Trainee') {
-                                                            echo 'selected';
-                                                        } ?>>Trainee</option>
-                                            <option <?php if ($employee['position'] == 'Junior') {
-                                                echo 'selected';
-                                            } ?>>Junior</option>
-                                            <option <?php if ($employee['position'] == 'Senior') {
-                                                            echo 'selected';                                                            
-                                                        } ?> >Senior</option>
-                                              </select>
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Phone</label>
-                                                        <input type="text" class="form-control" name="phone"
-                                                        value="<?php echo $employee['phone'] ?>"
-                                                    >
-                                                    </div>
-                                                </div>
-                                                 <div class="col-md-3 col-sm-12">
-                                                    <div class="form-group">
-                                                       <label >Team Lead </label>
+                                            }
                                         
-                                  <select class="form-control show-tick" name="tl_id" Required>
-                                   <option value="">Select</option>
-                                              <?php 
-                                              $sql = "SELECT `id`, concat(`f_name`, ' ', `l_name`) as name FROM `employees`";
-                                           $res = $conn->query($sql);
-                                                if ($res->num_rows > 0) {
-                                                    while ($row = $res->fetch_assoc()) {
-                                                        $selected = ($employee['TL_id'] == $row['id']) ? 'selected' : '';
-                                                        echo "<option value='{$row['id']}' {$selected}>{$row['name']}</option>";
-                                                    }
-                                                }
-                                                ?>                    </select>
-                                                    </div>
-                                                </div>
-                                                 <div class="col-md-4 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Password</label>
-                                                        <input type="text" class="form-control" name="password"
-                                                        value="<?php echo $employee['password'] ?>"
-                                                    >
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Enter Your Email</label>
-                                                        <input type="text" class="form-control" name="email"  value="<?php echo $employee['email'] ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 col-sm-12">
-                                                    <div class="form-group">
-                                                        <label>Salary</label>
-                                                        <input type="number" class="form-control" name="salary"  value="<?php echo $employee['salary'] ?>">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="form-group mt-2 mb-3">
-                                                        <input type="file" class="dropify" name="uploadfile" value="<?php echo $employee['emp_image'] ?>">
-                                                        <small id="fileHelp" class="form-text text-muted">Upload Profile Image</small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <button type="submit" class="btn btn-primary" name="edit">Update</button>
-                                                <a href="employees.php" class="btn btn-secondary">Cancel</a>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                       
+                                            ?>
+                                            <!-- <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button> -->
+                                        </tbody>
+                                    </table>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add   -->
+                    <div class="tab-pane" id="Holiday-add-Boot">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Add Holiday</h3>
+                                <div class="card-options ">
+                                    <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                    <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                 </div>
                             </div>
+                            <form class="card-body" action="../backend/holiday_crud.php" method="post">
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Title <span class="text-danger">*</span></label>
+                                    <div class="col-md-7">
+                                        <input type="text" class="form-control" name="title">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Holiday Type  <span class="text-danger">*</span></label>
+                                    <div class="col-md-7">
+                                        <select class="form-control input-height" name="holiday_type">
+                                            <option value="">Select...</option>
+                                            <option value="Public Holiday">Public Holiday</option>
+                                            <option value="Holiday By Organization">Holiday By Organization</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Holiday Start Date <span class="text-danger">*</span></label>
+                                    <div class="col-md-7">
+                                        <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="" name="start_date">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Holiday End Date <span class="text-danger">*</span></label>
+                                    <div class="col-md-7">
+                                        <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="" name="end_date">
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group row">
+                                    <label class="col-md-3 col-form-label">Holiday Details <span class="text-danger">*</span></label>
+                                    <div class="col-md-7">
+                                        <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                    </div>
+                                </div> -->
+                                <div class="form-group row">
+                                    <label class="col-md-3 col-form-label"></label>
+                                    <div class="col-md-7">
+                                        <button type="submit" class="btn btn-primary" name="submit_holiday">Submit</button>
+                                        <a href="holiday.php" class="btn btn-secondary">Cancel</a>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-     
-    </div>    
+            </div>    
 </div>
+
+
+
 
 <!-- Start Main project js, jQuery, Bootstrap -->
 <script src="../assets/bundles/lib.vendor.bundle.js"></script>
 
 <!-- Start Plugin Js -->
+<script src="../assets/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-<script src="../assets/plugins/dropify/js/dropify.min.js"></script>
-<script src="../assets/bundles/summernote.bundle.js"></script>
+<script src="../assets/bundles/dataTables.bundle.js"></script>
+<script src="../assets/bundles/fullcalendar.bundle.js"></script>
 
 <!-- Start project main js  and page js -->
 <script src="../assets/js/core.js"></script>
-<script src="assets/js/form/dropify.js"></script>
-<script src="assets/js/page/summernote.js"></script>
+<script src="assets/js/page/dialogs.js"></script>
+<script src="assets/js/table/datatable.js"></script>
+<script src="assets/js/page/calendar.js"></script>
 </body>
 </html>

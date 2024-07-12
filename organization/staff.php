@@ -776,15 +776,16 @@
             <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="index.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li><a href="admin_dashboard.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
                         <li class="active"><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                       <li><a href="teams.php"><i class="fa fa-users"></i><span>Teams</span></a></li>    
+                        <li><a href="departments.php"><i class="fa fa-database"></i><span>Departments</span></a></li>
                         <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
                         <!-- <li><a href="app-chat.html"><i class="fa fa-comments-o"></i><span>Chat App</span></a></li> -->
-                        <li><a href="app-contact.html"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
+                        <li><a href="app-contact.php"><i class="fa fa-address-book"></i><span>Contact</span></a></li>
                                            </ul>
                 </nav>
             </div>
@@ -796,8 +797,7 @@
                         <li><a href="taskboard.php"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
                         <li><a href="attendance.php"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li><a href="leave.php"><i class="fa fa-flag"></i><span>Leave</span></a></li>
-                        <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
-                    </ul>
+                        </ul>
                 </nav>
             </div>
         </div>

@@ -742,7 +742,8 @@ exit;
                         <li><a href="admin_dashboard.php"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="employees.php"><i class="fa fa-black-tie"></i><span>Employees</span></a></li>
                         <!-- <li><a href="staff.php"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li> -->
-                        <li><a href="departments.php"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                        <li><a href="teams.php"><i class="fa fa-users"></i><span>Teams</span></a></li>                        
+                        <li><a href="departments.php"><i class="fa fa-database"></i><span>Departments</span></a></li>
                         <li><a href="holiday.php"><i class="fa fa-bullhorn"></i><span>Holiday</span></a></li>
                         <li class="g_heading">Extra</li>
                         <li><a href="events.html"><i class="fa fa-calendar"></i><span>Calender</span></a></li>
