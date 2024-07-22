@@ -86,4 +86,27 @@ if (isset($_POST['submit'])) {
             </script>";
         }
     }
+
+    //    this is for WFH
+    elseif ($clicked_button == 'WFH') {
+        $emp_id = $_POST['emp_id'];
+            if (employee_sigin_exists($emp_id)) {
+                echo "<script>alert('Employee Already Marked.');
+            window.location.href='../organization/user_login_for_attend.php';
+            </script>";
+            } else {
+                $sql_insert = "INSERT INTO `attendance`(`emp_id`, `status`) VALUES
+                ('$emp_id','WFH')";
+                if ($conn->query($sql_insert)) {
+                    echo "<script>alert('Marked Successfully');
+                    window.location.href='../organization/user_login_for_attend.php';
+                    </script>";
+                } else {
+                    echo "<script>alert('Sorry!Server Down.');
+                    window.location.href='../organization/user_login_for_attend.php';
+                    </script>";
+                }
+            }
+        
+    }
 }

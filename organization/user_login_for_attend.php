@@ -4,6 +4,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     header("location:user_login.php");
     exit();
 }
+ date_default_timezone_set('Asia/Karachi');
+$current_logintime=date('h:i:s');
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -13,7 +15,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="logo.png" type="image/x-icon" />
 
   <title>User :: Login</title>
 
@@ -32,7 +34,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
         <div class="card-body">
           <form action="../backend/emp_attendance.php" method="post">
             <div class="text-center">
-              <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+             <img class="header-brand" src="logo.png" alt="" width="90px">
               <div class="card-title mt-3">Employee Attendance</div>
               <!-- <button type="button" class="btn btn-facebook"><i class="fa fa-facebook mr-2"></i>Facebook</button>
                         <button type="button" class="btn btn-google"><i class="fa fa-google mr-2"></i>Google</button>
@@ -64,13 +66,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
                      <div class="form-group row">
                 <label class="col-md-4 col-form-label">Login time </label>
                 <div class="col-md-7">
-                  <input type="time" class="form-control" name="login_time" >
+                  <input type="time" class="form-control" name="login_time" value="<?php echo $current_logintime; ?>" >
                 </div>
               </div>
                <div class="form-group row">
                 <label class="col-md-4 col-form-label">Logout time </label>
                 <div class="col-md-7">
-                  <input type="time" class="form-control" name="logout_time" >
+                  <input type="time" class="form-control" name="logout_time" value="<?php echo $current_logintime; ?>">
                 </div>
               </div>
               </div>
@@ -78,9 +80,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
           <button type="submit" class="btn btn-primary" value="signin_time" name="submit">Login Time</button>
           <button type="submit" class="btn btn-primary" value="signout_time" name="submit">Logout Time</button>
           <button type="submit" class="btn btn-danger" value="mark_absent" name="submit">Mark Absent</button>
-     
-          <!-- <a href="index.html" class="btn btn-primary btn-block" title=""
-                  >Sign in</a>-->
+           <button type="submit" class="btn btn-secondary" value="WFH" name="submit">WFH</button>
+          <!-- <a href="index.html" class="btn btn-primary btn-block" title="" >Sign in</a>-->
         </div>
         </form>
       </div>

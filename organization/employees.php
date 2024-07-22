@@ -11,7 +11,7 @@ exit;
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="logo.png" type="image/x-icon"/>
 <title>Employees</title>
 
 <!-- Bootstrap Core and vandor -->
@@ -285,6 +285,7 @@ exit;
                                 <thead class="thead-dark">
                                     <th>Image</th>
                                     <th>Name</th>
+                                    <th>Email</th>
                                     <th>Password</th>
                                     <th>Phone</th>
                                     <th>Team Lead</th>
@@ -302,7 +303,7 @@ exit;
     $employees = get_employees();
     $current_month = date('m');
     $current_year = date('Y');
-    $standard_signin_time = '09:00:00';
+    $standard_signin_time = '12:00:00';
 
     foreach($employees as $employee) {
         // SQL query to get the late count for the current month
@@ -317,7 +318,6 @@ exit;
 
         if ($result) {
             $late_count = mysqli_fetch_assoc($result)['late_count'];
-
             // Calculating salary deduction
             $firstDayOfMonth = date('Y-m-01');
             $totalNum_days = date('t', strtotime($firstDayOfMonth));
@@ -330,6 +330,7 @@ exit;
                     <img class="avatar" src="'.$employee['emp_image'].'" alt="profile image">
                 </td>
                 <td><div class="font-15">'.$employee['Employee'].'</div></td>
+                <td>'.$employee['email'].'</td>
                 <td>'.$employee['password'].'</td>
                 <td><span>'.$employee['phone'].'</span></td>
                 <td><span class="text-muted">'.$employee['Team Lead'].'</span></td>
@@ -731,7 +732,6 @@ exit;
                                     <div class="card-body">
                                         <form action="../backend/employee_crud.php" method="post" enctype="multipart/form-data">
                                         <div class="row clearfix">
-
                                                 <div class="col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label>First Name</label>
@@ -761,16 +761,13 @@ exit;
                                                          <option value="<?php echo $row['dept_id'] ;?>">
                                                             <?php echo $row['stack_name']; ?></option>
                                                <?php
-                                                    }
+                                                }
                                                 }
            
-                                                ?>                                               
-                                            
-                                        
+                                                ?>                                                                                      
                                             </select>
                                                     </div>
                                                 </div>
-
                                                 <div class="col-md-4 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Position</label>
